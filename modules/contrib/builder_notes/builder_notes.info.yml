@@ -1,0 +1,11 @@
+name: Builder Notes
+description: Adds text area to include important notes about entities.
+type: module
+dependencies:
+  - drupal:field_ui
+core_version_requirement: ^8 || ^9 || ^10
+
+# Information added by Drupal.org packaging script on 2024-01-11
+version: '2.1.1'
+project: 'builder_notes'
+datestamp: 1704946655

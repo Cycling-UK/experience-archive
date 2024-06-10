@@ -1,0 +1,39 @@
+.skyfish-results .form-checkboxes .form-item {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+
+.skyfish-results .form-checkbox {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.skyfish-results dl.popup {
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  top: 25px;
+  left: 0;
+  padding: 5px;
+}
+
+.skyfish-results dt {
+  margin-top: 0.5em;
+}
+
+.skyfish-results dd {
+  margin: 0;
+  padding: 0;
+}
+
+.skyfish-results .item-list ul {
+  margin-left: 0;
+}
+
+.skyfish-results li {
+  margin-left: 0;
+}
