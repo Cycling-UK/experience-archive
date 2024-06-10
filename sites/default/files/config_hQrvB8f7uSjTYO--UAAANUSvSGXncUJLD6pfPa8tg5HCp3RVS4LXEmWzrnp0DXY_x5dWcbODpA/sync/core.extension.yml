@@ -1,7 +1,6 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
-  acquia_connector: 0
   address: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
@@ -69,7 +68,6 @@ module:
   geofield_map_extras: 0
   help: 0
   history: 0
-  honeypot: 0
   image: 0
   image_widget_crop: 0
   inline_entity_form: 0
@@ -87,7 +85,6 @@ module:
   link: 0
   link_attributes: 0
   linkit: 0
-  login_destination: 0
   loqate: 0
   mailsystem: 0
   map_embed: 0
@@ -133,7 +130,6 @@ module:
   slick_ui: 0
   smtp: 0
   stage_file_proxy: 0
-  super_login: 0
   system: 0
   tamper: 0
   taxonomy: 0
