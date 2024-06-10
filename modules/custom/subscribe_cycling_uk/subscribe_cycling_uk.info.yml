@@ -1,0 +1,8 @@
+name: Subscribe Cycling UK field cookies
+description: Helper to send field values from footer subscribe block to the main subscibe webform page.
+type: module
+core_version_requirement: ^9.4 || ^10
+package: Custom
+
+dependencies:
+  - webform:webform

@@ -1,0 +1,6 @@
+name: Cycling UK GPX data processing
+description: Helper to send GPX data to be processed.
+type: module
+core_version_requirement: ^9
+package: Custom
+

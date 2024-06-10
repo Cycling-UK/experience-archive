@@ -1,0 +1,135 @@
+footer.footer {
+  background-color: $gray;
+  margin-top: 0;
+  padding: 60px 30px 200px 30px;
+  color: $white;
+  font-size: $font-size-sm;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: $yellow;
+    text-decoration: underline;
+    background-color: inherit;
+  }
+}
+
+.footer-text {
+  .field--name-body > div {
+    max-width: 950px;
+    margin-bottom: 20px;
+  }
+
+  .cyclinguk-logo img {
+    width: 183px;
+    height: auto;
+  }
+
+  .social span {
+    display: inline-flex;
+    margin-right: 5px;
+  }
+
+  .social a {
+    border: 1px solid $white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
+
+  .social a:hover,
+  .social a:focus {
+    border: 1px solid $yellow;
+  }
+
+  .social i {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .names > span {
+    display: block;
+  }
+
+  .yellow {
+    color: $yellow;
+  }
+
+  .small-print {
+    text-transform: uppercase;
+  }
+
+  .copyright {
+    font-weight: $font-weight-bold;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    display: inline-flex;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 979px) {
+  footer.footer {
+    text-align: center;
+  }
+  .footer-text {
+    .cyclinguk-logo img {
+      width: 198px;
+    }
+    .social span {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    ul li {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.experience-logo-strip {
+  border-top: 1px solid $blue-lighter;
+  margin-top: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  .field--name-body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+    .experience-logo {
+      display: inline-flex;
+      padding: 15px;
+
+      img {
+        width: auto;
+        height: 65px;
+      }
+    }
+  }
+}

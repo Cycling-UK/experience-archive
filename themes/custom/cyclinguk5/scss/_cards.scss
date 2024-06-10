@@ -1,0 +1,235 @@
+.cards {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+
+    // This is related to a specific view that we may not use in the end.  Will revisit later.
+    /*&.proximity-block {
+        gap: 2rem 4rem;
+       // justify-content: space-evenly;
+        margin-bottom: 3rem;
+
+        .card {
+            flex: 0 0 auto;
+
+            .card-body {
+                background-color: $white;
+            }
+        }
+    }*/
+
+    .map-canvas,
+    .leaflet-container {
+        -webkit-border-top-left-radius: $border-radius;
+        -webkit-border-top-right-radius: $border-radius;
+        -moz-border-radius-topleft: $border-radius;
+        -moz-border-radius-topright: $border-radius;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        -webkit-border-bottom-right-radius: 0;
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius: 5px;
+        -moz-border-radius-bottomright: 0;
+        -moz-border-radius-bottomleft: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        overflow: hidden;
+    }
+}
+
+.card {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    border: none;
+    align-items: flex-start;
+}
+
+// paragraph type specific
+
+.paragraph--type--quick-cards,
+.paragraph--type--cards-by-id {
+    h2.paragraph-title {
+        text-align: center;
+    }
+    .card .field--name-field-media-image {
+        margin-bottom: 0;
+    }
+
+    .field--name-field-title,
+    .viewsreference--view-title {
+        display: none;
+    }
+}
+
+.field--name-field-topic-card a {
+    padding: 0 8%;
+    border: none;
+}
+
+//  paragraph type specific end
+
+.topic-card a {
+    color: $blue;
+    font-size: 90%;
+    display: inline-block;
+    padding: 0 8%;
+    border-bottom: 0px solid transparent;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $gray-100;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+    padding-bottom: 6%;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+    width: 100%;
+    padding: 0 0 0 0;
+
+    p {
+        padding: 0 1rem;
+    }
+
+    .paragraph,
+    .field--name-field-media-image-1 {
+        margin: 0 auto;
+    }
+    .field--name-field-media-oembed-video,
+    .field--name-field-media-image img,
+    .card-map,
+    img {
+        -webkit-border-radius: $border-radius;
+        -webkit-border-bottom-right-radius: 0;
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius: $border-radius;
+        -moz-border-radius-bottomright: 0;
+        -moz-border-radius-bottomleft: 0;
+        border-radius: $border-radius;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    figure {
+        margin: 0 0 0;
+    }
+
+    &:hover {
+        background-color: $gray-200;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem 0;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.map-wrap {
+    width: 420px;
+    height: 262px;
+    display: block;
+    overflow: hidden;
+    -webkit-border-top-left-radius: $border-radius;
+    -webkit-border-top-right-radius: $border-radius;
+    -moz-border-radius-topleft: $border-radius;
+    -moz-border-radius-topright: $border-radius;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+}
+
+
+.bottom-flexed {
+    margin-top: auto;
+}
+
+// using newer bs5 breakpoints
+
+@media only screen and (min-width: $cuk-breakpoint-xxl) {
+    .card {
+        flex: 0 0 440px;
+    }
+
+    .card.benefitcard-view {
+        flex: 0 0 222px;
+    }
+    .card.benefitcard-view {
+        flex: 0 0 15%;
+    }
+}
+
+@media only screen and (max-width: $cuk-breakpoint-xxl) {
+    .card {
+        flex: 0 0 350px;
+    }
+    .map-wrap {
+        width: 334px;
+        height: 210px;
+    }
+}
+
+@media only screen and (max-width: $cuk-breakpoint-xl) {
+    .cards {
+        //justify-content: space-around;
+    }
+    .card {
+        flex: 0 0 285px;
+    }
+
+    .map-wrap {
+        width: 282px;
+        height: 176px;
+    }
+}
+
+@media only screen and (max-width: calc($cuk-breakpoint-md - 1px)) {
+    .cards {
+        //justify-content: space-around;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    .card {
+        flex: 0 0 250px;
+    }
+
+    .card.benefitcard-view {
+        flex: 0 0 48%;
+    }
+
+    /* this will need updating */
+    .map-wrap {
+        width: 282px;
+        height: 176px;
+    }
+}
+
+
+.map-stage {
+	width: 440px; // copyright details begin to look better at 500px.  Giving it about 16:9 window with 500 width.
+	height: 248px;
+	//border: 1px solid $white; // #007faf;
+	border-radius: $border-radius-img;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+	overflow: hidden;
+	display: block;
+	margin: auto;
+}

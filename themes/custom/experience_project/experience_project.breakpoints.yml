@@ -1,0 +1,28 @@
+cyclinguk.mobile:
+  label: mobile
+  mediaQuery: 'all and (min-width: 0px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+cyclinguk.tablet:
+  label: tablet
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+cyclinguk.menu:
+  label: menu
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+cyclinguk.desktop:
+  label: desktop
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x

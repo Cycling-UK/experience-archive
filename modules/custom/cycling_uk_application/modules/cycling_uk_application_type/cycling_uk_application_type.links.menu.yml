@@ -1,0 +1,5 @@
+entity.cycling_uk_application_type.settings:
+  title: Cycling UK application type
+  description: Configure a Cycling UK application type entity type
+  route_name:  entity.cycling_uk_application_type.settings
+  parent: system.admin_structure

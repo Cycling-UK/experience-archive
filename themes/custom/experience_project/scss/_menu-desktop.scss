@@ -1,0 +1,111 @@
+/*
+ * TB Mega Menu
+ * ============
+ *
+ * composer require 'drupal/tb_megamenu:^1.0@RC'
+ *
+ * Requires the basic preset style to be set to "Default" (/admin/structure/tb-megamenu/main__cyclinguk).
+ *
+ * Also requires a patch to be installed to allow submenus to be 100% width:
+ * https://www.drupal.org/project/tb_megamenu/issues/3178668
+ * https://www.drupal.org/files/issues/2021-03-02/add_fullwidth_option-3178668-12.patch
+ */
+
+// Hide the Mega Menu for mobile devices
+@media (max-width: 991px) {
+  nav#tbm-experience {
+    display: none;
+  }
+}
+
+
+
+/* TB Megamenu styling */
+
+/* We need to anchor the dropdown second-level submenu to the parent Bootstrap container:
+   1. we unset the position on the .tbm container, then
+   2. we add position:relative to the Bootstrap container.
+*/
+
+.tbm {
+  position: inherit;
+}
+
+nav.navbar > .container {
+  position: relative;
+}
+
+/* We then need media queries to force the width of the submenu depending on the container size. */
+
+@media only screen and (min-width :  768px) and (max-width :  991px) {.tbm-submenu {width:  720px;}} /* <----- This value needs checking */
+@media only screen and (min-width :  992px) and (max-width : 1199px) {.tbm-submenu {width:  960px;}}
+@media only screen and (min-width : 1200px) and (max-width : 1599px) {.tbm-submenu {width: 1170px;}}
+@media only screen and (min-width : 1600px) and (max-width : 1899px) {.tbm-submenu {width: 1530px;}}
+@media only screen and (min-width : 1900px)                          {.tbm-submenu {width: 1830px;}}
+
+
+/* Style the main menu */
+
+#block-experience {
+  display: flex;
+  justify-content: center;
+}
+
+nav#tbm-experience {
+  background-color: inherit;
+  font-size: larger;
+  text-transform: uppercase;
+
+  .tbm-item.level-1 {
+    border-right: none;
+    padding: 15px 30px;
+  }
+
+  .tbm-item--has-dropdown .tbm-link.level-1 {
+    padding: 0;
+  }
+
+  .tbm-link.level-1,
+  .menu-item-search.tbm-item--has-dropdown .tbm-link.level-1 {
+    color: inherit;
+    padding: 0;
+    border-bottom: 2px solid $white;
+    text-decoration: none;
+
+    .tbm-item--has-dropdown.open,
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $blue;
+      background-color: inherit;
+      color: $blue;
+      outline: none;
+    }
+  }
+
+  .tbm-submenu-toggle {
+    background-color: inherit;
+    color: $blue;
+    width: 12px;
+    padding: 0;
+    margin: 0 0 0 10px;
+  }
+
+  /* The option to specify an icon within the TB Megamenu configuration is buggy and erratic (/admin/structure/tb-megamenu/main__cyclinguk5).
+     We will therefore add a FontAwesome psuedo class to the Search menu link. */
+  .menu-item-search .tbm-link::before {
+    font-size: large;
+    font-weight: 300;
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f002";
+  }
+
+  /* Style the submenu */
+  .tbm-submenu {
+    border: none;
+    -webkit-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+    box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+    padding: 1rem;
+  }
+}
+

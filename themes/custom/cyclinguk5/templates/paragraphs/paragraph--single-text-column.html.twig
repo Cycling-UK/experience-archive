@@ -1,0 +1,29 @@
+{#
+/** 
+#}
+{%
+  set classes = [
+    'container',
+    'mx-auto',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="row px-sm-0 px-lg-5">
+        <section class="paragraph-content">
+          
+            {% if content.field_title.0 is not empty %}
+              <h2 class="paragraph-title mb-3 mb-lg-4 text-center">{{ content.field_title.0 }}</h2>
+            {% endif %}
+            {{ content.field_text.0 }}
+          
+        <section>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

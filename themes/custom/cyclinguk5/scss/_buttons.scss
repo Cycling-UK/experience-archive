@@ -1,0 +1,196 @@
+// Back to top button
+#backtotop {
+	background: url(../images/backtotop/backtotop.png) no-repeat center center;
+	height: 70px;
+	width: 70px;
+	opacity: 0.5;
+}
+
+#backtotop:hover {
+	opacity: 1;
+}
+#backtotop:focus {
+	opacity: 1;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	#backtotop {
+		background: url(../images/backtotop/backtotop2x.png) no-repeat center center;
+		background-size: 70px 70px;
+	}
+}
+
+// Remove underline on links classed as buttons
+a.btn,
+.button-paragraph a,
+.paragraph--type--simple-buttons a {
+	text-decoration: none;
+	font-family: $font-family-sans-serif;
+	font-weight: $font-weight-normal !important;
+	border: none !important;
+	text-transform: uppercase;
+	font-size: inherit;
+	padding: 0.375rem 1.5rem;
+	min-width: 120px;
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	border-radius: 2rem;
+}
+.button-paragraph a {
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	border-radius: 2rem;
+	display: inline-block;
+	text-align: center;
+}
+
+button,
+.btn,
+.button-paragraph a {
+	margin: 0 10px 10px;
+	&:hover,
+	&:focus,
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		outline: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+.button-paragraph a {
+	margin: 0 auto 12px;
+}
+
+button .label {
+	padding: 0;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+	border-radius: inherit;
+}
+
+.webform-file-button,
+.btn-info,
+.btn-danger,
+.btn-primary,
+.btn-success,
+.btn-default,
+.button-paragraph a {
+	font-family: $font-family-sans-serif;
+	text-transform: uppercase;
+	padding: 0.375rem 1.5rem;
+	min-width: 120px;
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	border-radius: 2rem;
+}
+
+
+.btn-primary,
+.button-paragraph a,
+.paragraph--type--simple-buttons a {
+	background-color: $yellow;
+	border-color: $yellow;
+	color: $black !important;
+
+	&:hover,
+	&:focus {
+		background-color: darken($yellow, 10%);
+		border-color: darken($yellow, 10%);
+		color: $black !important;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: darken($yellow, 20%);
+		border-color: darken($yellow, 20%);
+		color: $black !important;
+	}
+}
+
+.webform-file-button,
+.btn-default {
+	background-color: $gray-400;
+	border-color: $gray-400;
+	color: $black !important;
+
+	&:hover,
+	&:focus {
+		background-color: $gray-500;
+		border-color: $gray-500;
+		color: $black !important;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: $gray-500;
+		border-color: $gray-500;
+		color: $black !important;
+	}
+}
+
+.btn-success {
+	background-color: $green;
+	border-color: $green;
+	color: $black !important;
+
+	&:hover,
+	&:focus {
+		background-color: darken($green, 10%);
+		border-color: darken($green, 10%);
+		color: $white !important;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: darken($green, 20%);
+		border-color: darken($green, 20%);
+		color: $white !important;
+	}
+}
+
+.btn-info {
+	background-color: $purple;
+	border-color: $purple;
+	color: $white !important;
+
+	&:hover,
+	&:focus {
+		background-color: darken($purple, 10%);
+		border-color: darken($purple, 10%);
+		color: $white !important;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: darken($purple, 20%);
+		border-color: darken($purple, 20%);
+		color: $white !important;
+	}
+}
+
+.btn-danger {
+	background-color: $pink;
+	border-color: $pink;
+	color: $white !important;
+
+	&:hover,
+	&:focus {
+		background-color: darken($pink, 10%);
+		border-color: darken($pink, 10%);
+		color: $white !important;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: darken($pink, 20%);
+		border-color: darken($pink, 20%);
+		color: $white !important;
+	}
+}
+
+

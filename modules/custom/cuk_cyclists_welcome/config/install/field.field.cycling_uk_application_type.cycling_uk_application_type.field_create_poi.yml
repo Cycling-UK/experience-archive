@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.cycling_uk_application_type.field_create_poi
+  module:
+    - cycling_uk_application_type
+id: cycling_uk_application_type.cycling_uk_application_type.field_create_poi
+field_name: field_create_poi
+entity_type: cycling_uk_application_type
+bundle: cycling_uk_application_type
+label: 'Create POI'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

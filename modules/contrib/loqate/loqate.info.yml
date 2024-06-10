@@ -1,0 +1,13 @@
+name: 'Loqate'
+type: module
+description: 'Provides an integration with Loqate address lookup API.'
+core_version_requirement: ^9 || ^10
+package: 'Address'
+configure: loqate.loqate_api_key_config_form
+dependencies:
+  - key:key
+
+# Information added by Drupal.org packaging script on 2023-08-25
+version: '3.0.0'
+project: 'loqate'
+datestamp: 1692977994

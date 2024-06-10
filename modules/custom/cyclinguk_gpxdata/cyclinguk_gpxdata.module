@@ -1,0 +1,173 @@
+<?php
+
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\AppendCommand;
+use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Ajax\MessageCommand;
+use Drupal\Core\Ajax\RemoveCommand;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @noinspection PhpUnused
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_gpxdata_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Edit this to add the calculation button to other forms.
+  $form_ids_to_add_to = ['node_route_edit_form', 'node_route_form'];
+
+  // Edit this for the field name of the GPX file.
+  $gpx_field_name = 'field_gpx_file';
+
+  if (in_array($form_id, $form_ids_to_add_to)) {
+    $weight = $form[$gpx_field_name]['#weight'];
+    $form['alternate-message-container'] = [
+      '#type' => 'container',
+      '#id' => 'gpx-message-container',
+      '#weight' => $weight,
+    ];
+    $form['import_from_third_party_service_submit'] = [
+      '#name' => 'custom',
+      '#type' => 'button',
+      '#value' => t('Process GPX for route information'),
+      '#ajax' => [
+        'callback' => 'cyclinguk_gpxdata_import_ajax_callback',
+      ],
+      '#limit_validation_errors' => [],
+      '#weight' => $weight,
+    ];
+  }
+}
+
+
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *
+ * @return \Drupal\Core\Ajax\AjaxResponse
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ * @noinspection PhpComposerExtensionStubsInspection
+ * @noinspection PhpUnused
+ */
+function cyclinguk_gpxdata_import_ajax_callback($form, FormStateInterface $form_state): AjaxResponse {
+
+  $ajax_response = new AjaxResponse();
+
+  if ($form_state->hasValue('field_gpx_file')) {
+    $gpx_file_fid = $form_state->getValue('field_gpx_file')[0]['fids'][0];
+    /** @var $file \Drupal\file\Entity\File */
+    $file = Drupal::entityTypeManager()->getStorage('file')->load($gpx_file_fid);
+    if (!$file) {
+      $ajax_response->addCommand(new MessageCommand(t('Please upload a GPX file first'), '#gpx-message-container', ['type' => 'error'], TRUE));
+      return $ajax_response;
+    }
+    $file_uri = $file->getFileUri();
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file_uri);
+    if (!$path) {
+      $form['no_path'] = ['#markup' => 'No path'];
+      return $form;
+    }
+
+    $url = 'https://mapping.cycle.travel/analyse';
+    $client = Drupal::httpClient();
+    $gpx_data = file_get_contents($file->getFileUri());
+
+    try {
+      $request = $client->post($url, [
+        'body' => json_encode(['gpx' => $gpx_data], JSON_THROW_ON_ERROR),
+        'headers' => ["Content-Type" => "application/json"],
+      ],
+      );
+      $response = json_decode($request->getBody(), FALSE, 512, JSON_THROW_ON_ERROR);
+    } catch (Exception $e) {
+      $ajax_response->addCommand(new MessageCommand($e->getMessage(), '#gpx-message-container', ['type' => 'error'], TRUE));
+      return $ajax_response;
+    }
+    $result = $response->results;
+    if (!$result) {
+      $ajax_response->addCommand(new MessageCommand(t('No results returned'), '#gpx-message-container', ['type' => 'error'], TRUE));
+      return $ajax_response;
+    }
+
+    $ajax_response->addCommand(new MessageCommand(t('GPX processed OK'), '#gpx-message-container', [], TRUE));
+
+    // Set "Route length" field (text).
+    // Assumes field name of "field_route_length".
+    $route_length_km = $result->total_distance / 1000;
+    $route_length_miles = round(($route_length_km / 8) * 5, 1);
+    $route_length_details = t('From GPX: Route length = %route_length_km km', ['%route_length_km' => round($route_length_km, 1)]);
+    $form['field_route_length']['widget'][0]['value']['#value'] = $route_length_miles;
+    $ajax_response->addCommand(new RemoveCommand("#route_length_details"));
+    $ajax_response->addCommand(new AppendCommand("#edit-field-route-length-wrapper > div.form-item", '<div id="route_length_details" class="gpxdata">' . $route_length_details . '</div>'));
+    $ajax_response->addCommand(new InvokeCommand("#edit-field-route-length-0-value", 'val', [$route_length_miles]));
+
+    // Set "Hilliness" field (taxonomy term reference).
+    // Assumes field name of "field_hilliness_ref" and widget of type "select list".
+    $elevation = $result->elevation;
+    $hilliness = $elevation->hilliness;
+    $total_climb = number_format($elevation->total_climb);
+    $total_descent = number_format($elevation->total_descent);
+    $total_steep = number_format($elevation->total_steep / 1000, 1);
+    $max_gradient = number_format($elevation->max_gradient * 100);
+    $hilliness_details = t('From GPX: Total climb = %total_climb m, Total descent = %total_descent m, Total over 5% = %total_steep km, Max gradient = %max_gradient %, Code = %code', [
+      '%total_climb' => $total_climb,
+      '%total_descent' => $total_descent,
+      '%total_steep' => $total_steep,
+      '%max_gradient' => $max_gradient,
+      '%code' => $hilliness,
+    ]);
+    $terms = Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties(['field_code' => $hilliness, 'vid' => 'hilliness']);
+    $term_id = 0;
+    if ($terms) {
+      $term_id = reset($terms)->id();
+    }
+    $ajax_response->addCommand(new RemoveCommand("#hilliness_gpxdata"));
+    $ajax_response->addCommand(new AppendCommand("#edit-field-hilliness-ref-wrapper > div.form-item", '<div id="hilliness_gpxdata" class="cyclinguk_gpxdata">' . $hilliness_details . '</div>'));
+    $ajax_response->addCommand(new InvokeCommand("#edit-field-hilliness-ref", 'val', [$term_id]));
+
+    // Set "Surface" field (taxonomy term reference).
+    // Assumes field name of "field_surface_ref" and widget of type "select list".
+    $roads = $result->roads;
+    $surface_code = $roads->surface;
+    $total_matched = number_format($roads->total_matched / 1000, 1);
+    $busy_percent = number_format($roads->busy_frac * 100, 1);
+    $bumpy_percent = number_format($roads->bumpy_frac * 100, 1);
+    $gravel_percent = number_format($roads->gravel_frac * 100, 1);
+    $road_percent = number_format($roads->road_frac * 100, 1);
+    $surface_details = t("From GPX: Matched = %total_matched km, Busy = %busy_percent %, Rough = %bumpy_percent %, Unsurfaced = %gravel_percent %, Road = %road_percent %, Code = %code", [
+      '%total_matched' => $total_matched,
+      '%busy_percent' => $busy_percent,
+      '%bumpy_percent' => $bumpy_percent,
+      '%gravel_percent' => $gravel_percent,
+      '%road_percent' => $road_percent,
+      '%code' => $surface_code,
+    ]);
+    $terms = Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties(['field_code' => $surface_code, 'vid' => 'surface']);
+    $term_id = 0;
+    if ($terms) {
+      $term = reset($terms);
+      $term_id = $term->id();
+    }
+    $ajax_response->addCommand(new RemoveCommand("#surface_gpxdata"));
+    $ajax_response->addCommand(new AppendCommand("#edit-field-surface-ref-wrapper > div.form-item", '<div id="surface_gpxdata" class="cyclinguk_gpxdata">' . $surface_details . '</div>'));
+    $ajax_response->addCommand(new InvokeCommand("[name='field_surface_ref']", 'val', [$term_id]));
+
+    // Set "Traffic-free" field (boolean).
+    // Assumes field name of "field_traffic_free".
+    $traffic_free_details = t('From GPX: Traffic free = %traffic_free', ['%traffic_free' => $roads->traffic_free ? 'Yes' : 'No']);
+    $ajax_response->addCommand(new RemoveCommand("#traffic_free_gpxdata"));
+    $ajax_response->addCommand(new AppendCommand("#edit-field-traffic-free-wrapper > div.form-item", '<div id="traffic_free_gpxdata" class="cyclinguk_gpxdata">' . $traffic_free_details . '</div>'));
+    $ajax_response->addCommand(new InvokeCommand("[name='field_traffic_free[value]'", 'prop', [
+      'checked',
+      $roads->traffic_free == 1,
+    ]));
+  }
+  return $ajax_response;
+}

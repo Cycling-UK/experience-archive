@@ -1,0 +1,154 @@
+<?php
+
+/**
+ * @file
+ * Contains views_display_union.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Views;
+use Drupal\views_ui\ViewUI;
+
+/**
+ * Implements hook_help().
+ */
+function views_display_union_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the views_display_union module.
+    case 'help.page.views_display_union':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A Views display that makes a UNION of results to be displayed on a master page') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_views_pre_execute().
+ */
+function views_display_union_views_pre_execute(ViewExecutable $view) {
+  if (isset($view->query)) {
+    $get_union_view = function ($id) use ($view) {
+      $cloned_view = Views::executableFactory()->get($view->storage);
+      $cloned_view->setArguments($view->args);
+      $cloned_view->setDisplay($id);
+      $cloned_view->setExposedInput($view->getExposedInput());
+      return $cloned_view->buildRenderable($id, $view->args)['#view'];
+    };
+
+    $get_exposed_filters = function ($view) {
+      $exposed = [];
+      foreach ($view->filter as $id => $filter) {
+        if (!empty($filter->options['exposed'])) {
+          $exposed[$id] = $filter->definition['title'];
+        }
+      }
+      return $exposed;
+    };
+
+    $get_display_name = function ($id) use ($view) {
+      return $view->displayHandlers->get($id)->display['display_title'];
+    };
+
+    $main_exposed = $get_exposed_filters($view);
+    foreach (['query', 'count_query'] as $type) {
+      $attached_queries = [];
+      foreach ($view->display_handler->getAttachedDisplays() as $id) {
+        $display_handler = $view->displayHandlers->get($id);
+        if ($display_handler->getPluginId() == 'union' && $display_handler->isEnabled() && $display_handler->access()) {
+          $union_view = $get_union_view($id);
+          if ($union_view->build() !== FALSE) {
+            $union_exposed = $get_exposed_filters($union_view);
+            if ($diff = array_diff_key($union_exposed, $main_exposed)) {
+              foreach ($diff as $field_id => $field_name) {
+                \Drupal::messenger()->addError(t('The union %name (@id) contains the exposed filter %field_name (@field_id) which is not present in the main display %main (@main_id) to which it is attached.', [
+                  '%name' => $get_display_name($id),
+                  '@id' => $id,
+                  '%field_name' => $field_name,
+                  '@field_id' => $field_id,
+                  '%main' => $get_display_name($view->current_display),
+                  '@main_id' => $view->current_display,
+                ]));
+              }
+              return;
+            }
+
+            $attached_queries[$id] = $union_view->build_info[$type];
+          }
+        }
+      }
+
+      if ($attached_queries) {
+        $main_query =& $view->build_info[$type];
+        $main_query->preExecute();
+
+        $check_exprs = [];
+        foreach ($main_query->getExpressions() as $data) {
+          $check_exprs[] = $data['alias'];
+        }
+
+        $check_fields = [];
+        foreach ($main_query->getFields() as $data) {
+          $check_fields[] = $data['field'];
+        }
+
+        foreach ($attached_queries as $id => $attached_query) {
+          $attached_query->preExecute();
+
+          if (count($attached_query->getFields()) != count($check_fields) ||
+              count($attached_query->getExpressions()) != count($check_exprs)) {
+            \Drupal::messenger()->addError(t('The union %name (@id) does not have the same fields, in the same order, as the main display %main (@main_id) to which it is attached. Hint: Be sure to use the same Sort Criteria in the union as the main display.', [
+              '%name' => $get_display_name($id),
+              '@id' => $id,
+              '%main' => $get_display_name($view->current_display),
+              '@main_id' => $view->current_display,
+            ]));
+            return;
+          }
+
+          // Copy the "distinct" setting. Stupidly, there is no getter method
+          // for the protected "distinct" property, so hack it.
+          $distinct = (function () {
+            return $this->distinct;
+          })->call($main_query);
+          $attached_query->distinct($distinct);
+
+          if ($type == 'count_query' && !$distinct) {
+            // Add a dummy HAVING clause so that Select::prepareCountQuery does
+            // not try to count a union of rows having only "1" in them.
+            $attached_query->having(1);
+            if (empty($fixed_main_query)) {
+              $main_query->having(1);
+              $fixed_main_query = TRUE;
+            }
+          }
+
+          $orderby = &$attached_query->getOrderBy();
+          $orderby = [];
+
+          // Additional queries are UNIONed with the main query.
+          $main_query->union($attached_query);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_ui_display_tab_alter().
+ */
+function views_display_union_views_ui_display_tab_alter(array &$build, ViewUI $view, $display_id) {
+  // Hide various UI elements that are not needed.
+  if (($display = $view->getExecutable()->displayHandlers->get($display_id)) && $display->getPluginId() == 'union') {
+    $columns = &$build['details']['columns'];
+    $columns['first']['format']['#access'] = FALSE;
+    $columns['second']['header']['#access'] = FALSE;
+    $columns['second']['footer']['#access'] = FALSE;
+    $columns['second']['empty']['#access'] = FALSE;
+    $columns['second']['pager']['#access'] = FALSE;
+    $columns['third']['exposed']['#access'] = FALSE;
+    $columns['third']['other']['use_ajax']['#access'] = FALSE;
+    $columns['third']['other']['show_admin_links']['#access'] = FALSE;
+    $columns['third']['other']['css_class']['#access'] = FALSE;
+  }
+}

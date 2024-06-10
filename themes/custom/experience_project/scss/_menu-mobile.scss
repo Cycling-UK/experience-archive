@@ -1,0 +1,172 @@
+/*
+ * Responsive menu settings
+ * /admin/config/user-interface/responsive-menu
+ *
+ * The base mmenu theme should be set to white. 
+ */
+
+// Hide the Mobile Responsive Menu for desktop devices
+
+.responsive-menu-toggle-wrapper {
+  display: inline-block;
+}
+
+@media (min-width: 992px) {
+  .responsive-menu-toggle-wrapper {
+    display: none;
+  }
+}
+
+// There's a small window where the Mobile Responsive Menu doesn't appear, let's show it
+/* 
+@media (min-width: 960px) and (max-width: 979px) {
+	#block-responsivemenumobileicon {
+	    display: inline-block;
+	}
+} */
+
+.responsive-menu-toggle-icon:before,
+.responsive-menu-toggle-icon:after,
+.responsive-menu-toggle-icon span.icon {
+  background: $yellow;
+}
+
+.responsive-menu-toggle-icon span.label {
+  display: none;
+}
+
+.user-logged-in li.menu-item--_daec387-dc7a-42f9-b6cd-8ca4a581e742,   /* Machine name of the Login menu li */
+.user-logged-in li.menu-item--_b8e4061-2a27-49e5-bc30-db6fddc38296 {
+  /* Machine name of the Join menu li  */
+  display: none;
+}
+
+/* MMenu overrides */
+
+.mm-menu {
+  padding: 60px;
+
+  a,
+  a:link,
+  a:visited {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    color: $black;
+  }
+
+  a:active,
+  a:hover {
+    color: $yellow;
+  }
+
+  .mm-navbar {
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid;
+    border-color: $blue-lighter;
+  }
+
+  a.mm-navbar__title {
+    color: $black;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  ul.mm-listview {
+    text-align: center;
+  }
+
+  .mm-listitem {
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $black;
+    border-color: $white;
+  }
+
+  .mm-listitem:after {
+    left: 0px;
+  }
+
+  .mm-listitem__text {
+    padding: 10px;
+    height: 52px;
+  }
+
+  .mm-listitem__btn {
+    padding-right: 10px;
+    border: $white;
+  }
+
+  // #mm-1 is the top level menu so it is styled differently
+  #mm-1 {
+    a,
+    a:link,
+    a:visited,
+    a:active,
+    a:hover {
+      text-decoration: none;
+      color: $black;
+    }
+
+    .mm-navbar {
+      border-top: none;
+    }
+
+    a.mm-navbar__title {
+      display: none;
+    }
+
+    ul.mm-listview {
+      text-transform: uppercase;
+    }
+
+    .mm-listitem {
+      border-color: $blue-lighter;
+    }
+  }
+
+  .mm-btn_next:after,
+  .mm-btn_prev:before {
+    border-color: $blue-lighter;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+  .mm-menu {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 399px) {
+  .mm-menu {
+    padding: 15px;
+  }
+}
+
+/* MMenu search the website button */
+
+.mm-menu a.search:before {
+  @extend %fa-icon;
+  @extend .fal;
+  content: fa-content($fa-var-search);
+  color: $yellow;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+/* MMenu join button */
+
+.mm-menu a.btn {
+  max-width: 120px;
+  margin: 0 auto;
+  height: 42px;
+}

@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - classes: A list of classes to apply to the top level <ul> element.
+ * - dropdown_classes: A list of classes to apply to the dropdown <ul> element.
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup templates
+ *
+ * Define a custom macro that will render all menu trees.
+ */
+#}
+{% macro menu_links(items, attributes, menu_level, classes, dropdown_classes) %}
+  {% if items %}
+    <ul{{ attributes.addClass(menu_level == 0 ? classes : dropdown_classes) }}>
+    {% for item in items %}
+      {%
+        set item_classes = item.url.getOption('container_attributes').class | split(" ")
+      %}
+      {%
+        set item_classes = [
+          item.is_expanded and item.below ? 'expanded dropdown',
+          item.in_active_trail ? 'active active-trail',
+          loop.first ? 'first',
+          loop.last ? 'last',
+        ]
+      %}
+      <li{{ item.attributes.addClass(item_classes) }}>
+        
+        {# Setting things up to wrap menu links in spans #}
+        {% set link_title = item.title %}
+        {% set link_title = '<span>'~item.title~'</span>' %}
+        {% set link_text %}{{ link_title|raw }}{% endset %}
+        {# end span wrap vars setup.  The raw filter tells twig to not espape the spans SPW 06/2021 #}
+
+        {% set link_attributes = item.link_attributes %}
+        {% if menu_level == 0 and item.is_expanded and item.below %}
+          {% set link_title %}{{ link_title }} <span class="caret"></span>{% endset %}
+          {% set link_attributes = link_attributes.addClass('dropdown-toggle').setAttribute('data-toggle', 'dropdown') %}
+        {% endif %}
+        {# Must use link() here so it triggers hook_link_alter(). #}
+        {# Here the new link_text var is used in place of the original link title var.  link_text carries the link text wrapped in spans SPW 06/2021  #}
+          {{ link(link_text, item.url, link_attributes.addClass(item.in_active_trail ? 'active-trail')) }}
+        </span>
+        {% if item.below %}
+          {{ _self.menu_links(item.below, attributes.removeClass(classes), menu_level + 1, classes, dropdown_classes) }}
+        {% endif %}
+     </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{#
+  Invoke the custom macro defined above. If classes were provided, use them.
+  This allows the template to be extended without having to also duplicate the
+  code above. @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ _self.menu_links(items, attributes, 0, classes ?: ['menu', 'menu--' ~ menu_name|clean_class, 'nav'], dropdown_classes ?: ['dropdown-menu']) }}

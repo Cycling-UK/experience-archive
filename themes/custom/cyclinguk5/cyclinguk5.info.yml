@@ -1,0 +1,21 @@
+name: 'Cycling UK Bootstrap 5 subtheme'
+type: theme
+description: 'Cycling UK Bootstrap 5 subtheme subtheme based on Bootstrap 5 theme.'
+core_version_requirement: ^9.4 || ^10
+'base theme': bootstrap5
+libraries:
+  - cyclinguk5/global-styling
+ckeditor_stylesheets:
+  - css/base/elements.css
+stylesheets-remove:
+  - '@bootstrap5/css/style.css'
+regions:
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer

@@ -1,0 +1,14 @@
+
+.mo_oauth_container {
+	width: 59%;
+	padding: 25px;
+	float: left;
+}
+
+.mo_oauth_client_highlight_background_note{
+	background-color: #e0e0e0;
+	border-radius: 4px;
+	padding: 0.55em;
+	width: 79%;
+}
+

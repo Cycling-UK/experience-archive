@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a taxonomy term.
+ *
+ * Available variables:
+ * - url: URL of the current term.
+ * - name: (optional) Name of the current term.
+ * - content: Items for the content of the term (fields and description).
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.description'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('description') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - page: Flag for the full page state.
+ * - term: The taxonomy term entity, including:
+ *   - id: The ID of the taxonomy term.
+ *   - bundle: Machine name of the current vocabulary.
+ * - view_mode: View mode, e.g. 'full', 'teaser', etc.
+ *
+ * @see template_preprocess_taxonomy_term()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{# the show all routes field is a text list type field. Here defining a variable with its key value  #}
+
+
+{% if content.field_show_all_routes.0 is not empty %} 
+  {% set showAllRoutes = content.field_show_all_routes['#items'].getString() %}
+{% else %}
+  {% set showAllRoutes = "false" %}
+{% endif %}
+
+{# attach Richard's assets using libraries in the map_embed module #}
+{{ attach_library('map_embed/cycling-uk-map') }}
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if name and not page %}
+    <h2><a href="{{ url }}">{{ name }}</a></h2>
+  {% endif %}
+  {{ title_suffix }}
+
+<div class="row">
+  {% if content.field_teaser.0 is not empty %}
+    <h2 class="text-center top-teaser">{{ content.field_teaser.0 }}</h2>
+  {% endif %}
+  {#  Richard's map embed, grabbing the name of the taxonomy term to use for the area name #}
+  <script>
+      window.addEventListener("load", (event) => {
+        initialiseMap('mapwrapper', { preset: 'County', areaName: '{{ name.0 }}', sidepanel: true, showPOISidepanel: true, showRouteSidepanel: true , filterPanel: 'closed', showRouteFilter: true, allRoutes: {{ showAllRoutes }} });
+      })
+  </script>
+  <div id="mapwrapper" class="mapframe" style="margin-bottom: 60px;"></div>
+</div>
+  {# Hero and caption start #}
+  {% if content.field_hero.0 is not empty %}
+  <div class="container hero-wrap">
+    <figure>
+    {{ content.field_hero.0 }}
+    {% if (content.field_caption.0 is not empty) and (content.field_hero.0 is not empty) %}
+      <figcaption>{{ content.field_caption.0 }}</figcaption>
+    {% endif %}
+    </figure>
+  </div>
+  {% endif %}
+  {# Hero and caption end #} 
+  <div class="container">
+    <div class="row term-body-block">
+      {% if content.field_side_image.0 is not empty %}
+        <div class="col-md-8">{{ content.field_body }}</div>
+        <div class="col-md-4 side-image">{{ content.field_side_image }}</div>
+      {% else %}
+        <div class="col-md-12">{{ content.field_body }}</div>
+      {% endif %}
+    </div>
+  </div>
+  {{ content.field_paragraph }}
+
+      
+</div>

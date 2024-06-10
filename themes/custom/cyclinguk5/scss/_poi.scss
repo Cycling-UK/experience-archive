@@ -1,0 +1,35 @@
+// POI bootstrap in twig dev:
+
+.page-node-type-point-of-interest {
+    .poi-type {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: $font-weight-bold;
+        font-size: larger;
+    }
+
+    article .row {
+        .map-display {
+            margin-bottom: 30px;
+        }
+    }
+
+    .right-column.outer-wrapper {
+        .contact-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            min-width: 25px;
+            max-width: 25px;
+        }
+
+        .contact-link {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

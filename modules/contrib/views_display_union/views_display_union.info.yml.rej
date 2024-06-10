@@ -1,0 +1,11 @@
+--- views_display_union.info.yml
++++ views_display_union.info.yml
+@@ -1,7 +1,7 @@
+ name: 'Views Display Union'
+ type: module
+ description: 'A Views display that makes a UNION of results to be displayed on a master page'
+-core_version_requirement: ^8 || ^9
++core_version_requirement: ^8 || ^9 || ^10
+ package: 'Views'
+ dependencies:
+   - drupal:views

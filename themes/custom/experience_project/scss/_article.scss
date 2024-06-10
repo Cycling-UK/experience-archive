@@ -1,0 +1,23 @@
+.page-node-type-article .main-container .field--name-body {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.page-node-type-article article .content > div {
+	margin-bottom: 30px;
+}
+
+article {
+	.usercontent {
+
+		padding-bottom: 30px;
+
+		.label {
+			color: #000;
+			font-size: $font-size-base;
+			font-family: $font-family-base;
+			font-weight: normal;
+			padding: 0.2em 0.1em 0.3em 0.6em;
+		}
+	}
+}

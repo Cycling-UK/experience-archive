@@ -1,0 +1,13 @@
+name: 'PCA Address'
+type: module
+description: 'PCA Address integration with the Address module.'
+core_version_requirement: ^9 || ^10
+package: 'Address'
+dependencies:
+  - loqate:loqate
+  - address:address
+
+# Information added by Drupal.org packaging script on 2023-08-25
+version: '3.0.0'
+project: 'loqate'
+datestamp: 1692977994

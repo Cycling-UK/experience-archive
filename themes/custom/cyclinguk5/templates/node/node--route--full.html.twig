@@ -1,0 +1,207 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ */
+#}
+{%
+  set classes = [
+    'container',
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+    'ct-poi',
+  ]
+%}
+
+{% 
+  set content_classes = [
+    'node__content', 
+    'main-content', 
+    'mx-auto',
+    'col-sm-12'
+  ] 
+%}
+
+{% set distance_miles = node.field_route_length.0.value %}
+{% set distance_km = (distance_miles * 1.609)|number_format(2) %}  
+
+
+
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass(content_classes) }}>
+    <div class="row">
+    
+      <div class="node-meta route-meta mb-4">
+        <div class="route-type">Route</div>
+
+        {% if content.field_rating is not empty %}
+          <div class="node-rating">{{ content.field_rating }}</div>
+        {% endif %}
+    
+        {% if logged_in %}
+          {{ content.flag_bookmark }}
+        {% endif %}
+      </div>
+
+      {{ title_prefix }}
+      {% if label and not page %}
+        <h2{{ title_attributes }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+      {% endif %}
+      {{ title_suffix }}
+    
+      
+    </div>
+    <div class="row">
+      <div class="col-sm-12 map-display">
+        {# {{ content.field_geofield }} #}
+        <div class="gpx-download">
+          {{ content.field_gpx_file }} 
+        </div>
+
+        {# The standard download link could cause the GPX files to be opened in a new tab as text
+          in some browsers such as Edge and Firefox. The following code provides a secondary link
+          with the 'download' switch enabled within the <a> statement to force the download. The
+          original download link is simply hidden via CSS. This approach is preferable as an
+          individual case solution as we may want PDFs to still open in a browser tab rather than
+          globally force a download. #}
+        <div class="gpx-download-file">
+          <a download href="{{ file_url (node.field_gpx_file.entity.uri.value) }}">{{ node.field_gpx_file.description }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="row g-5 px-xl-5"> 
+      <div class="col-md-12 col-lg-8">
+        {{ content.body }}
+        <div class="route-disclaimer">
+          {{ drupal_block('block_content:ac1dc38d-8317-4237-b6d3-ecb994331505') }}
+          {{ drupal_block('block_content:f00974d4-29e5-4050-803b-08a839039d82') }}
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-4 pb-4">
+            
+          {% if content.field_insert_media.0 is not empty %}
+            <div class="media-insert">
+              <figure>
+              {{ content.field_insert_media.0 }}
+              {% if (content.field_caption.0 is not empty) and (content.field_insert_media.0 is not empty) %}
+                <figcaption>{{ content.field_caption.0 }}</figcaption>
+              {% endif %}
+              </figure>
+            </div>
+          {% endif %} 
+
+            <div class="route-detail-container">
+              <div class="route-detail route-length rounded-circle">
+                <div class="route-detail-wrapper">
+                  <i class="fa-solid fa-route"></i>
+                  <div class="field--label">Distance</div>
+                  <span class="field--item">
+                    {{ distance_miles }} miles
+                  </span>
+                  <span class="field--item">
+                    {{ distance_km }} km
+                  </span>
+                </div>
+              </div>
+              <div class="route-detail ride-level rounded-circle">
+                <div class="route-detail-wrapper">
+                  <i class="fa-solid fa-signal-bars"></i>
+                  <div class="field--label">{{ content.field_ride_level['#title'] }}</div>
+                  <div class="field--item">{{ content.field_ride_level.0 }}</div>
+                </div>
+              </div>
+              <div class="route-detail bike-type rounded-circle">
+                <div class="route-detail-wrapper">
+                  <i class="fa-solid fa-person-biking"></i>
+                  <div class="field--label">{{ content.field_bike_type['#title'] }}</div>
+                  <div class="field--item">{{ content.field_bike_type.0 }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="route-detail route-features">
+              {{ content.field_route_features}}
+            </div>
+            <div class="route-detail node-gallery">
+              {{ content.field_slideshow }}
+            </div>
+      </div> 
+    </div>
+  </div>
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('author') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+</article>

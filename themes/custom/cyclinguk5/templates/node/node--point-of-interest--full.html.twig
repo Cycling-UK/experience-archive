@@ -1,0 +1,240 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ */
+#}
+{%
+  set classes = [
+	'container',
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+    'ct-poi',
+  ]
+%}
+
+{% 
+  set content_classes = [
+    'node__content', 
+    'main-content', 
+    'mx-auto',
+    'col-sm-12'
+  ] 
+%}
+
+<article{{attributes.addClass(classes)}}>
+	<div{{ content_attributes.addClass(content_classes) }}>
+		<div class="row">
+			<div class="node-meta poi-meta mb-4">
+				{% if content.field_poi_type is not empty %}
+					<div class="poi-type">{{ content.field_poi_type }}</div>
+				{% endif %}
+
+				{% if content.field_rating is not empty %}
+					<div class="node-rating">{{ content.field_rating }}</div>
+				{% endif %}
+
+				{% if logged_in %}
+					{{ content.flag_bookmark }}
+				{% endif %}
+			</div>
+
+			{{ title_prefix }}
+			{% if label and not page %}
+				<h2{{title_attributes}}>
+					<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+				</h2>
+			{% endif %}
+			{{ title_suffix }}
+
+			
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12 map-display">
+				{{ content.field_geofield }}
+			</div>
+		</div>
+
+		<div class="row g-5 px-xl-5">
+			<div class="col-md-12 col-lg-8">
+				{{ content.body }}
+			</div>
+
+			<div class="col-md-12 col-lg-4">
+				<!-- This is the right column -->
+				<div class="right-column outer-wrapper mb-4">
+
+					{% if content.field_insert_media.0 is not empty %}
+						<div class="media-insert">
+							<figure>
+							{{ content.field_insert_media.0 }}
+							{% if (content.field_caption.0 is not empty) and (content.field_insert_media.0 is not empty) %}
+								<figcaption>{{ content.field_caption.0 }}</figcaption>
+							{% endif %}
+							</figure>
+						</div>
+					{% endif %} 
+
+					{{ content.field_address }}
+					{% if content.field_website.0 is not empty %}
+						<div class="poi-website contact-wrapper">
+							<div class="contact-icon">
+								<i class="fa-light fa-globe"></i>
+							</div>
+							<div class="contact-link">
+								<a href="{{ content.field_website.0['#url'] }}" title="website" rel="nofollow">
+									{% set siteaddress = content.field_website.0['#url']|render %}
+									{% set webaddress = siteaddress|replace({'https://': "", "http://" : ""})|trim('/') %}
+									<span>{{ webaddress }}</span>
+								</a>
+							</div>
+						</div>
+					{% endif %}
+
+					{% if content.field_telephone.0 is not empty %}
+						<div class="poi-phone contact-wrapper">
+							<div class="contact-icon">
+								<i class="fa-light fa-phone"></i>
+							</div>
+							<div class="contact-link">
+								<span>{{ content.field_telephone }}</span>
+							</div>
+						</div>
+					{% endif %}
+
+					{% if content.field_amenities.0 is not empty %}
+						{{ content.field_amenities }}
+						<br>
+					{% endif %}
+
+					<div class="poi-socials">
+						{# Social links #}
+						{% if (content.field_facebook.0 is not empty) or (content.field_twitter.0 is not empty) or (content.field_instagram.0 is not empty) or (content.field_strava.0 is not empty) or (content.field_youtube_social.0 is not empty) %}
+							<ul class="social-link-list">
+								{% if content.field_facebook.0 is not empty %}
+									<li>
+										<a class="rounded-circle" href="{{ content.field_facebook.0['#url'] }}" title="Facebook">
+											<i class="fa-brands fa-facebook-f"></i>
+										</a>
+									</li>
+								{% endif %}
+								{% if content.field_twitter.0 is not empty %}
+									<li>
+										<a class="rounded-circle" href="{{ content.field_twitter.0['#url'] }}" title="Twitter">
+											<i class="fa-brands fa-twitter"></i>
+										</a>
+									</li>
+								{% endif %}
+								{% if content.field_instagram.0 is not empty %}
+									<li>
+										<a class="rounded-circle" href="{{ content.field_instagram.0['#url'] }}" title="Instagram">
+											<i class="fa-brands fa-instagram-square"></i>
+										</a>
+									</li>
+								{% endif %}
+								{% if content.field_strava.0 is not empty %}
+									<li>
+										<a class="rounded-circle" href="{{ content.field_strava.0['#url'] }}" title="Strava">
+											<i class="fa-brands fa-strava"></i>
+										</a>
+									</li>
+								{% endif %}
+								{% if content.field_youtube_social.0 is not empty %}
+									<li>
+										<a class="rounded-circle" href="{{ content.field_youtube_social.0['#url'] }}" title="YouTube">
+											<i class="fa-brands fa-youtube"></i>
+										</a>
+									</li>
+								{% endif %}
+							</ul>
+						{% endif %}
+					</div>
+					<!-- End of poi-socials -->
+					<div class="node-gallery">
+						{{ content.field_slideshow }}
+					</div>
+
+				</div>
+				<!-- End of row -->
+			</div>
+		</div>
+	</div>
+	{% if display_submitted %}
+		<footer>
+			{{ author_picture }}
+			<div{{author_attributes.addClass('author')}}>
+				{% trans %}Submitted by
+				{{ author_name }}
+				on
+				{{ date }}{% endtrans %}
+				{{ metadata }}
+			</div>
+		</footer>
+	{% endif %}
+</article>

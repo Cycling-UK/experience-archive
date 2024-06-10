@@ -1,0 +1,40 @@
+miniorange_oauth_client.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    miniorange_oauth_client_customer_admin_email:
+      type: 'NULL'
+    miniorange_oauth_client_license_key:
+      type: 'NULL'
+    miniorange_oauth_client_customer_id:
+      type: string
+    miniorange_oauth_client_customer_admin_token:
+      type: string
+    miniorange_oauth_client_customer_api_key:
+      type: string
+    miniorange_oauth_client_force_auth:
+      type: boolean
+    miniorange_oauth_client_enable_backdoor:
+      type: boolean
+    miniorange_oauth_client_default_relaystate:
+      type: string
+    miniorange_oauth_client_name:
+      type: string
+    miniorange_oauth_client_logout_url:
+      type: string
+    miniorange_oauth_client_status:
+      type: string
+    miniorange_oauth_client_customer_admin_phone:
+      type: 'NULL'
+    miniorange_oauth_client_tx_id:
+      type: 'NULL'
+    miniorange_oauth_client_auto_redirect_to_idp:
+      type: boolean
+    miniorange_oauth_client_base_url :
+      type: string
+    miniorange_oauth_duplicate_username:
+      type: boolean
+    miniorange_oauth_client_enable_page_access:
+      type: boolean
+    miniorange_oauth_isMultiSitePluginRequested:
+      type: string

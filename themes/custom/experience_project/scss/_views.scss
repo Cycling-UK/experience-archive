@@ -1,0 +1,198 @@
+.main-map-search {	
+
+	form {
+		max-width: 720px;
+		margin: 0 auto 45px auto;
+	}
+	
+	h2.block-title {
+		display: none;
+	}
+
+	.form-inline > div {
+		width: 100%;
+		text-align: center;
+		
+		.panel-body > div {
+			display: flex;
+			align-items: center;
+			
+			.panel-body {
+				display: flex;
+				flex-direction: row;
+				align-items: stretch;
+				width: 100%;
+			}
+			
+			.form-item-field-geofield-proximity-value:after {
+				content: 'miles from';
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+			
+			.form-item-field-geofield-proximity-value input {
+				width: 80px;
+			}
+			
+			.origin-address-autocomplete {
+				flex: 1;
+			}
+			
+			.origin-address-autocomplete input {
+				width: 100%;
+			}
+		}
+	}
+
+	.form-item-field-geofield-proximity-value label,
+	.form-item-field-geofield-proximity-source-configuration-origin-address label {
+		display: none;
+	}
+
+	.panel {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+	
+	.panel-body {
+		padding: 0;
+	}
+	
+	.panel-default {
+		border: none;
+	}
+	
+	.panel-heading {
+		padding: 0;
+		border: none;
+		background-color: inherit;
+		color: $black;
+		margin-bottom: 10px;
+	}
+	
+	.panel-title,
+	.panel-title:hover,
+	.panel-title:focus {
+		font-size: smaller;
+		text-decoration: underline;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	
+	.panel-title:after {
+	  @extend %fa-icon;
+	  @extend .fal;
+		content: fa-content($fa-var-chevron-down);	
+	  color: $black;
+	  margin-left: 5px;
+	}
+	
+	legend {
+		font-family: $headings-font-family;
+		font-size: inherit;
+		border: none;
+		margin: 0;
+	}
+	
+	.form-checkboxes {
+		display: inline-flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		
+		> div {
+			margin: 0 15px;
+		}
+	}
+	
+	table {
+		max-width: 1000px;
+		margin: 30px auto;
+		
+		tbody > tr {
+			.views-field-field-rating {
+				text-align: center;
+			}			
+		}
+		
+		tbody > tr > td {
+			vertical-align: middle;
+		}
+		
+		.views-field-title {
+			display: flex;
+			flex-direction: column;
+			
+			> span {
+				margin-bottom: 2px;
+			}
+			
+			> span:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		
+		.table-poi-type {
+			text-transform: uppercase;
+			font-size: smaller;	
+		}
+	
+		.table-title {
+			font-family: $headings-font-family;
+			line-height: 1.2;
+			white-space: break-spaces;
+		}
+		
+		form {
+			margin: 0;
+		}		
+	}		
+}
+
+@media (max-width: 767px) {
+
+	.main-map-search {
+		
+		form {
+			max-width: 500px;
+		}
+
+		#edit-field-geofield-proximity,
+		#edit-field-geofield-proximity--3 {
+
+			.panel-body {
+				flex-direction: column;
+				
+				.form-item-field-geofield-proximity-value {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				
+				.form-item-field-geofield-proximity-value:after {
+					margin-right: 0;
+				}
+
+			}
+		}
+		
+		table {
+			max-width: inherit;
+			font-size: small;
+		}
+	}
+}
+
+.views-entity-embed {
+    font-weight: bold;
+	margin: 0 98px;
+    .view-related-embed-blocks {
+        padding-bottom: 1rem;
+        .view-content {
+            ul {
+                padding-left: 1rem;
+                list-style-type: square;
+            }
+        }
+    }
+}

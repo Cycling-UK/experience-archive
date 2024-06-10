@@ -1,0 +1,87 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ * 
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'row',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    paragraph.field_background_colour.value ? paragraph.field_background_colour.value|clean_class, 
+    paragraph.field_remove_bottom_margin.value ? paragraph.field_remove_bottom_margin.value|clean_class, 
+    paragraph.field_remove_rounded_corners_img.value ? paragraph.field_remove_rounded_corners_img.value|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% set text_placement = content.field_text_location['#items'].0.value %}
+
+{#
+/**
+ * the videoUrl var gets the value of an embedded remote video.
+ * Used to check if it has a value in order to apply appropriate css classes.
+ *
+ #}
+{% set videoUrl = paragraph.field_paragraph_image.entity.field_media_oembed_video.entity.field_media_oembed_video.value %}
+
+{% block paragraph %}
+<div class="container">
+  <div{{ attributes.addClass(classes) }}>
+    <section class="p-3 p-xxl-5">
+      <div class="txt-img-white-bg">   
+        {% block content %}    
+              <div class="col-xl-12 col-xxl-6{% if videoUrl is not empty %} remote-video{% else %} md-device-ctr-img{% endif %}{% if text_placement == "right" %} order-lg-1{% else %} order-lg-2{% endif %}">
+                {{ content.field_paragraph_image }}
+              </div>
+              <div class="col-xl-12 col-xxl-6 {% if text_placement == "right" %}order-lg-2{% else %}order-lg-1{% endif %}">
+                <div class="p-3 p-xxl-5 pt-xxl-4">
+                  {% if content.field_title.0 is not empty %}
+                    <h2 class="paragraph-title text-start pb-sm-1 pb-md-2 pt-xl-1">{{ content.field_title.0 }}</h2>
+                  {% endif %}
+                  {{ content.field_text }}
+                  {{ content.field_btn_link }}
+                </div>            
+              </div>           
+        {% endblock %}      
+      </div> 
+    </section>
+  </div>
+</div>
+{% endblock paragraph %}

@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function cuk_cyclists_welcome_install() {
+  \Drupal\cycling_uk_application_type\Entity\CyclingUkApplicationType::create([
+    'title' => 'Cyclists Welcome',
+    'title_format' => 'Hello [webform_submission:values:first_name] [webform_submission:values:last_name]',
+    'machine_name' => 'cyclists_welcome'
+  ])->save();
+}

@@ -1,0 +1,235 @@
+footer.page-footer {
+  background-color: $blue;
+  margin-top: 0;
+  padding: 60px 30px 200px 30px;
+  color: $white;
+  font-size: $font-size-sm;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: $yellow;
+    text-decoration: underline;
+    background-color: inherit;
+  }
+}
+
+.footer-text {
+  .field--name-body > div {
+    max-width: 950px;
+    margin-bottom: 20px;
+  }
+
+  .cyclinguk-logo img {
+    width: 183px;
+    height: auto;
+  }
+
+  .social span {
+    display: inline-flex;
+    margin-right: 5px;
+  }
+
+  .social a {
+    border: 1px solid $white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
+
+  .social a:hover,
+  .social a:focus {
+    border: 1px solid $yellow;
+  }
+
+  .names > span {
+    display: block;
+  }
+
+  .yellow {
+    color: $yellow;
+  }
+
+  .small-print {
+    text-transform: uppercase;
+  }
+
+  .copyright {
+    font-weight: $font-weight-bold;
+  }
+
+  .field--name-body ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-flex;
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  footer {
+    text-align: center;
+  }
+  .footer-text {
+    .cyclinguk-logo img {
+      width: 198px;
+    }
+    .social span {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    ul li {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.newsletter-signup {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: $border-radius-img;
+  -webkit-border-radius: $border-radius-img;
+  -moz-border-radius: $border-radius-img;
+  margin-bottom: 60px;
+
+  .webform-submission-form {
+    background-color: transparent;
+    padding: 0;
+
+    .webform-wrapper {
+      max-width: 100%;
+      display: flex;
+      gap: 18px;
+
+      .form-type-textfield,
+      .form-type-textarea,
+      .form-type-email {
+        margin: 0;
+      }
+    }
+  }
+
+  h2 {
+    color: $white;
+    font-size: 1.2rem;
+    margin: 0 20px 0 0;
+    white-space: nowrap;
+  }
+
+  form {
+    display: flex;
+  }
+
+  .form-actions {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .btn-primary {
+      font-family: $font-family-sans-serif;
+      text-transform: uppercase;
+      font-size: inherit;
+      margin: 0;
+      padding: 0.375rem 1.5rem;
+      min-width: inherit;
+      border-width: 2px;
+      border-radius: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+    }
+  }
+}
+
+@media (max-width: calc($cuk-breakpoint-lg - 1px)) {
+  .newsletter-signup {
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto 60px auto;
+
+    h2 {
+      margin: 0 0 10px 0;
+    }
+
+    form {
+      flex-direction: column;
+    }
+
+    .form-item {
+      margin: 0 0 10px 0;
+    }
+
+    .webform-submission-form {
+      .webform-wrapper {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+
+.menu--footer {
+  ul.nav {
+    display: block;
+    columns: 4;
+    max-width: 1200px;
+
+    li {
+      padding: 2px 0;
+    }
+
+    a {
+      padding: 0;
+      margin: 0;
+      color: $white;
+      text-decoration: underline;
+
+      &:focus,
+      &:hover {
+        color: $yellow;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (min-width: $cuk-breakpoint-lg) and (max-width: calc($cuk-breakpoint-xl - 1px)) {
+  .menu--footer {
+    ul.nav {
+      columns: 3;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: calc($cuk-breakpoint-lg - 1px)) {
+  .menu--footer {
+    ul.nav {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      max-width: 600px;
+      margin: 0 auto;
+
+      li {
+        padding: 0px 15px;
+      }
+    }
+  }
+}

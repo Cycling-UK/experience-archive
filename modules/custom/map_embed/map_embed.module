@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Contains map_embed.module
+ */
+
+
+
+
+//function map_embed_preprocess_page(&$variables) {
+//    kint($variables['page']);
+ //  }
+
+//  function map_embed_field_widget_entity_reference_paragraphs_form_alter(&$element, &$form_state, $context) { 
+//     if ($element['#paragraph_type'] === 'map_embed_preset') {
+//         $parents_array = $element['subform']['#parents'];
+//         $parents = array_shift($parents_array) . '[' . implode('][',
+//         $parents_array) . ']';
+//     } 
+// }

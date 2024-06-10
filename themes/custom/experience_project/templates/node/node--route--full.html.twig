@@ -1,0 +1,302 @@
+
+{%
+  set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+    'ct-poi',
+  ]
+%}
+
+{# attach Richard's assets using libraries in the map_embed module #}
+{{ attach_library('map_embed/cycling-uk-map') }}
+
+{% set distance_miles = node.field_route_length.0.value %}
+{% set distance_km = (distance_miles * 1.609)|number_format(2) %}  
+
+{% set routeUUID %}
+     {{ content.uuid.0 }}
+{% endset %}
+
+{# this gets the uuid:  content.uuid.0 #}
+
+<article{{ attributes.addClass(classes) }}>
+		<div class="node-meta route-meta">
+      <div class="route-type">Route</div>
+
+      {% if content.field_rating is not empty %}
+        <div class="node-rating">{{ content.field_rating }}</div>
+      {% endif %}
+
+      {% if logged_in %}
+        <div class="my-bookmark">{{ content.flag_bookmark }}</div>
+      {% endif %}
+		</div>
+
+	  {{ title_prefix }}
+	  {% if label and not page %}
+	    <h2{{ title_attributes }}>
+	      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+	    </h2>
+	  {% endif %}
+	  {{ title_suffix }}
+	
+	  {% if display_submitted %}
+	    <footer>
+	      {{ author_picture }}
+	      <div{{ author_attributes.addClass('author') }}>
+	        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+	        {{ metadata }}
+	      </div>
+	    </footer>
+	  {% endif %}
+
+
+{#
+/**
+ * Check if this is a parent route of a multistage route  
+ * If it's the full route node of a multi stage route then
+ * we display the multiple rute embed code. Else display the
+ * standard single route embed.
+ *
+ * The multiple route embed code needs the route stage entity
+ * reference field values to build the map.
+ *
+ */
+#}
+
+
+{% if node.field_single_or_full_multi_route[0].value == 'multi_stage_parent' %}
+{# multiple stage route embed #}
+<div class="row node-map-wrap">
+  <script>
+      window.addEventListener("load", (event) => {
+        initialiseMap('map-{% apply spaceless %}{{ routeUUID }}{% endapply %}', { preset: 'multiple', multiple: '{% for item in node.field_route_stage %}{% if loop.last %}{% set separator = '' %}{% else %}{% set separator = ',' %}{% endif %}{% apply spaceless %}{{ drupal_entity('node', item.entity.id, 'uuid') }}{% endapply %}{{ separator }}{% endfor %}', showSearch: false, sidepanel: true, filterPanel: false });
+      })
+    </script>
+  <div id="map-{% apply spaceless %}{{ routeUUID }}{% endapply %}" class="mapframe">
+  </div>
+</div>
+{% else %}
+{# single route embed #}
+<div class="row node-map-wrap">
+  <script>
+      window.addEventListener("load", (event) => {
+        initialiseMap('map-{% apply spaceless %}{{ routeUUID }}{% endapply %}', { preset: 'route', routeID: '{% apply spaceless %}{{ routeUUID|render|trim }}{% endapply %}', showSearch: false, sidepanel: 'closed', filterPanel: false });
+      })
+    </script>
+  <div id="map-{% apply spaceless %}{{ routeUUID }}{% endapply %}" class="mapframe">
+  </div>
+</div>
+{% endif %}
+  <div class="row">
+    <div class="col-sm-12 route-detail">
+      {# 
+      /** 
+        * The standard download link could cause the GPX files to be opened in a new tab as text
+        * in some browsers such as Edge and Firefox. The following code provides a secondary link
+        * with the 'download' switch enabled within the <a> statement to force the download. The
+        * original download link is simply hidden via CSS. This approach is preferable as an
+        * individual case solution as we may want PDFs to still open in a browser tab rather than
+        * globally force a download. 
+        *  {{ node.field_gpx_file.description }}
+        */
+      #}
+      <div class="gpx-download-file">
+        <a class="btn btn-primary" download href="{{ file_url (node.field_gpx_file.entity.uri.value) }}">Download {% if node.field_single_or_full_multi_route[0].value == 'multi_stage_parent' %}complete route {% endif %}GPX file</a>
+      </div>
+    </div>
+    <div class="main-content col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 col-xl-10 col-xl-offset-1">
+      <div class="row"> 
+        <div class="col-xs-12 col-sm-8 col-md-8 left-column outer-wrapper">
+          {{ content.body }}
+          <div class="route-disclaimer">
+            {{ drupal_block('block_content:ac1dc38d-8317-4237-b6d3-ecb994331505') }}
+            {{ drupal_block('block_content:f00974d4-29e5-4050-803b-08a839039d82') }}
+          </div>
+        </div>
+    
+        <div class="col-xs-12 col-sm-4 col-md-4 right-column outer-wrapper">
+            <!-- This is the right column -->
+            <div class="col-xs-12 inner-wrapper">
+            {% if content.field_insert_media.0 is not empty %}
+              <div class="media-insert">
+                <figure>
+                {{ content.field_insert_media.0 }}
+                {% if (content.field_caption.0 is not empty) and (content.field_insert_media.0 is not empty) %}
+                  <figcaption>{{ content.field_caption.0 }}</figcaption>
+                {% endif %}
+                </figure>
+              </div>
+            {% endif %} 
+              <div class="route-detail route-length">
+                <div class="route-detail-wrapper">
+                  <i class="fa-solid fa-route"></i>
+                  <div class="field--label">Distance</div>
+                  <span class="field--item">
+                    {{ distance_miles }} miles
+                  </span>
+                  <span class="field--item">
+                    {{ distance_km }} km
+                  </span>
+                </div>
+              </div>
+              <div class="route-detail ride-level">
+                <div class="route-detail-wrapper">
+                  <i class="fa-regular fa-mountains"></i>
+                  <div class="field--label">Hilliness</div>
+                   <span class="field--item">{{ content.field_hilliness_ref.0}}</span>
+                </div>
+              </div>
+              <div class="route-detail bike-type">
+                <div class="route-detail-wrapper">
+                  <i class="fa-regular fa-road"></i>
+                  <div class="field--label">Surface type</div>
+                   <span class="field--item">{{ content.field_surface_ref.0}}</span>
+                </div>
+              </div>
+              <div class="route-detail route-features">
+                {{ content.field_route_features}}
+              </div>
+              <div class="route-detail node-gallery">
+                {{ content.field_slideshow }}
+              </div>
+          <!-- End of col-xs-12 -->
+        </div> 
+      </div>
+    </div>
+  </div>
+</article>
+{#
+/**
+ *  Related content - 
+ *  There is a Relate content field on the content type.  
+ *  The field is brought into the node using a view block - view/relate_content_union
+ */
+#}
+
+{# This field below - content.field_route_stage -  is and entity ref field for multi stage routes. 
+/** 
+ * On Route content type this has its own view display mode named
+ * Route stage panel
+ * and the relevant twig is node--route-stage-panel.html.twig
+ *
+ * On the form the field uses an entity ref view for the ref method. The view is /admin/structure/views/view/route_stage_select
+ */
+#}
+
+{# 
+/**
+ * Loop through and use the twig tweak drupal_entity function 
+ * to display the 'uuid' dislpay mode for each individual referenced entity ID
+ * and then build a comma sepearted list of the uuids.
+ *
+ */
+#}
+
+ {# below is a legible version of the code that loops through the stage route ent ref fields to build a comma seperated list for the multiple route embed #}
+ {# {% for item in node.field_route_stage %}
+  {% if loop.last %}
+    {% set separator = '' %}
+  {% else %}
+    {% set separator = ',' %}
+  {% endif %}
+    {% apply spaceless %}{{ drupal_entity('node', item.entity.id , 'uuid') }}{% endapply %}{{ separator }}
+{% endfor %} 
+#}
+{# 
+/**
+ * Route stage entity reference field 
+ * outputs panels of small map embed with 
+ * title, teaser and link.
+ *
+ */
+#}
+
+{% if node.field_single_or_full_multi_route[0].value == 'multi_stage_parent' %}
+  <div class="row" style="padding-top: 60px;">
+    {{ content.field_route_stage }}
+  </div>
+{% endif %}
+
+{#
+/** This is the relate content views block commentted out for now.
+ *  <div class="row" style="padding-top: 60px;">
+ *    Relate content field displays only if the boolean value says not to hide it. 
+ *    {% if node.field_hide_related_content_block.value != '1' %}
+ *     {{ drupal_view('relate_content_union', 'block_related_ref_on_node') }} 
+ *    {% endif %} 
+ *  </div>
+ */
+#}
+
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ */
+#}

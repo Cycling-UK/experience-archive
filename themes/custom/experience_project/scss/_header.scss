@@ -1,0 +1,182 @@
+/* Temporary removal of width restriction for navbar */
+.navbar.container {
+	max-width: inherit !important;
+}
+
+header .navigation-left,
+header .navigation-right {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.site-logo img {
+	width: auto;
+	height: 76px;
+}
+
+.site-links > .region {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 76px;
+	justify-content: flex-end;
+}
+
+
+header#navbar {
+	margin-bottom: 0;;
+}
+
+/*
+ * Top navigation site links
+ */
+
+.cuk-user-account-menu {
+	margin-right: 24px;
+}
+
+.cuk-user-account-menu a.my-bookmarks,
+.user-logged-in .cuk-user-account-menu a.user-login,
+.user-logged-in .cuk-user-account-menu a.join {
+	display: none;
+}
+
+.user-logged-in .cuk-user-account-menu a.my-bookmarks {
+	display: inherit;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: $black;
+  background-color: inherit;
+}
+
+.cuk-user-account-menu .navbar-nav > li > a {
+	display: inline-flex;
+	align-content: center;
+	padding: 10px 12px;
+	text-decoration: none;
+}
+
+.cuk-user-account-menu a:hover span {
+	text-decoration: underline;
+}
+
+.cuk-user-account-menu a:hover:before {
+	text-decoration: none;
+}
+
+a.my-account:before,
+a.my-bookmarks:before,
+a.user-login:before,
+a.user-logout:before {
+  @extend %fa-icon;
+  @extend .fal;
+  margin-right: 10px;
+  color: $yellow;
+	width: 32px;
+	height: 32px;
+  font-size: 32px;
+	display: inline-flex;
+	text-decoration: none;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+a.my-account:before 	{content: fa-content($fa-var-user-circle);}
+a.my-bookmarks:before {content: fa-content($fa-var-bookmark);}
+a.user-login:before		{content: fa-content($fa-var-sign-in);}
+a.user-logout:before 	{content: fa-content($fa-var-sign-out);}
+
+.cuk-user-account-menu ul {
+	display: flex;
+	align-items: center;
+	
+	li {
+		display: inline-flex;
+		
+		span {
+			line-height: 32px;
+		}
+	}
+	
+	a.mobile-only {
+		display: none;
+	}
+}
+
+@media (max-width: 991px) {
+	.cuk-user-account-menu ul li span {
+		display: none;
+	}
+	.cuk-user-account-menu ul li a.join span {
+		display: inherit;
+	}
+	.cuk-user-account-menu a {
+		padding: 0;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.cuk-user-account-menu a:before {
+		margin-right: 0;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 599px) {
+	.cuk-user-account-menu,
+	.cuk-user-account-menu a.join {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.solr-search-form.search-block {
+		display: none;
+	}
+}
+
+
+
+/*
+ * Join button
+ */
+
+.cuk-user-account-menu {
+
+	a.btn.join {
+		font-family: $headings-font-family;
+		border: none;
+		text-decoration: none;
+		padding: 10px 40px;
+		margin: 0 12px;
+		min-width: inherit;
+	}
+	
+	.active > a.join {
+		background-color: $yellow;
+		color: $black
+	}
+	
+	li.open a.join:hover,
+	li.open a.join:focus,
+	.active > a.join:hover,
+	.active > a.join:focus {
+		background-color: $purple !important;
+		color: $white !important;
+		border: none;
+		text-decoration: none;
+	}
+	
+	a.join span,
+	a.join:hover span,
+	a.join:focus span {
+		text-decoration: none;
+		line-height: 18px;
+	}
+		
+}

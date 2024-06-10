@@ -1,0 +1,350 @@
+/*
+ * TB Mega Menu
+ * ============
+ *
+ * IMPORTANT: THIS v1 FILE REFERS TO STYLING AND THEMING FOR THE drupal/tb_megamenu:^1.0@RC RELEASE
+ *
+ * composer require 'drupal/tb_megamenu:^1.0@RC'
+ *
+ * Requires the basic preset style to be set to "Default" (/admin/structure/tb-megamenu/main__cyclinguk).
+ *
+ * Also requires a patch to be installed to allow submenus to be 100% width:
+ * https://www.drupal.org/project/tb_megamenu/issues/3178668
+ * https://www.drupal.org/files/issues/2021-03-02/add_fullwidth_option-3178668-12.patch
+ */
+
+// Hide the Mega Menu for mobile devices
+@media (max-width: 991px) {
+  .block-tb-megamenu {
+    display: none;
+  }
+}
+
+div[role="heading"] {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 30px;
+}
+
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: inherit !important;
+  // border: none !important;
+}
+
+.tb-megamenu {
+  background-color: $white;
+  font-family: $font-family-sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: $font-weight-normal;
+  color: $black;
+  margin: 0 10px 30px 10px;
+  border-top: 1px solid $blue-lighter;
+  border-bottom: 1px solid $blue-lighter;
+}
+
+.tb-megamenu .nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 7px;
+}
+
+.tb-megamenu .nav > li:hover,
+.tb-megamenu .nav > li:focus,
+.tb-megamenu .nav > li {
+  float: inherit;
+  padding: 5px 10px;
+  margin: 0 10px;
+  background-color: $white;
+}
+
+.tb-megamenu .nav > li:hover > a,
+.tb-megamenu .nav > li:focus > a {
+  background-color: $white;
+}
+
+.tb-megamenu .nav > li > a,
+.tb-megamenu .nav > li > span .tb-megamenu-no-link,
+.tb-megamenu .nav > li > a,
+.tb-megamenu .nav > li > span.tb-megamenu-no-link {
+  border: 0;
+  color: $black;
+  font-weight: $font-weight-normal;
+  text-shadow: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0;
+  border-bottom: 3px solid $white;
+  line-height: 25px;
+}
+
+.tb-megamenu .nav > .active > a,
+.tb-megamenu .nav > .active > a:focus,
+.tb-megamenu .nav > .active > span.tb-megamenu-no-link,
+.tb-megamenu .nav > .active > span.tb-megamenu-no-link:focus,
+.tb-megamenu .nav > li > a:focus,
+.tb-megamenu .nav > li > span.tb-megamenu-no-link:focus {
+  background-color: $white;
+  color: $black;
+  border-bottom: 3px solid $blue-lighter;
+}
+
+.tb-megamenu .nav > .active > a:hover,
+.tb-megamenu .nav > .active > span.tb-megamenu-no-link:hover,
+.tb-megamenu .nav > li > a:hover,
+.tb-megamenu .nav > li > span.tb-megamenu-no-link:hover {
+  background-color: $white;
+  color: $black;
+  border-bottom: 3px solid $blue-lighter;
+}
+
+.tb-megamenu .nav li.dropdown.active > .dropdown-toggle,
+.tb-megamenu .nav li.dropdown.open.active > .dropdown-toggle,
+.tb-megamenu .nav > li.dropdown.open.active > a:hover,
+.tb-megamenu .nav > li.dropdown.open.active > span.tb-megamenu-no-link:hover {
+  background-color: $white;
+  color: $black;
+  border-bottom: 3px solid $blue-lighter;
+}
+
+.tb-megamenu .nav li.dropdown.open > .dropdown-toggle {
+  background-color: inherit;
+  color: $black;
+}
+
+/*
+ * Submenu dropdown
+ */
+
+.tb-megamenu .dropdown-menu {
+  border: none;
+  border-bottom: 1px solid $blue;
+  border-top: none;
+  padding: 30px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.tb-megamenu .mega-dropdown-inner {
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tb-megamenu .mega-dropdown-inner .tb-megamenu-row:nth-child(1) {
+  width: 67%;
+}
+
+.tb-megamenu .mega-dropdown-inner .tb-megamenu-row:nth-child(2) {
+  width: 33%;
+  margin-right: 60px;
+}
+
+.tb-megamenu .row-fluid + .row-fluid {
+  border: none;
+}
+
+/*
+ * Information block
+ */
+
+.tb-megamenu .tb-block .block-title {
+  font-size: $h2-font-size;
+  color: $black;
+  line-height: $h2-font-size;
+  margin: 0 0 15px;
+  text-transform: inherit;
+}
+
+.block-tb-megamenu .tb-megamenu .tb-block .field--name-body {
+  line-height: $line-height-base;
+  margin: 0 0 15px;
+}
+
+.tb-megamenu .tb-block .field--name-field-link a {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 5px;
+  color: $black;
+  border-bottom: 1px solid $white;
+  text-decoration: none;
+}
+
+.tb-megamenu .tb-block .field--name-field-link a:hover,
+.tb-megamenu .tb-block .field--name-field-link a:focus {
+  color: $black;
+  border-bottom: 1px solid $black;
+}
+
+.tb-megamenu .tb-block .field--name-field-link a:after {
+  display: inline-block;
+  margin-left: 10px;
+  @extend %fa-icon;
+  @extend .fas;
+  content: fa-content($fa-var-chevron-right);
+  font-size: 14px;
+}
+
+/*
+ * Submenu menu items
+ */
+
+ul.tb-megamenu-subnav.mega-nav.level-1 {
+  column-count: 2;
+  column-gap: 30px;
+}
+
+.tb-megamenu .mega-nav > li:first-child > a,
+.tb-megamenu .dropdown-menu .mega-nav > li:first-child > a,
+.tb-megamenu .mega-nav > li:first-child > span.tb-megamenu-no-link,
+.tb-megamenu
+  .dropdown-menu
+  .mega-nav
+  > li:first-child
+  > span.tb-megamenu-no-link {
+  margin: 5px 0;
+  padding-top: 5px;
+}
+
+.tb-megamenu .dropdown-menu li > a,
+.tb-megamenu .dropdown-submenu > a,
+.tb-megamenu .dropdown-menu li > span.tb-megamenu-no-link,
+.tb-megamenu .dropdown-submenu > span.tb-megamenu-no-link {
+  display: inline-block;
+  padding: 0 0 5px;
+  margin: 5px 0;
+  color: $black;
+  border-top: none;
+  border-bottom: 1px solid $white;
+  text-decoration: none;
+}
+
+.tb-megamenu .dropdown-menu li > a:hover,
+.tb-megamenu .dropdown-menu li > a:focus,
+.tb-megamenu .dropdown-submenu:hover > a,
+.tb-megamenu .dropdown-menu li > span.tb-megamenu-no-link:hover,
+.tb-megamenu .dropdown-menu li > span.tb-megamenu-no-link:focus,
+.tb-megamenu .dropdown-submenu:hover > span.tb-megamenu-no-link {
+  color: $black;
+  border-bottom: 1px solid $black;
+}
+
+.tb-megamenu .dropdown-menu .active > a,
+.tb-megamenu .dropdown-menu .active > a:hover,
+.tb-megamenu .dropdown-menu .active > span.tb-megamenu-no-link,
+.tb-megamenu .dropdown-menu .active > span.tb-megamenu-no-link:hover {
+  color: $black;
+  background-color: inherit;
+  background-image: none;
+  border-bottom: 1px solid $black;
+}
+
+/*
+ * Caret
+ */
+
+.tb-megamenu .nav li.dropdown > .dropdown-toggle .caret,
+.tb-megamenu .caret {
+  display: none;
+}
+
+.tb-megamenu .nav li.dropdown > .dropdown-toggle:after {
+  @extend %fa-icon;
+  @extend .fas;
+  content: fa-content($fa-var-chevron-down);
+  font-size: 14px;
+}
+
+
+
+
+
+
+/* TB Megamenu styling */
+
+/* We need to anchor the dropdown second-level submenu to the parent Bootstrap container:
+   1. we unset the position on the .tbm container, then
+   2. we add position:relative to the Bootstrap container.
+*/
+
+.tbm {
+  position: inherit;
+}
+
+nav.navbar > .container {
+  position: relative;
+}
+
+/* We then need media queries to force the width of the submenu depending on the container size. */
+
+@media only screen and (min-width :  768px) and (max-width :  991px) {.tbm-submenu {width:  720px;}} /* <----- This value needs checking */
+@media only screen and (min-width :  992px) and (max-width : 1199px) {.tbm-submenu {width:  960px;}}
+@media only screen and (min-width : 1200px) and (max-width : 1599px) {.tbm-submenu {width: 1140px;}}
+@media only screen and (min-width : 1600px)                          {.tbm-submenu {width: 1520px;}}
+
+
+
+/* Style the main menu */
+
+nav#tbm-main {
+  background-color: inherit;
+  font-size: large;
+
+  .tbm-item.level-1 {
+    border-right: none;
+    padding: 15px 30px;
+  }
+
+  .tbm-item--has-dropdown .tbm-link.level-1 {
+    padding: 0;
+  }
+
+  .tbm-link.level-1,
+  .menu-item-search.tbm-item--has-dropdown .tbm-link.level-1 {
+    color: inherit;
+    padding: 0;
+    border-bottom: 2px solid $white;
+    text-decoration: none;
+
+    .tbm-item--has-dropdown.open,
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $blue;
+      background-color: inherit;
+      color: $blue;
+    }
+  }
+
+  .tbm-submenu-toggle {
+    background-color: inherit;
+    color: $blue;
+    width: 12px;
+    padding: 0;
+    margin: 0 0 0 10px;
+  }
+
+  /* The option to specify an icon within the TB Megamenu configuration is buggy and erratic (/admin/structure/tb-megamenu/main__cyclinguk5).
+     We will therefore add a FontAwesome psuedo class to the Search menu link. */
+  .menu-item-search .tbm-link::before {
+    font-size: large;
+    font-weight: 300;
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f002";
+  }
+}
+
+
+/* Style the submenu */
+
+nav#tbm-main .tbm-submenu {
+  border: none;
+  -webkit-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+  padding: 1rem;
+}

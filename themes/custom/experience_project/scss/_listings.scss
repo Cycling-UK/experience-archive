@@ -1,0 +1,146 @@
+.distance-from {
+    font-size: 0.8em;
+}
+.field--name-field-type-of-event {
+    .field--item {
+        background: $gray-lightest;
+        border-radius: $border-radius-img;
+        display: inline;
+        margin: 0 0.5em 0.5em 0;
+        font-size: 0.8em;
+        padding: 4px 8px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+.listing {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0 10px;
+    border: none;
+    //flex: 0 0 360px;
+}
+
+.listings,
+.view-listings .view-content {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0 0 0 0;
+    align-items: stretch;
+    //gap: 1em;
+}
+
+
+
+.listing-body {
+    display: flex;
+    flex-direction: column;
+    background-color: $grey-webform-field;
+    width: 100%;
+    -webkit-border-radius: $border-radius-img;
+    -moz-border-radius: $border-radius-img;
+    border-radius: $border-radius-img;
+    padding: 10px;
+
+    .listing-date {
+        text-align: center;
+    }
+
+    .detail-event {
+        p.event-title {
+            font-weight: 16px !important;
+            line-height: 22px;
+            margin-top: 0;
+            font-family: $headings-font-family;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.event-detail-grid,
+.event-link-grid {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "date-event detail-event";
+}
+
+.event-detail-grid {
+    grid-template-areas: "date-event detail-event";
+    height: 100%;
+}
+
+.event-link-grid {
+    grid-template-areas: "space-a space-b";
+}
+
+.date-event {
+    grid-area: date-event;
+    font-family: $headings-font-family;
+
+    .event-day {
+        font-size: 20px;
+    }
+    .event-month {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+}
+.detail-event {
+    grid-area: detail-event;
+}
+
+.listing-link {
+    display: block;
+    padding-top: 20px;
+    color: $blue;
+    text-decoration: none !important;
+}
+
+.link-grid-space-a {
+    grid-area: space-a;
+}
+.link-grid-space-b {
+    grid-area: space-b;
+}
+
+@media (min-width: $cuk-breakpoint-md) {
+    .listings {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: $cuk-breakpoint-xl) {
+    .listing {
+        flex: 0 0 440px;
+    }
+    
+    .listings {
+        gap: 2em;
+    }
+
+}
+
+@media only screen and (max-width: $cuk-breakpoint-xl) {
+    .listing {
+        flex: 0 0 360px;
+    }
+
+    .listings {
+        gap: 1em;
+    }
+
+}

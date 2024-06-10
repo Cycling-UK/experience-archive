@@ -1,0 +1,10 @@
+{#
+/**
+ * This is to get ONLY the uuid using a uuid display mode
+ * In use with twig teak inside the route full twig to 
+ * get the uuids on the stage route entity reference field.
+ * 
+ */
+#}
+{% set nodeUUID = content.uuid.0 %}
+{{ nodeUUID }}

@@ -1,0 +1,43 @@
+<?php
+/**
+ * @file
+ * 
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function subscribe_cycling_uk_form_alter( & $form, FormStateInterface $form_state, $form_id) {
+  // Form alter hook
+  // @see hook_form_alter()
+  // @see hook_form_FORM_ID_alter()
+
+  //  REMEMBER if adding a new form id that dashes need to be replaced by underscores
+
+  // if ($form_id === 'webform_submission_subscribe_to_cycling_uk_add_form' || $form_id === 'webform_submission_subscribe_to_cycling_uk_node_678_add_form' || $form_id === 'webform-submission-subscribe-to-cycling-uk-node-917-add-form') {
+
+  if ($form_id === 'webform_submission_subscribe_to_cycling_uk_add_form' || $form_id === 'webform_submission_subscribe_to_cycling_uk_node_821_add_form') {
+
+    // The Subscribe fields to cookies (FormToFormWebformHandler.php) places 3 cookies for first name, last name, and email from the block form.
+    // Here we hook into the full webform to prepopulate these values in their fields with the cookie values if they exist.
+    
+      // retrieving cookie values and place in form fields
+
+    if (isset($_COOKIE['c_uk_fn'])) {
+        $form['elements']['first_name']['#default_value'] = $_COOKIE["c_uk_fn"];
+    };
+
+    if (isset($_COOKIE['c_uk_ln'])) {
+        $form['elements']['last_name']['#default_value'] = $_COOKIE["c_uk_ln"];
+    };
+
+    if (isset($_COOKIE['c_uk_em'])) {
+        $form['elements']['email']['#default_value'] = $_COOKIE["c_uk_em"];
+    }; 
+
+
+  }
+}

@@ -1,0 +1,61 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      @include tab-focus;
+    }
+  }
+
+  // [converter] extracted a& to a.btn
+}
+
+// below directly from cyclinguk5 theme
+
+.btn-primary {
+  background-color: $yellow;
+  border-color: $yellow;
+  color: $black !important;
+
+  &:hover,
+  &:focus {
+    background-color: darken($yellow, 10%);
+    border-color: darken($yellow, 10%);
+    color: $black !important;
+  }
+  &:active,
+  &:active:hover,
+  &:active:focus {
+    background-color: darken($yellow, 20%);
+    border-color: darken($yellow, 20%);
+    color: $black !important;
+  }
+}
+
+.btn-default {
+  background-color: $gray-lightest;
+  border-color: $gray-lightest;
+  color: $black !important;
+
+  &:hover,
+  &:focus {
+    background-color: $gray-lighter;
+    border-color: $gray-lighter;
+    color: $black !important;
+  }
+  &:active,
+  &:active:hover,
+  &:active:focus {
+    background-color: $gray-lighter;
+    border-color: $gray-lighter;
+    color: $black !important;
+  }
+}

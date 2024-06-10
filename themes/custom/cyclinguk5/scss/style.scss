@@ -1,0 +1,49 @@
+// Sub theme styling.
+@import 'variables_drupal';
+
+// Bootstrap overriden variables.
+// @see https://getbootstrap.com/docs/5.1/customize/sass/#variable-defaults.
+@import 'variables_bootstrap';
+
+// Include bootstrap.
+@import '../../../../themes/contrib/bootstrap5/scss/style';
+
+// Import fonts
+@import url("https://use.typekit.net/lmn7yno.css");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+// Font Awesome is now loaded within the <head> section via html.html.twig
+
+// Import remaining theme stylesheets
+@import "ui-widget";
+@import "alerts";
+@import "header";
+@import "footer";
+@import "links";
+@import "node";
+@import "login";
+@import "buttons";
+@import "menu-desktop";
+@import "menu-mobile";
+@import "tabs";
+@import "pager";
+@import "search";
+@import "webforms";
+@import "tables";
+@import "views";
+@import "slick.theme--classic";
+@import "article";
+@import "poi";
+@import "route";
+@import "paragraphs";
+@import "elevation";
+@import "maintenance";
+@import "cookie-compliance";
+@import "editor-embed-blocks";
+@import "mapping";
+@import "cards";
+@import "attachments";
+@import "tagging";
+@import "embed";
+@import "adverts";
+

@@ -1,0 +1,24 @@
+miniorange_oauth_client_idp_customer_admin_email: null
+miniorange_oauth_client_license_key: null
+miniorange_oauth_client_customer_id: ''
+miniorange_oauth_client_customer_admin_token: ''
+miniorange_oauth_client_customer_api_key: ''
+miniorange_oauth_client_force_auth: false
+miniorange_oauth_client_enable_backdoor: false
+miniorange_oauth_client_default_relaystate: ''
+miniorange_oauth_client_enable_login: false
+miniorange_oauth_client_name_attr_val: ''
+miniorange_oauth_client_email_attr_val: ''
+miniorange_oauth_client_status: ''
+miniorange_oauth_client_customer_admin_phone: null
+miniorange_oauth_client_tx_id: null
+miniorange_oauth_client_auto_redirect_to_idp: false
+miniorange_oauth_client_base_url : ''
+miniorange_oauth_send_with_header_oauth: true
+miniorange_oauth_send_with_body_oauth: true
+miniorange_oauth_enable_login_with_oauth: true
+miniorange_auth_client_display_name: 'Login using ##app_name##'
+miniorange_oauth_duplicate_username: false
+miniorange_oauth_client_auto_create_users: true
+miniorange_oauth_client_enable_page_access: true
+miniorange_oauth_isMultiSitePluginRequested: false

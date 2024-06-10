@@ -1,0 +1,114 @@
+// Attachments - change default file icons to Font Awesome
+.field--name-field-attachments {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+
+  .file--image {
+    background-image: none;
+  }
+
+  span.file,
+  .media--type-image .field__item,
+  .media--type-audio .field__item,
+  .media--type-video .field__item {
+    background-image: none;
+    padding: 0;
+    display: inline-flex;
+    flex-direction: row;
+    padding: 0 1rem;
+    height: 36px;
+    background-color: $gray-200;
+    text-decoration: none;
+    border: none;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+    max-width: 100%;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      background-color: $gray-400;
+    }
+
+    &::before {
+      display: flex;
+      justify-content: flex-start;
+      font-family: 'Font Awesome 6 Pro';
+      font-size: 1.5rem;
+      font-weight: 100;
+      outline: none;
+      width: 40px;
+      min-width: 40px;
+      max-width: 40px;
+    }
+
+    a {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border: none;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &:hover,
+      &:focus {
+        color: $black;
+        border: none;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Change the default icons with Font Awesome alternatives and colour if necessary
+  .file--general,
+  .file--application-octet-stream::before   {content: "\f15b"; color: $black;}
+  .file--package-x-generic::before          {content: "\f15b"; color: $black;}
+  .file--x-office-spreadsheet::before       {content: "\f1c3"; color: #107a40;} // Excel green
+  .file--x-office-document::before          {content: "\f1c2"; color: #185abd;} // Word blue
+  .file--x-office-presentation::before      {content: "\f1c4"; color: #c43f1d;} // Powerpoint red
+  .file--application-pdf::before            {content: "\f1c1"; color: $red;}
+  .file--text-x-script::before              {content: "\f1c9"; color: $black;}
+  .file--text-html::before                  {content: "\f1c9"; color: $black;}
+  .file--text-plain::before                 {content: "\f15c"; color: $black;}
+  .file--application-x-executable::before   {content: "\f15b"; color: $black;}
+  .file--audio::before                      {content: "\f001"; color: $black;}
+  .file--video::before                      {content: "\f03d"; color: $black;}
+  .file--text::before                       {content: "\f15c"; color: $black;}
+  .file--image::before                      {content: "\f8c4"; color: $black;} 
+}
+
+
+/*
+ * Drupal wants to render image, video and audio attachments so we add a new media display mode called "Attachment" and
+ * configure the display for the attachment to be "Download link". We then need to target these types of attachments
+ * in a dfferent way.
+ */
+
+.field--name-field-attachments {
+  .media--type-image,
+  .media--type-audio,
+  .media--type-video {
+    a {
+    padding: 0;
+      &.file--image,
+      &.file--audio,
+      &.file--video {
+        background-image: none;
+      }
+    }
+    a::before {
+      display: flex;
+      justify-content: flex-start;
+      font-family: 'Font Awesome 6 Pro';
+      font-size: 1.5rem;
+      font-weight: 100;
+      outline: none;
+      width: 40px;
+      min-width: 40px;
+      max-width: 40px;
+    }
+  }
+}

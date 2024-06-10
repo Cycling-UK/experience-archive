@@ -1,0 +1,691 @@
+.remove-image-corners-no .img-col img,
+.img-col img {
+  -webkit-border-radius: $border-radius-img;
+  -moz-border-radius: $border-radius-img;
+  border-radius: $border-radius-img;
+}
+
+.remove-image-corners-yes .img-col img {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.intro {
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto 36px auto;
+}
+
+.paragraph:not(.paragraph--type--map-embed):not(.paragraph--type--map-embed-preset) {
+  // margin: 0 auto 60px;
+
+  h2.paragraph-title {
+    margin-bottom: 36px;
+  }
+
+  // .field--name-field-media-image {
+  //   margin-bottom: 18px;
+  // }
+
+  .button-paragraph {
+    margin: 0 20px 0 0;
+  }
+
+  // FAQ related
+
+  .field--name-field-faq {
+    max-width: $cuk-breakpoint-lg;
+    margin: auto;
+  }
+
+  .ui-accordion .ui-accordion-content {
+    padding: 1em 0;
+  }
+
+  .ui-widget {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    //line-height: $line-height-base;
+    font-weight: $font-weight-normal;
+  }
+
+  .ui-widget-content p {
+    line-height: $line-height-base;
+  }
+
+  .ui-state-active,
+  .ui-widget-content .ui-state-active,
+  .ui-widget-header .ui-state-active,
+  a.ui-button:active,
+  .ui-button:active,
+  .ui-button.ui-state-active:hover {
+    border: 0px solid transparent;
+    background: transparent;
+    font-weight: normal;
+    color: $black;
+  }
+
+  .ui-accordion .ui-accordion-header {
+    margin: 2rem 0 0 0;
+    //font-size: 1.4rem;
+    padding: 0 0 0.25rem 0;
+    line-height: 2.5rem;
+    font-size: 2rem;
+  }
+
+  /* Icons
+----------------------------------*/
+
+  /* states and images */
+  .ui-icon {
+    width: 42px;
+    height: 42px;
+    margin-right: 1rem;
+  }
+
+  .ui-icon,
+  .ui-widget-content .ui-icon,
+  .ui-state-active .ui-icon,
+  .ui-button:active .ui-icon {
+    background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png")
+    /*{iconsContent}*/
+    ;
+  }
+
+  .ui-widget-header .ui-icon,
+  .ui-state-active .ui-icon,
+  .ui-button:active .ui-icon {
+    background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png")
+    /*{iconsHeader}*/
+    ;
+  }
+
+  .ui-state-hover .ui-icon,
+  .ui-state-focus .ui-icon,
+  .ui-button:hover .ui-icon,
+  .ui-button:focus .ui-icon {
+    background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png")
+    /*{iconsHover}*/
+    ;
+  }
+
+  .ui-state-highlight .ui-icon,
+  .ui-button .ui-state-highlight.ui-icon {
+    background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png")
+    /*{iconsHighlight}*/
+    ;
+  }
+
+  .ui-state-error .ui-icon,
+  .ui-state-error-text .ui-icon {
+    background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png")
+    /*{iconsError}*/
+    ;
+  }
+
+  .ui-button .ui-icon {
+    background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png")
+    /*{iconsDefault}*/
+    ;
+  }
+
+  .ui-icon-triangle-1-e {
+    background-position: 0 -42px;
+  }
+
+  .ui-icon-triangle-1-s {
+    background-position: 0 0;
+  }
+
+  /* We use html here because we need a greater specificity to make sure disabled
+works properly when clicked or hovered */
+  .ui-state-default,
+  .ui-button.ui-state-disabled:hover,
+  .ui-button.ui-state-disabled:active,
+  .ui-widget.ui-widget-content {
+    border: 0 solid transparent;
+    background: transparent;
+  }
+
+  .ui-widget-content {
+    background: transparent;
+    border: 1px solid;
+    border-image: linear-gradient(90deg, $white, $gray-lighter, $white) 1;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+  }
+
+  .ui-widget-content a {
+    color: $black;
+  }
+}
+
+
+
+@media (min-width: $cuk-breakpoint-md) {
+  .paragraph {
+    margin-bottom: 60px;
+
+    h2.paragraph-title {
+      margin-bottom: 30px;
+    }
+
+    h3.paragraph-title {
+      margin-bottom: 24px;
+    }
+
+
+
+  }
+}
+
+
+
+// Block reference paragraph type, to insert blocks, views blocks, etc.
+.paragraph--type--block-reference {
+  h2.block-title {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+}
+
+// Quick Cards - uses nested paragraph type
+.cards.field--name-field-title.card {
+  display: none;
+}
+
+
+// Image, text, background colour paragraph type
+
+.paragraph--type--img-text-bg-para {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  h2.paragraph-title {
+    margin: 0 0 18px 0;
+    margin-bottom: 18px !important;
+  }
+
+  .flex-button-list {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .left-col {
+    padding-left: 0;
+  }
+
+  .right-col {
+    padding-right: 0;
+  }
+}
+
+// img txt bg colour end
+
+.paragraph--type--paragraph-simple-text {
+  text-align: center;
+  max-width: 800px;
+
+  h2.paragraph-title {
+    text-align: center;
+  }
+}
+
+.paragraph--type--text-and-image {
+  h2.paragraph-title {
+    text-align: left;
+  }
+}
+
+.paragraph--type--bg-img-title-cta {
+  position: relative;
+
+  h2.paragraph-title {
+    text-align: center;
+    //margin-bottom: 0;
+    color: $white;
+  }
+
+  .info-on-top {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .vertical-flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+  }
+
+  .bg-para-img img {
+    -webkit-border-radius: $border-radius-img;
+    -moz-border-radius: $border-radius-img;
+    border-radius: $border-radius-img;
+  }
+
+  .bg-para-cta {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      margin: 0;
+      /* min-width: 180px;
+			padding: 10px 20px;
+			font-family: $headings-font-family; */
+    }
+  }
+}
+
+.paragraph--type--issuu-embed,
+.paragraph--type--simple-video,
+.paragraph--type--faq,
+.paragraph--type--map-embed {
+  h2.paragraph-title {
+    text-align: center;
+  }
+
+  .field--name-field-text {
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: $cuk-breakpoint-xl;
+  }
+}
+
+.remove-bottom-margin-yes {
+  margin-bottom: 0;
+}
+
+.remove-bottom-margin-no {
+  margin-bottom: 60px;
+}
+
+
+// even out experience start
+@media (max-width: $cuk-breakpoint-md) {
+
+  .paragraph {
+    margin-bottom: 30px;
+
+    &.paragraph--type--map-embed,
+    &.paragraph--type--map-embed-preset,
+    &.paragraph--type--img-text-bg-para,
+    &.paragraph--type--simple-video,
+    &.paragraph--type--bg-img-title-cta,
+    &.paragraph--type--quick-cards,
+    &.paragraph--type--cards-by-id,
+    &.paragraph--type--video-cards,
+    &.paragraph--type--single-text-column {
+      margin-bottom: 30px;
+    }
+
+    h2.paragraph-title {
+      margin-bottom: 18px;
+      // font-size: 30px;
+      margin-top: 0;
+      padding: 0 8px;
+    }
+
+    h3.paragraph-title {
+      margin-bottom: 18px;
+      // font-size:26px;
+      margin-top: 0;
+      padding: 0 8px;
+    }
+
+
+    &.paragraph--type--bg-img-title-cta {
+      h2.paragraph-title {
+        max-width: 90%;
+        margin: auto;
+      }
+    }
+
+    &.paragraph--type--map-embed,
+    &.paragraph--type--map-embed-preset {
+      .intro {
+        margin-bottom: 30px;
+      }
+    }
+
+    .field--name-field-faq {
+      padding: 0 1.5em
+    }
+
+
+
+  }
+
+
+  h3.view-title {
+    font-size: 26px;
+  }
+}
+
+// even out end
+
+
+
+@media (max-width: $screen-sm-min) {
+  .paragraph--type--image-and-text .img-col img {
+    margin-bottom: 1em;
+  }
+
+  .paragraph--type--text-and-image .img-col img {
+    margin-top: 1em;
+  }
+
+  .paragraph--type--img-text-bg-para {
+    .flex-button-list {
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+  }
+
+  .paragraph {
+    .img-text-para-btn {
+      margin: 0 auto 12px auto;
+    }
+  }
+
+  .paragraph--type--img-text-bg-para {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .left-col {
+      padding: 15px;
+      padding-left: 15px;
+    }
+
+    .right-col {
+      padding: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .paragraph--type--bg-img-title-cta {
+    h2.paragraph-title {
+      font-size: 1.6em;
+      padding: 0 18px;
+    }
+  }
+}
+
+.paragraph--type--simple-buttons {
+  .simple-button-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    margin-bottom: 1rem;
+    -webkit-border-radius: $btn-border-radius-base;
+    -moz-border-radius: $btn-border-radius-base;
+    border-radius: $btn-border-radius-base;
+    text-align: center;
+  }
+}
+
+// Single text column - Clean, easy to read, single column design that allows for text and inline images
+
+.paragraph--type--single-text-column {
+  //margin: 0 auto;
+
+  h2 {
+    text-align: center;
+  }
+
+  .paragraph-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2.paragraph-title,
+    h2,
+    h3,
+    h4 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    p {
+      margin: 0 90px 15px 90px;
+    }
+
+    img {
+      margin: 33px 0 30px 0;
+      -webkit-border-radius: $border-radius-img;
+      -moz-border-radius: $border-radius-img;
+      border-radius: $border-radius-img;
+    }
+  }
+
+  .related-block-embed {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+}
+
+// quick and dirty application of cyclinguk5 paragraph--type--links paragraph type version to the bs3 experience theme
+.paragraph--type--links {
+  .field--name-field-link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .link-icon {
+    padding-right: 1rem;
+  }
+
+  .link-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    -webkit-border-radius: $border-radius-img;
+    -moz-border-radius: $border-radius-img;
+    border-radius: $border-radius-img;
+    padding: 1rem 1.5rem;
+  }
+}
+
+.paragraph--type--terms-and-conditions {
+  .t-c {
+    text-transform: uppercase;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .field--type-text-long {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    p,
+    ul li {
+      font-size: 85%;
+      line-height: 140%;
+    }
+
+    .field--type-text-long * {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// text field with one or more columns
+.paragraph--type--text-field-1-to-4-col {
+  h2.paragraph-title {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+}
+
+.two-col,
+.three-col,
+.four-col {
+  .field--name-field-text {
+    column-count: 1;
+    column-gap: 3.5rem;
+    column-rule: 1px solid $grey-webform-field;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: $cuk-breakpoint-sm) {
+
+  .two-col,
+  .three-col,
+  .four-col {
+    .field--name-field-text {
+      column-count: 2;
+    }
+  }
+}
+
+@media only screen and (min-width: $cuk-breakpoint-md) {
+  .two-col .field--name-field-text {
+    column-count: 2;
+  }
+
+  .three-col,
+  .four-col {
+    .field--name-field-text {
+      column-count: 3;
+    }
+  }
+}
+
+@media only screen and (min-width: $cuk-breakpoint-xl) {
+  .two-col .field--name-field-text {
+    column-count: 2;
+  }
+
+  .three-col .field--name-field-text {
+    column-count: 3;
+  }
+
+  .four-col .field--name-field-text {
+    column-count: 4;
+  }
+}
+
+// columns end
+
+@media screen and (min-width: 450px) and (max-width: 767px) {
+  .paragraph--type--single-text-column {
+    .paragraph-content {
+      p {
+        margin: 0 45px 15px 45px;
+      }
+    }
+  }
+
+  .paragraph--type--terms-and-conditions {
+    .t-c {
+      padding: 0 26px;
+    }
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .paragraph--type--single-text-column {
+    .paragraph-content {
+      p {
+        margin: 30px 15px 30px;
+      }
+    }
+  }
+
+  .paragraph--type--terms-and-conditions {
+    .t-c {
+      padding: 0 18px;
+    }
+  }
+}
+
+.paragraph--type--blockquote {
+  max-width: 800px;
+
+  blockquote {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-left: none;
+    padding: 0;
+    font-family: $headings-font-family;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  blockquote::before {
+    display: none;
+  }
+
+  blockquote::after {
+    display: none;
+  }
+
+  .bq-cont {
+    position: relative;
+  }
+
+  .bq-cont .blockquote-footer {
+    padding: 0 10px 0;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .bq-cont .blockquote-footer::before {
+    content: "- ";
+  }
+
+  .qt-mark {
+    font-size: 60px;
+    color: $yellow;
+    padding: 12px;
+  }
+
+  .q-text {
+    padding: 18px 18px 6px;
+  }
+}

@@ -1,0 +1,237 @@
+.cuk-page-management {
+  z-index: 1000;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  display: inline-block;
+  max-width: 300px;
+  padding: 0.75rem 0.75rem 0.375rem 0.75rem;
+  border-radius: $border-radius-img;
+  /* border: 3px solid $pink; */
+  background-color: $pink-100;
+  font-size: small;
+
+  h2 {
+    font-size:large;
+  }
+
+  .separator {
+    margin-bottom: 0.375rem;
+  }
+}
+
+
+.page-node-type-post h1 {
+  text-align: left !important;
+  margin: 2rem 0 1rem 0;
+  padding: 0;
+  font-size: 48px;
+  font-size: xxx-large;
+}
+
+.hero-image-and-caption {
+  position: relative;
+  margin-bottom: 1rem;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .caption {
+    border-radius: 0 0 $border-radius-img $border-radius-img;
+    background-color: rgba(0,0,0,0.3);
+    color: $white;
+    padding: 7px 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.submitted {
+  margin-bottom: 1rem;
+  .submitted-name {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.cuk-main-page-content {
+  margin-bottom: 3rem;
+  .teaser {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size: x-large;
+    margin-bottom: 1rem;  
+  }
+}
+
+.cuk-tag-block {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  > a {
+    font-weight: $font-weight-normal !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+}
+
+.cuk-accordion {
+  h3.faqfield-question {
+    font-size: larger;
+  }
+  .faqfield-answer {
+    margin-bottom: 1rem;
+  }
+}
+
+.cuk-notes-to-editors,
+.cuk-press-contact-information {
+  margin-bottom: 1rem;
+}
+
+.cuk-downloads,
+.cuk-gpx-files {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  > a {
+    margin: 0;
+  }
+}
+
+
+/* Main content column padding */
+@media (min-width: $cuk-breakpoint-xl) and (max-width: calc($cuk-breakpoint-xxl - 1px)) {
+  .cuk-main-page-content,
+  .cuk-tag-block,
+  .cuk-downloads,
+  .cuk-gpx-files {
+    padding-right: 10rem;
+  }
+}
+
+@media (min-width: $cuk-breakpoint-xxl) {
+  .cuk-main-page-content,
+  .cuk-tag-block,
+  .cuk-downloads,
+  .cuk-gpx-files {
+    padding-right: 15rem;
+  }
+}
+
+
+/* Toggle display location of additional content on desktop and mobile */
+@media (max-width: 991px) {
+  .cuk-additional-content.desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .cuk-additional-content.mobile {
+    display: none;
+  }
+}
+
+
+.cuk-other-content {
+  margin: 6rem 0 6rem 0;
+  padding: 1.5rem;
+  background-color: $gray-300;
+
+  h2 {
+    font-size:large;
+  }
+
+  .to-do {
+    margin-bottom: 1.5rem;
+  }
+
+  .separator {
+    margin-bottom: 0.375rem;
+  }
+}
+
+.cuk-further-reading {
+  margin: 3rem 0 6rem 0;
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.cuk-gallery {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  .slide__content {
+    .slide__caption {
+      position: absolute;
+      bottom: 0;
+      top: inherit;
+      height: inherit;
+      min-height: inherit;
+      width: 100%;
+      border-radius: 0 0 $border-radius-img $border-radius-img;
+      background-color: rgba(0,0,0,0.3);
+      color: $white;
+      padding: 7px 14px;    }
+  }
+  .slick-arrow::before {
+    color: $white;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: 'Font Awesome 6 Pro';
+    font-size: 18px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: $gray;
+    border-radius: 18px;
+  }
+  .slick-prev:before {
+    content: "\f053";
+  }
+  .slick-next:before {
+    content: "\f054";
+  }
+  img {
+    border-radius: $border-radius-img;
+  }
+}
+
+.cuk-google-dfp-advert {
+  display: flex;
+  justify-content: center;
+}
+
+.cuk-dfp-advert {
+  margin-bottom: 1rem;
+
+  .slug {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: smaller;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: $gray-400;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Remove the background colour and padding of right hand column for smallest devices */
+@media (max-width: 379px) {
+  .bg-light.p-4 {
+    background-color: inherit !important;
+    padding: 0 !important;
+  }
+}

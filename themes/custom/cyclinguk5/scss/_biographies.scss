@@ -1,0 +1,85 @@
+body.page-node-type-biography {
+  ul.nav {
+    justify-content: center;
+  }
+  h1.page-title {
+    display: none;
+  }
+}
+
+article.node--type-biography {
+  .main-content > div > div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .biography-image img {
+    display: block;
+    max-width: 100%;
+    margin: 10px auto 30px;
+    border-radius: 400px;
+    border-width: 5px;
+    border-style: solid;
+
+    &.community_champion {border-color: $yellow;}
+    &.industry_mogul     {border-color: $blue;}
+    &.cycle_influencer   {border-color: $pink;}
+    &.sporting_hero      {border-color: $green;}  
+  }
+
+  .biography-category {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .biography-title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .biography-headline {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size: larger;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: x-large;
+  }
+}
+
+#cuk-biography-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+
+  span {
+    display: none;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $gray-500;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
+    color: $gray-500;
+
+    &:hover {
+      border: 1px solid $yellow;
+      color: $yellow;
+    }
+  }
+}

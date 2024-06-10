@@ -1,0 +1,63 @@
+/* Component containers */
+
+.ui-widget {
+	font-family: $font-family-base;
+	font-weight: $font-weight-normal;
+	font-size: $font-size-base;
+}
+
+.ui-widget .ui-widget {
+	font-size: $font-size-base;
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea {
+	font-family: $font-family-base;
+	font-weight: $font-weight-normal;
+}
+
+.ui-widget button {
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+}
+
+.ui-widget.ui-widget-content {
+	border: 1px solid $gray-lighter;
+}
+
+.ui-widget-content {
+	border: 1px solid #dddddd;
+	background: $white;
+	color: $black;
+}
+
+.ui-widget-header {
+	border: 1px solid $purple;
+	background: $purple;
+	color: $white;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+}
+
+
+
+/* Overlays */
+
+.ui-widget-overlay {
+	background: #333;
+	opacity: .85;
+	filter: Alpha(Opacity=85);
+}
+
+
+
+/* Change default button alignment from right to left */
+
+/* .ui-dialog .ui-dialog-buttonpane {
+  padding: .3em .4em .5em 1em;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  float: left;
+} */

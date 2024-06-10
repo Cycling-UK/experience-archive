@@ -1,0 +1,193 @@
+// Relate Content Union view block
+.block-views-blockrelate-content-union-block-related-ref-on-node {
+    h3.block-title {
+        margin-bottom: 32px;
+    }
+}
+
+// paragraph type specific
+
+.paragraph--type--quick-cards,
+.paragraph--type--cards-by-id,
+.paragraph--type--video-cards {
+    h2.paragraph-title {
+        text-align: center;
+        margin-bottom: 36px;
+    }
+
+    .card .field--name-field-media-image {
+        margin-bottom: 0;
+    }
+
+    .field--name-field-title,
+    .viewsreference--view-title {
+        display: none;
+    }
+}
+
+.pb-3 {
+    padding-bottom: 1rem !important;
+}
+
+.pb-1 {
+    padding-bottom: 0.25rem !important;
+}
+
+.field--name-field-topic-card a {
+    padding: 0 8%;
+}
+
+//  paragraph type specific end
+
+.topic-card a {
+    margin: 3% 0 0 0;
+    color: $blue;
+    font-size: 90%;
+    display: inline-block;
+    padding: 0 8%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    -webkit-border-radius: $border-radius-img;
+    -moz-border-radius: $border-radius-img;
+    border-radius: $border-radius-img;
+    padding-bottom: 6%;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+    width: 100%;
+    padding: 0 0 16px 0;
+
+    p,
+    h4 {
+        padding: 0 8%;
+    }
+
+    h4 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+
+    .paragraph,
+    .field--name-field-media-image-1 {
+        margin: 0 auto;
+    }
+
+    .field--name-field-media-image img,
+    img {
+        -webkit-border-radius: $border-radius-img;
+        -webkit-border-bottom-right-radius: 0;
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius: $border-radius-img;
+        -moz-border-radius-bottomright: 0;
+        -moz-border-radius-bottomleft: 0;
+        border-radius: $border-radius-img;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    figure {
+        margin: 0 0 0;
+    }
+
+    &:hover {
+        background-color: #e9ecef;
+    }
+
+    .card-title {
+        margin: 4% 0 2%;
+
+        a {
+            text-decoration: none;
+            color: $text-black;
+        }
+    }
+}
+
+.cards {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0 0 0 0;
+    gap: 0 0;
+}
+
+.card {
+    list-style: none;
+    display: flex;
+    //flex: 0 0 440px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0 10px;
+    border: none;
+
+    .map-stage {
+        -webkit-border-radius: $border-radius-img;
+        -webkit-border-bottom-right-radius: 0;
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius: $border-radius-img;
+        -moz-border-radius-bottomright: 0;
+        -moz-border-radius-bottomleft: 0;
+        border-radius: $border-radius-img;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        overflow: hidden;
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+    }
+}
+
+.region-content ul li.card {
+    margin-bottom: 2.2em;
+}
+
+.bottom-flexed {
+    margin-top: auto;
+}
+
+// p.bottom-flexed {
+//     margin-bottom: 1em;
+// }
+
+// using newer bs5 breakpoints
+
+.card-hero {
+    img {
+        border: 1px solid $gray-lightest;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (min-width: $cuk-breakpoint-xl) {
+    .card {
+        flex: 0 0 440px;
+
+        .map-stage {
+            width: 440px;
+            height: 248px;
+        }
+    }
+
+    .cards {
+        gap: 0 2em;
+    }
+}
+
+@media only screen and (max-width: $cuk-breakpoint-xl) {
+    .card {
+        flex: 0 0 360px;
+
+        .map-stage {
+            width: 342px;
+            height: 192px;
+        }
+    }
+}

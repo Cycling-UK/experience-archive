@@ -1,0 +1,92 @@
+// Full pager
+
+ul.pagination {
+  padding: 3rem 0;
+
+  .page-link {
+    padding: 0.375rem 1.2rem;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: darken($blue, 10%);
+      border-color: darken($blue, 10%);
+    }
+  }
+
+  .page-item:first-child .page-link {
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
+  .page-item:last-child .page-link {
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+}
+
+
+// Mini pager
+
+ul.pager__items {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid $gray-300;
+    border-bottom: 1px solid $gray-300;
+    border-left: 1px solid $gray-300;
+    padding: 0.375rem 1.2rem;
+
+    &:hover,
+    &:focus,
+    &:hover a,
+    &:focus a {
+        color: $white;
+      background-color: darken($blue, 10%);
+      border-color: darken($blue, 10%);
+
+    }
+  }
+
+  li:first-child {
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 0.375rem 1.2rem;
+
+    a {
+      border-top-left-radius: 2rem;
+      border-bottom-left-radius: 2rem;
+      }
+  }
+
+  li:last-child {
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-right: 1px solid $gray-300;
+    padding: 0.375rem 1.2rem;
+
+
+    a {
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
+  }
+
+  a {
+    padding: 0;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: darken($blue, 10%);
+      border-color: darken($blue, 10%);
+    }
+  }
+}

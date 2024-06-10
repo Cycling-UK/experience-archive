@@ -1,0 +1,472 @@
+h1 {
+	font-size: $font-size-base * 2;
+	line-height: 44px;
+}
+
+h2,
+.h2 {
+	font-size: $font-size-base * 1.75;
+}
+
+h3,
+.h3 {
+	font-size: $font-size-base * 1.6;
+}
+
+.page-header {
+	margin: 10px 0 18px 0;
+	line-height: 44px;
+	padding: 0;
+	border-bottom: none;
+	text-align: center;
+}
+
+.hero-wrap {
+	margin: 0 auto 30px;
+}
+
+.top-teaser {
+	font-size: 20px;
+	line-height: 140%;
+	margin: 0 auto 30px;
+	max-width: 800px;
+}
+
+.relate-block {
+	padding-top: 30px;
+}
+
+
+// the .mapframe class wraps Richard's map embed div, which is present as a paragraph and as taxonomy term page content, currently
+.mapframe {
+	height: 95vh;
+	display: block;
+	//border-top: 2px solid $blue;
+	//border-bottom: 2px solid $blue;
+}
+
+
+.map-stage {
+	border-radius: $border-radius-img;
+	//width: 500px;
+	display: block;
+	margin: auto;
+	width: auto;
+	height: 280px;
+	border: 1px solid $gray-lightest;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.node-map-wrap {
+	margin-bottom: 40px;
+}
+
+
+.stage-panel {
+	background-color: #f7f7f7;
+	margin-bottom: 2em;
+}
+
+
+
+.route-step {
+	padding: 1em 0;
+	margin: 0 2em 0.25em;
+
+	h4 {
+		margin-top: 12px;
+		//font-family: $font-family-base;
+		font-size: 22px;
+	}
+
+	@media (orientation:portrait) {
+		.more-wrap {
+			text-align: center;
+		}
+
+	}
+
+}
+
+
+// basicaly desktop:
+
+@media (min-width: $cuk-breakpoint-md) {
+
+	.mapframe {
+		height: 540px;
+	}
+
+	h1,
+	.h1 {
+		font-size: $h1-font-size;
+		;
+	}
+
+	h2,
+	.h2 {
+		font-size: $h2-font-size;
+	}
+
+	h3,
+	.h3 {
+		font-size: $h3-font-size;
+	}
+
+	.top-teaser {
+		font-size: 2.5rem;
+		line-height: 140%;
+		margin: 0 auto 40px;
+		max-width: 800px;
+	}
+
+	// Page header
+	.page-header {
+		padding: 0;
+		margin: 0 0 26px 0;
+		border-bottom: none;
+		text-align: center;
+		line-height: 64px;
+	}
+
+	.hero-wrap {
+		margin: 0 auto 40px;
+	}
+}
+
+
+
+// Lists
+.region-content ul li,
+.region-content ol li {
+	margin-bottom: 6px;
+}
+
+.region-content ol {
+	text-align: left;
+}
+
+
+// Images
+.img-responsive {
+	width: 100%;
+	height: auto;
+}
+
+// Inline images
+.region-content .field--name-field-media-image img {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.field--name-field-hero img {
+	-webkit-border-radius: $border-radius-img;
+	-moz-border-radius: $border-radius-img;
+	border-radius: $border-radius-img;
+}
+
+.map-canvas,
+.leaflet-container {
+	-webkit-border-radius: $border-radius-img;
+	-moz-border-radius: $border-radius-img;
+	border-radius: $border-radius-img;
+	overflow: hidden;
+}
+
+// images with captions
+figure {
+	position: relative;
+
+	>div {
+		position: relative;
+		bottom: 0;
+	}
+
+	img {
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	figcaption {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		font-size: small;
+		padding: 8px 12px;
+		color: $white;
+		background-color: rgba(0, 0, 0, 0.5);
+		-webkit-border-radius: 0 0 10px 10px;
+		-moz-border-radius: 0 0 10px 10px;
+		border-radius: 0 0 10px 10px;
+	}
+}
+
+
+
+
+
+
+// Five-star ratings
+.has-glyphicons .form-type-fivestar .select-wrapper:after {
+	display: none;
+}
+
+.fivestar-basic div.rating div a:hover {
+	background: url("/themes/custom/cyclinguk/images/star.png") no-repeat 0 0;
+}
+
+.fivestar-basic div.fivestar-widget {
+
+	.star,
+	.star a {
+		background: url("/themes/custom/cyclinguk/images/star.png") no-repeat 0 0;
+	}
+
+	div.on a {
+		background-position: 0 -32px;
+	}
+
+	div.hover a {
+		background: url("/themes/custom/cyclinguk/images/star.png") no-repeat 0 0;
+		background-position: 0 -16px;
+	}
+
+	.cancel,
+	.star {
+		height: 16px;
+	}
+}
+
+.form-type-fivestar .form-control {
+	height: 0;
+}
+
+.fivestar-basic div.rating div a:hover {
+	background-position: 0 -16px;
+}
+
+.fivestar-basic .help-block {
+	color: $black;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.node-rating {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+
+	div.fivestar-widget {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+// Node meta information container
+.node-meta {
+	margin-bottom: 30px;
+}
+
+// Bookmarks
+.my-bookmark {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	a {
+		color: $black;
+	}
+
+	a:hover,
+	a:focus {
+		color: $black;
+	}
+
+	.js-flag-message {
+		display: none;
+	}
+}
+
+.user-logged-in .my-bookmark {
+
+	.action-flag:before,
+	.action-unflag:before {
+		@extend %fa-icon;
+		content: fa-content($fa-var-bookmark);
+		color: $yellow;
+		margin-right: 10px;
+	}
+
+	.action-flag:before {
+		@extend .fal;
+	}
+
+	.action-unflag:before {
+		@extend .fas;
+	}
+}
+
+// Social links
+ul.social-link-list {
+	list-style: none;
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
+
+	li a {
+		color: $purple;
+		border: 1px solid $purple;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		text-decoration: none;
+		justify-content: center;
+		align-items: center;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		margin-right: 5px;
+	}
+
+	li a:hover,
+	li a:focus {
+		color: $yellow;
+		border: 1px solid $yellow;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	ul.social-link-list li a {
+		width: 36px;
+		height: 36px;
+	}
+
+
+	.map-stage {
+		//width: 440px;
+		height: 248px;
+	}
+
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+	ul.social-link-list li a {
+		width: 36px;
+		height: 36px;
+	}
+
+
+	.map-stage {
+		width: 440px;
+		height: 248px;
+	}
+
+}
+
+.left-column.outer-wrapper {
+	.inner-wrapper>div {
+		margin-bottom: 15px;
+	}
+}
+
+// Right hand column layout
+.right-column.outer-wrapper {
+	padding: 20px;
+	background-color: #f6f6f6;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	.inner-wrapper>div {
+		margin-bottom: 15px;
+	}
+
+	.inner-wrapper>div.media-insert {
+		margin: 0 auto 30px;
+	}
+
+	.inner-wrapper>div:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.field--name-field-hero img {
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	.node-gallery img {
+		-webkit-border-radius: 10px 10px 0 0;
+		-moz-border-radius: 10px 10px 0 0;
+		border-radius: 10px 10px 0 0;
+	}
+
+	.slide__caption {
+		-webkit-border-bottom-right-radius: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-moz-border-radius-bottomright: 10px;
+		-moz-border-radius-bottomleft: 10px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+
+	.slide__description {
+		text-align: center;
+	}
+}
+
+// General content type - a paragraphs based content type
+.page-node-type-content {
+	.general-content-teaser {
+		max-width: 800px;
+		margin: 0 auto 60px;
+	}
+
+	.general-content-teaser p {
+		text-align: center;
+		font-size: 120%;
+		font-family: $headings-font-family, Arial, Helvetica, sans-serif;
+	}
+
+
+	.my-bookmark {
+		margin-bottom: 30px;
+	}
+}
+
+
+
+
+.benefit-blocks {
+	display: flex;
+	justify-content: center;
+}
+
+// Button to guide experience potential applicants to register first.
+// button held in custom block placed only on application webform node, visible only to anonymous users
+.experience-reg-prompt {
+	.btn {
+		max-width: 345px;
+		display: block;
+		margin: auto;
+
+
+	}
+
+	text-align: center;
+}
+
+@media only screen and (max-width: $cuk-breakpoint-xl) {
+
+	.stage-panel {
+		padding: 0 5%;
+	}
+
+	.route-step {
+		padding: 1em 0;
+		margin: 0 0 1em;
+	}
+}

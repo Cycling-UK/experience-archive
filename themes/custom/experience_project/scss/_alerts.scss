@@ -1,0 +1,119 @@
+@media (min-width: 768px) {
+	.messages__wrapper {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+.alert {
+	border: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.close {
+  color: $white;
+  text-decoration: none;
+  text-shadow: inherit;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.close:hover,
+.close:focus {
+  color: $white;
+  text-decoration: none !important;
+  cursor: pointer;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+
+
+/* Success */
+
+.alert-success {
+	color: $black;
+	background-color: $green;
+
+	.alert-link {
+		color: $black;
+	}
+	
+	a {
+		color: $black;
+	}
+	
+	a:focus,
+	a:hover {
+		color: $white;
+	}
+}
+
+
+
+/* Information */
+
+.alert-info {
+	color: $black;
+	background-color: #009fda; // Override from EU blue to Cycling UK blue
+
+	.alert-link {
+		color: $black;
+	}
+	
+	a {
+		color: $black;
+	}
+	
+	a:focus,
+	a:hover {
+		color: $white;
+	}
+}
+
+
+
+/* Warnings */
+
+.alert-warning {
+	color: $black;
+	background-color: $yellow;
+
+	.alert-link {
+		color: $black;
+	}
+	
+	a {
+		color: $black;
+	}
+	
+	a:focus,
+	a:hover {
+		color: $white;
+	}
+}
+
+
+
+/* Danger */
+
+.alert-danger {
+	color: $black;
+	background-color: $pink;
+	
+	.alert-link {
+		color: $black;
+	}
+	
+	a {
+		color: $black;
+	}
+	
+	a:focus,
+	a:hover {
+		color: $white;
+	}
+}
+

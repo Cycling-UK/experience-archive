@@ -1,0 +1,12 @@
+name: 'Image Styles Mapping'
+type: module
+description: 'Provides a report containing where image styles are used.'
+core_version_requirement: ^9.2 || ^10
+package: 'Administration'
+dependencies:
+  - drupal:field_ui
+
+# Information added by Drupal.org packaging script on 2024-02-01
+version: '8.x-1.6'
+project: 'image_styles_mapping'
+datestamp: 1706781609

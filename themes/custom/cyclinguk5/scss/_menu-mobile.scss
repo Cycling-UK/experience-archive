@@ -1,0 +1,227 @@
+// Hide the desktop TB Mega Menus on the mobile display as we will use the Responsive Menu module
+// and a custom iconified secondary menu for for mobile instead.
+
+@media only screen and (max-width : calc($cuk-breakpoint-lg - 1px)) {
+  .tbm--mobile {
+    display: none;
+  }
+}
+
+
+// Change the default appearance of the menu icon
+#block-responsivemenumobileicon {
+  background-color: $brand-blue;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+
+  .label {
+    display: none;
+  }
+
+  .responsive-menu-toggle-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .responsive-menu-toggle-icon::before,
+  .responsive-menu-toggle-icon span.icon,
+  .responsive-menu-toggle-icon::after {
+    height: 2px;
+    width: 16px;
+    left: 10px;
+  }
+
+  .responsive-menu-toggle-icon::before    {top: 11px;}
+  .responsive-menu-toggle-icon span.icon  {top: 17px;}
+  .responsive-menu-toggle-icon::after     {top: 23px;}
+
+  &:hover {
+    background-color: darken($brand-blue, 10%);
+  }
+
+}
+
+// Tweak the animation of the menu icon when the menu is opened
+// Nudge the mobile menu bars so they form a neat cross to show the user how to close the mobile menu
+.mm-wrapper_opening #block-responsivemenumobileicon {
+
+  background-color: darken($brand-blue, 20%);
+
+  .responsive-menu-toggle-icon::before,
+  .responsive-menu-toggle-icon::after,
+  .responsive-menu-toggle-icon span.icon {
+    left: 6px;
+    width: 24px;
+  }
+  .responsive-menu-toggle-icon::before    {top: 16px;}
+  .responsive-menu-toggle-icon::after     {top: 17px;}
+}
+
+
+// Mobile menu icons - these are the circular icons that appear in the header
+// 22/03/22 - these may not be used in the final design but keeping the code for now. All functionality may move to the responsive sidebar menu.
+#block-secondarymenumobile {
+  .tbm {
+    background-color: inherit;
+    .tbm-item.level-1 {
+      border: none;
+    }
+  }
+
+  ul.tbm-nav {
+    gap: 10px;
+  }
+
+  .tbm-link.level-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    font-size: 0;
+    padding: 0;
+    text-decoration: none;
+    background-color: $brand-blue;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+
+    &:hover {background-color: darken($brand-blue, 10%);}
+    &:focus {background-color: darken($brand-blue, 20%);}
+  }
+
+  .tbm-link.level-1::before {
+    font-family: 'Font Awesome 6 Pro';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    outline: none;
+    color: $white;
+  }
+  
+  a.login::before                   {content: "\e4b2";}
+  a.logout::before                  {content: "\e4b1";}
+  a.user-account::before            {content: "\f007"; font-weight: 600 !important;}  // Solid icon
+  .tbm-link.level-1.search::before  {content: "\f002";}
+}
+
+
+// Responsive mobile menu - basic theming
+// This is the main menu that pulls in from the side
+.mm-menu {
+
+  .mm-navbar {
+    margin: 0 30px;
+    padding: 15px 0;
+  }
+
+  // Remove the default "Menu" label from the top level only and add our logo instead
+  #mm-1 a.mm-navbar__title::before {
+    display: block;
+    content: url('../logo.svg');
+    height: 72px;
+    width: 198px;
+    margin: 15px 0;
+  }
+
+  #mm-1 a.mm-navbar__title span {
+    display: none;
+  }
+
+  // Container for the vertical list of menu items
+  .mm-listview {
+    padding: 0 30px;
+
+    a {
+      line-height: 20px;
+    }
+  }
+
+  // Draws the line under each menu item
+  .mm-listitem::after {
+    left: 0;
+  }
+
+  // Menu item text
+  .mm-listitem__text {
+    text-align: left;
+    padding: 15px 10px;
+  }
+
+  // Sub menu headers
+  #mm-2 a.mm-navbar__title {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    color: $brand-blue;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+// Responsive mobile menu - customising the secondary menu that has the login, logout, join, benefits and search icons etc.
+
+.mm-menu li.menu-name--secondary-menu a::before {
+  font-family: 'Font Awesome 6 Pro';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  outline: none;
+  color: $brand-blue;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.mm-menu li.menu-name--secondary-menu {
+  a {
+    padding: 15px 10px;
+    margin: 0;
+    text-transform: inherit;
+    background-color: inherit;
+
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
+
+    &.login::before         {content: "\e4b2";}
+    &.logout::before        {content: "\e4b1";}
+    &.user-account::before  {content: "\f007";}
+    &.join::before          {content: "\f234";}
+    &.my-account::before    {content: "\f007";}
+    &.my-benefits::before   {content: "\f06b";}
+    &.search::before        {content: "\f002";}
+    &.accessibility::before {content: "\f29a"; font-weight: 600 !important;}
+  }
+}
+
+
+// Remove "link to any"
+// The default permission for admin is to enable "link to any" which therefore displays both "login" and "logout".
+// This looks bad and breaks the layout for testing so we'll remove the unwanted links.
+
+.mm-menu {
+  .menu-name--main .search,
+  .menu-name--secondary-menu .my-account,
+  .menu-name--secondary-menu .my-benefits,
+  .menu-name--secondary-menu .logout {
+      display: none;
+  }
+}
+
+.user-logged-in {
+  .mm-menu{
+    .menu-name--secondary-menu .join,
+    .menu-name--secondary-menu .login {
+        display: none;
+    }
+    .menu-name--secondary-menu .my-account,
+    .menu-name--secondary-menu .my-benefits,
+    .menu-name--secondary-menu .logout {
+        display: inherit;
+    }
+  }
+}

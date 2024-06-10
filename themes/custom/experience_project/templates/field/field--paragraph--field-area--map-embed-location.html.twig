@@ -1,0 +1,24 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field--label',
+    label_display == 'visually_hidden' ? 'sr-only',
+  ]
+%}
+{% if label_hidden %}
+  {% if multiple %}
+    {% for item in items %}{% apply spaceless %}{% set quoteWrap = '"' %}{% if loop.last %}{% set separator = '' %}{% else %}{% set separator = ',' %}{% endif %}{% autoescape false %}{{quoteWrap}}{% endautoescape %}{{ item.content }}{% autoescape false %}{{quoteWrap}}{% endautoescape %}{{ separator }}{% endapply %}{% endfor %}
+  {% else %}
+    {% for item in items %}{% apply spaceless %}{% set quoteWrap = '"' %}{% if loop.last %}{% set separator = '' %}{% else %}{% set separator = ',' %}{% endif %}{% autoescape false %}{{quoteWrap}}{% endautoescape %}{{ item.content }}{% autoescape false %}{{quoteWrap}}{% endautoescape %}{{ separator }}{% endapply %}{% endfor %}
+  {% endif %}
+{% else %}
+  {% for item in items %}{% apply spaceless %}{% set quoteWrap = '"' %}{% if loop.last %}{% set separator = '' %}{% else %}{% set separator = ',' %}{% endif %}{% autoescape false %}{{quoteWrap}}{% endautoescape %}{{ item.content }}{% autoescape false %}{{quoteWrap}}{% endautoescape %}{{ separator }}{% endapply %}{% endfor %}
+{% endif %}
+

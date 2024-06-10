@@ -1,0 +1,24 @@
+.field--name-field-gpx-file {
+	.map-canvas {
+		margin-bottom: 60px;
+	}
+
+	.elevation_chart > div {
+		margin-bottom: 30px;
+
+		svg g text {
+			font-style: normal;
+		}
+	}
+}
+
+// on route content type this is a hacky way to turn off 
+// the filename that displays in the elevation chart generated
+// by the GPX Track & Elevation module
+
+.elevation_chart {
+	svg:first-of-type  g:first-of-type text[text-anchor=start] {
+		fill: transparent;
+		display: none;
+	}
+}

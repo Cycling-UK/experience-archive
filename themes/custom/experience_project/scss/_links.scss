@@ -1,0 +1,167 @@
+a {
+	text-decoration: underline;
+	&:focus {
+		outline: none;
+	}
+}
+
+// Remove underline on links classed as buttons
+a.btn,
+.button-paragraph a,
+.paragraph--type--simple-buttons a {
+	text-decoration: none;
+	font-family: $headings-font-family;
+	padding: 10px 20px;
+	min-width: 180px;
+}
+.button-paragraph a {
+	-webkit-border-radius: $border-radius-img;
+	-moz-border-radius: $border-radius-img;
+	border-radius: $border-radius-img;
+	display: inline-block;
+	text-align: center;
+}
+
+button,
+.btn,
+.button-paragraph a {
+	margin: 0 10px 10px;
+	&:hover,
+	&:focus,
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		outline: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+.button-paragraph a {
+	margin: 12px auto;
+}
+
+button .label {
+	padding: 0;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+	border-radius: inherit;
+}
+
+.btn-info,
+.btn-danger,
+.btn-primary,
+.btn-success,
+.button-paragraph a {
+	font-family: $headings-font-family;
+	padding: 10px 20px;
+	min-width: 180px;
+}
+
+.btn-primary,
+.button-paragraph a,
+.paragraph--type--simple-buttons a {
+	background-color: $yellow;
+	border-color: $yellow;
+	color: $black;
+
+	&:hover,
+	&:focus {
+		background-color: darken($yellow, 10%);
+		border-color: darken($yellow, 10%);
+		color: $black;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: darken($yellow, 20%);
+		border-color: darken($yellow, 20%);
+		color: $black;
+	}
+}
+
+.btn-success {
+	background-color: $green;
+	border-color: $green;
+	color: $black;
+
+	&:hover,
+	&:focus {
+		background-color: darken($green, 10%);
+		border-color: darken($green, 10%);
+		color: $white;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: darken($green, 20%);
+		border-color: darken($green, 20%);
+		color: $white;
+	}
+}
+
+.btn-info {
+	background-color: $purple;
+	border-color: $purple;
+	color: $white;
+
+	&:hover,
+	&:focus {
+		background-color: darken($purple, 10%);
+		border-color: darken($purple, 10%);
+		color: $white;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: darken($purple, 20%);
+		border-color: darken($purple, 20%);
+		color: $white;
+	}
+}
+
+.btn-danger {
+	background-color: $pink;
+	border-color: $pink;
+	color: $white;
+
+	&:hover,
+	&:focus {
+		background-color: darken($pink, 10%);
+		border-color: darken($pink, 10%);
+		color: $white;
+	}
+	&:active,
+	&:active:hover,
+	&:active:focus {
+		background-color: darken($pink, 20%);
+		border-color: darken($pink, 20%);
+		color: $white;
+	}
+}
+
+// Link at bottom of cards, following designs, not the standard link style
+a.card-link {
+	//border-bottom: none;
+	font-weight: normal;
+	padding: 0 0 5px;
+	color: $blue;
+	border-bottom: 1px solid transparent;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		color: $blue;
+		border-bottom: 1px solid $blue;
+	}
+	&:after {
+		margin-left: 10px;
+		font-family: "Font Awesome 5 Pro";
+		font-weight: 100;
+		content: "\f054";
+		font-size: 14px;
+		font-weight: bold;
+	}
+}

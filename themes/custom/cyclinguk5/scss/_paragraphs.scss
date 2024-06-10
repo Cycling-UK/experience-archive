@@ -1,0 +1,585 @@
+.paragraph:not(.paragraph.card-body):not(.paragraph.paragraph--type--hero-with-caption) {
+    margin: 0 auto 60px auto;
+    clear: both;
+
+    h2.paragraph-title {
+        text-align: center;
+    }
+
+    .button-paragraph {
+        margin: 0 20px 0 0;
+    }
+
+    &.remove-bottom-margin-yes {
+        margin-bottom: 0;
+    }
+
+    // FAQ related
+
+    .field--name-field-faq {
+        max-width: $cuk-breakpoint-lg;
+        margin: auto;
+    }
+
+    .ui-accordion .ui-accordion-content {
+        padding: 1em 0;
+    }
+
+    .ui-widget {
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        //line-height: $line-height-base;
+        font-weight: $font-weight-normal;
+    }
+
+    .ui-widget-content p {
+        line-height: $line-height-base;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        border: 0px solid transparent;
+        background: transparent;
+        font-weight: normal;
+        color: $black;
+    }
+
+    .ui-accordion .ui-accordion-header {
+        margin: 2rem 0 0 0;
+        font-size: 1.4rem;
+        padding: 0 0 0.25rem 0;
+        line-height: 2.5rem;
+    }
+
+    /* Icons
+----------------------------------*/
+
+    /* states and images */
+    .ui-icon {
+        width: 42px;
+        height: 42px;
+        margin-right: 1rem;
+    }
+    .ui-icon,
+    .ui-widget-content .ui-icon,
+    .ui-state-active .ui-icon,
+    .ui-button:active .ui-icon {
+        background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png") /*{iconsContent}*/;
+    }
+    .ui-widget-header .ui-icon,
+    .ui-state-active .ui-icon,
+    .ui-button:active .ui-icon {
+        background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png") /*{iconsHeader}*/;
+    }
+    .ui-state-hover .ui-icon,
+    .ui-state-focus .ui-icon,
+    .ui-button:hover .ui-icon,
+    .ui-button:focus .ui-icon {
+        background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png") /*{iconsHover}*/;
+    }
+
+    .ui-state-highlight .ui-icon,
+    .ui-button .ui-state-highlight.ui-icon {
+        background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png") /*{iconsHighlight}*/;
+    }
+    .ui-state-error .ui-icon,
+    .ui-state-error-text .ui-icon {
+        background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png") /*{iconsError}*/;
+    }
+    .ui-button .ui-icon {
+        background-image: url("/themes/custom/cyclinguk5/images/accordion-buttons.png") /*{iconsDefault}*/;
+    }
+
+    .ui-icon-triangle-1-e {
+        background-position: 0 -42px;
+    }
+
+    .ui-icon-triangle-1-s {
+        background-position: 0 0;
+    }
+
+    /* We use html here because we need a greater specificity to make sure disabled
+works properly when clicked or hovered */
+    .ui-state-default,
+    .ui-button.ui-state-disabled:hover,
+    .ui-button.ui-state-disabled:active,
+    .ui-widget.ui-widget-content {
+        border: 0 solid transparent;
+        background: transparent;
+    }
+
+    .ui-widget-content {
+        background: transparent;
+        border: 1px solid;
+        border-image: linear-gradient(90deg, $white, $gray-400, $white) 1;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+    }
+    .ui-widget-content a {
+        color: $black;
+    }
+}
+
+.paragraph--type--issuu-embed {
+    text-align: center;
+}
+
+.paragraph--type--issuu-embed,
+.paragraph--type--simple-video,
+.paragraph--type--faq {
+    h2.paragraph-title {
+        text-align: center;
+    }
+
+    .field--name-field-text {
+        margin: auto;
+        margin-bottom: 30px;
+        //text-align: center;
+        max-width: $cuk-breakpoint-xl;
+    }
+    .video-wrapper {
+        max-width: $cuk-breakpoint-xl;
+        margin: auto;
+    }
+}
+
+.region-content {
+    .remove-image-corners-no .field--name-field-media-image img {
+        -webkit-border-radius: $border-radius-img;
+        -moz-border-radius: $border-radius-img;
+        border-radius: $border-radius-img;
+    }
+
+    .remove-image-corners-yes .field--name-field-media-image img {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+}
+
+.paragraph--type--hero-with-caption {
+    margin: 0 auto;
+
+    img {
+        -webkit-border-radius: $border-radius-img;
+        -moz-border-radius: $border-radius-img;
+        border-radius: $border-radius-img;
+    }
+}
+
+// Block reference paragraph type, to insert blocks, views blocks, etc.
+.paragraph--type--block-reference {
+    h2.block-title {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+}
+
+// .paragraph--type--paragraph-simple-text,
+.paragraph--type--single-text-column {
+    .media--view-mode-inline-image img {
+        margin: auto;
+        display: block;
+    }
+}
+
+// Single text column - Clean, easy to read, single column design that allows for text and inline images
+
+.paragraph--type--single-text-column {
+    .paragraph-content {
+        max-width: 800px;
+        margin: auto;
+        h2 {
+            text-align: center;
+        }
+        h3,
+        h4 {
+            text-align: center;
+
+            @media (min-width: $cuk-breakpoint-sm) {
+                padding-bottom: 0.25rem !important;
+            }
+            @media (min-width: $cuk-breakpoint-md) {
+                padding-bottom: 0.5rem !important;
+            }
+        }
+
+        blockquote p {
+            margin: 0 0 1rem 0;
+        }
+
+        // This is to force btn to be single block element that sits in the centre. Probably a better way exists to accomplish this.
+        .btn {
+            max-width: 210px;
+            display: block;
+            margin: auto;
+            clear: both;
+        }
+    }
+
+    .related-block-embed {
+        max-width: 620px;
+        margin: 0 auto;
+    }
+}
+// text field with one or more columns
+
+.two-col,
+.three-col,
+.four-col {
+    .field--name-field-text {
+        column-count: 1;
+        column-gap: 3.5rem;
+        column-rule: 1px solid $gray-200;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: $cuk-breakpoint-sm) {
+    .two-col,
+    .three-col,
+    .four-col {
+        .field--name-field-text {
+            column-count: 2;
+        }
+    }
+}
+
+@media only screen and (min-width: $cuk-breakpoint-md) {
+    .two-col .field--name-field-text {
+        column-count: 2;
+    }
+    .three-col,
+    .four-col {
+        .field--name-field-text {
+            column-count: 3;
+        }
+    }
+}
+
+@media only screen and (min-width: $cuk-breakpoint-xl) {
+    .two-col .field--name-field-text {
+        column-count: 2;
+    }
+    .three-col .field--name-field-text {
+        column-count: 3;
+    }
+    .four-col .field--name-field-text {
+        column-count: 4;
+    }
+}
+
+// columns end
+
+.paragraph--type--bg-img-title-cta {
+    position: relative;
+
+    h2.paragraph-title {
+        text-align: center;
+        margin-bottom: 0;
+        color: $white;
+    }
+
+    .info-on-top {
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        //background-color: rgba($color: $yellow, $alpha: 0.15);
+        padding: 0;
+        margin: 0;
+    }
+
+    .vertical-flex {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 100%;
+    }
+
+    .bg-para-img img {
+        -webkit-border-radius: $border-radius-img;
+        -moz-border-radius: $border-radius-img;
+        border-radius: $border-radius-img;
+    }
+
+    .bg-para-cta {
+        display: flex;
+        justify-content: center;
+
+        .btn {
+            margin: 0;
+        }
+    }
+}
+
+// Image, text, background colour paragraph type
+
+.region-content .paragraph--type--img-text-bg-para .field--name-field-media-image img {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.paragraph--type--img-text-bg-para {
+    // Inline images
+    background-color: $gray-100;
+    // keeps the content, the image inside, butted up along the edge
+    .row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+    }
+
+    .txt-img-bg {
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .txt-img-white-bg {
+        background-color: white;
+    }
+
+    article.media--view-mode-inline-image {
+        margin: 0 0 0 0;
+    }
+
+    .flex-button-list {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    .left-col {
+        padding-left: 0;
+    }
+
+    .right-col {
+        padding-right: 0;
+    }
+
+    &.paragraph-bg-blue {
+        background-color: $blue;
+    }
+
+    &.paragraph-bg-white {
+        background-color: $gray-100;
+    }
+
+    &.paragraph-bg-pink {
+        background-color: $pink;
+    }
+
+    &.paragraph-bg-purple {
+        background-color: $purple;
+    }
+
+    &.paragraph-bg-yellow {
+        background-color: $yellow;
+    }
+
+    &.paragraph-bg-green {
+        background-color: $green;
+    }
+
+    &.paragraph-bg-grey {
+        background-color: $gray;
+    }
+}
+
+.paragraph--type--links {
+    .field--name-field-link {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .link-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        -webkit-border-radius: $border-radius;
+        -moz-border-radius: $border-radius;
+        border-radius: $border-radius;
+    }
+}
+
+.paragraph.paragraph--type--map-embed {
+    margin-left: -0.5rem !important;
+    margin-right: -0.5rem !important;
+
+    h2.paragraph-title {
+        margin-bottom: 2rem;
+    }
+    .map-embed-wrapper {
+        padding: 0 0 0 0;
+    }
+}
+
+.paragraph--type--terms-and-conditions {
+    .t-c {
+        text-transform: uppercase;
+        max-width: 600px;
+        margin: 0 auto;
+        .field--type-text-long {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        p,
+        ul li {
+            font-size: 0.9rem;
+            line-height: 1.2rem;
+        }
+
+        .field--type-text-long ul,
+        .field--type-text-long ol {
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.video-card-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragraph--type--blockquote {
+    max-width: 800px;
+
+    blockquote {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    blockquote::before {
+        display: none;
+    }
+
+    blockquote::after {
+        display: none;
+    }
+
+    .blockquote .blockquote-footer {
+        position: absolute;
+        bottom: -2.5rem;
+        color: $gray-600;
+        font-family: $font-family-sans-serif;
+    }
+
+    .qt-mark {
+        font-size: 4rem;
+        color: $yellow;
+    }
+}
+
+.paragraph--type--simple-buttons {
+    .simple-button-container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        margin-bottom: 1rem;
+    }
+}
+
+// Effort to handle balance of image placement in text image paragraph type
+// .md-device-ctr-img {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// @media only screen and (min-width: $cuk-breakpoint-lg) and (max-width: $cuk-breakpoint-xl) {
+//      This gives the text img para type image padding in a device size window, up to $cuk-breakpoint-xl.
+//     .md-device-ctr-img {
+//         padding: 1.5%;
+//     }
+
+//     .remote-video {
+//         padding: 1.5%;
+//     }
+// }
+
+@media screen and (min-width: $cuk-breakpoint-xs) {
+    .paragraph--type--blockquote {
+        .qt-mark {
+            font-size: 3rem;
+        }
+
+        blockquote {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media screen and (min-width: $cuk-breakpoint-md) {
+    .paragraph--type--issuu-embed,
+    .paragraph--type--single-text-column,
+    .paragraph--type--simple-video {
+        .paragraph-content {
+            margin-left: 3rem;
+            margin-right: 3rem;
+            margin: auto;
+        }
+    }
+
+    .paragraph--type--faq {
+        .field--name-field-text {
+            margin-left: 3rem;
+            margin-right: 3rem;
+            margin: auto;
+        }
+    }
+
+    .paragraph--type--blockquote {
+        blockquote {
+            font-size: 1.5rem;
+        }
+
+        .qt-mark {
+            font-size: 4rem;
+        }
+    }
+}

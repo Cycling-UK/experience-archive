@@ -1,0 +1,405 @@
+/* TB Megamenu styling */
+
+/* We need to anchor the dropdown second-level submenu to the parent Bootstrap container:
+   1. we unset the position on the .tbm and #block-mainnavigation containers, then
+   2. we add position:relative to the Bootstrap container.
+*/
+
+.tbm,
+#block-mainnavigation {
+  position: inherit;
+}
+
+nav.navbar > .container {
+  position: relative;
+}
+
+
+/* We then need media queries to force the width of the submenu depending on the container size. */
+@media only screen and (min-width :  768px) and (max-width :  991px) {.tbm-submenu {width:  720px;}} /* <----- This value needs checking */
+@media only screen and (min-width :  992px) and (max-width : 1199px) {.tbm-submenu {width:  960px;}}
+@media only screen and (min-width : 1200px) and (max-width : 1599px) {.tbm-submenu {width: 1140px;}}
+@media only screen and (min-width : 1600px)                          {.tbm-submenu {width: 1520px;}}
+
+
+/* Both the Acquia Solr Search exposed view and Civic Accessibility tools must be displayed as a block elsewhere on the header for
+   it to display in the mega menu dropdowns as a block so we need to hide these dummy ones. */
+.region-nav-main > .views-exposed-form,
+.region-nav-additional > #block-accessibilitytoolbar {
+  display: none; 
+}
+  
+  
+/* Style the main menu */
+
+nav#tbm-main {
+  background-color: inherit;
+  font-size: large;
+
+  .tbm-item.level-1 {
+    border-right: none;
+    padding: 15px 30px;
+  }
+
+  .tbm-item--has-dropdown .tbm-link.level-1 {
+    padding: 0;
+  }
+
+  .tbm-link.level-1,
+  .menu-item-search.tbm-item--has-dropdown .tbm-link.level-1 {
+    color: inherit;
+    padding: 0;
+    border-bottom: 2px solid $white;
+    text-decoration: none;
+
+    .tbm-item--has-dropdown.open span,
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $brand-blue;
+      background-color: inherit;
+      color: $brand-blue;
+      outline: none;
+    }
+  }
+
+  .tbm-submenu-toggle {
+    background-color: inherit;
+    color: $brand-blue;
+    width: 12px;
+    padding: 0;
+    margin: 0 0 0 10px;
+  }
+
+  /* We need to hide the "Search" text so it's only an icon and also hide the dropdown arrow. */
+  ul.tbm-nav > li.menu-item-search {
+    font-size: 0;
+
+    button {
+      display: none;
+    }
+  }
+
+  /* The option to specify an icon within the TB Megamenu configuration is buggy and erratic (/admin/structure/tb-megamenu/main__cyclinguk5).
+     We set the class .menu-item-search within the TB Megamenu configuration and then add a FontAwesome psuedo class to the Search menu link. */
+  .menu-item-search .tbm-link::before {
+    font-size: large;
+    font-weight: 300;
+    font-family: 'Font Awesome 6 Pro';
+    content: "\f002";
+  }
+}
+
+
+// Main menu layout adjustments for smaller devices
+// $cuk-breakpoint-sm = 540px
+// $cuk-breakpoint-md = 720px
+// $cuk-breakpoint-lg = 960px
+// $cuk-breakpoint-xl = 1140px
+
+@media only screen and (min-width : $cuk-breakpoint-lg) and (max-width : $cuk-breakpoint-xl) {
+  nav#tbm-main {
+    .tbm-item.level-1 {
+      padding: 15px 25px;
+    }
+  }
+}
+
+
+
+// Style the megamenu dropdown menus
+
+// First we have to hide from view the custom blocks that have to be present in the block layout settings so they can be used in the mega menu configuration.
+// These blocks are of type "Mega menu info block" and have the classes "mega-menu-info-block" and "mega-menu-article-block" manually assigned to them.
+
+.mega-menu-info-block,
+.mega-menu-article-block {
+  display: none;
+}
+
+// Next we need to rearrange the order of the dropdown elements as the UI is annoying.
+// The easiest way to configure and control everything is to populate the megamenu as a single column with three rows and then use flex to change the direction.
+// Top level menu items requiring this layout are given the classes "dropdown-theme" and the name of their menu, e.g. "go-cycling".
+
+#block-mainnavigation {
+  .dropdown-theme.open {
+    .tbm-submenu {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+      padding: 45px 10px;
+      .tbm-row:nth-child(1) {width:25%;}
+      .tbm-row:nth-child(2) {width:50%;}
+      .tbm-row:nth-child(3) {width:25%;}
+    }
+  }
+}
+
+// Theme the first column which is the text info block.
+
+#block-mainnavigation .tbm-submenu .tbm-row:nth-child(1) {
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.65rem;
+    color: $brand-blue;
+    line-height: 1;
+  }
+  .field--name-field-link a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.375rem 1.5rem;
+    min-width: 120px;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+    background-color: $gray-400;
+    border-color: $gray-400;
+    color: $black !important;
+    &:hover,
+    &:focus {
+      background-color: $gray-500;
+      border-color: $gray-500;
+      color: $black !important;
+    }
+    &:active {
+      background-color: $gray-500;
+      border-color: $gray-500;
+      color: $black !important;
+    }
+  }
+}
+
+
+// Theme the second column which are the menu items.
+
+#block-mainnavigation .tbm-submenu .tbm-row:nth-child(2) {
+  margin-top: 2rem;
+  border-right: 1px solid $gray-400;
+  .tbm-subnav {
+    column-count: 2;
+    column-gap: 30px;
+    .tbm-item {
+      display: inline-flex;
+      width: 100%;
+      padding: 10px 0;
+      a {
+        padding: 0px;
+        text-decoration: none;
+        border-bottom: 1px solid $white;
+        &:hover,
+        &:focus {
+          color: $black;
+          text-decoration: none;
+          border-bottom: 1px solid $black;
+        }
+      }
+    }
+  }
+}
+
+// Theme the third column which is the promoted article.
+
+#block-mainnavigation .tbm-submenu .tbm-row:nth-child(3) {
+  .field--name-field-promoted-article-label {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size: large;
+    margin-bottom: 10px;
+  }
+  .field--name-field-promoted-article-image {
+    margin-bottom: 10px;
+    img {
+      border-radius: $border-radius-img;
+      -webkit-border-radius: $border-radius-img;
+      -moz-border-radius: $border-radius-img;
+    }
+  }
+  .field--name-field-promoted-article-title {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-family;
+    font-size: large;
+    margin-bottom: 10px;
+    color: $brand-blue;
+  }
+  .field--name-field-promoted-article-teaser {
+    margin-bottom: 10px;
+  }
+  .field--name-field-promoted-article-link a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.375rem 1.5rem;
+    min-width: 120px;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+    background-color: $gray-400;
+    border-color: $gray-400;
+    color: $black !important;
+    &:hover,
+    &:focus {
+      background-color: $gray-500;
+      border-color: $gray-500;
+      color: $black !important;
+    }
+    &:active {
+      background-color: $gray-500;
+      border-color: $gray-500;
+      color: $black !important;
+    }
+  }
+
+}
+
+
+
+
+// Basic submenu theming
+nav#tbm-main .tbm-submenu {
+  border: none;
+  border-bottom: 1px solid $blue-100;
+  -webkit-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+  padding: 1rem;
+}
+
+
+
+// Theme the secondary user menu
+// These are the buttons that sit above the main menu
+nav#tbm-secondary-menu {
+  background-color: inherit;
+  font-size: large;
+  
+  ul.tbm-nav {
+    gap: 15px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .tbm-item.level-1 {
+    border-right: none;
+  }
+
+  .tbm-item--has-dropdown .tbm-link.level-1 {
+    padding: 0;
+  }
+
+  a.join,
+  a.my-benefits,
+  a.login,
+  a.logout {
+    display: flex;
+    justify-content: center;
+    min-width: inherit;
+    width: 140px;
+    padding: 0;
+    margin: 0;
+    height: 36px;
+  }
+  a.join:hover,
+  a.my-benefits:hover {
+      background-color: darken($yellow, 10%);
+    border-color: darken($yellow, 10%);
+  }
+  a.login,
+  a.logout {
+    background-color: $gray-400;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      background-color: $gray-500;
+      color: $black;
+    }
+  }
+
+
+
+  /* We need to hide the "Accessibility" text so it's only an icon and also hide the dropdown arrow. */
+  .menu-item-accessibility {
+    font-size: 0;
+    position: relative;
+
+    .tbm-link {
+      outline: none;
+    }
+  }
+
+  /* The option to specify an icon within the TB Megamenu configuration is buggy and erratic (/admin/structure/tb-megamenu/secondary-menu__cyclinguk5).
+    We set the class .menu-item-accessibility within the TB Megamenu configuration and then add a FontAwesome psuedo class to the Accessibility menu link. */
+  .menu-item-accessibility .tbm-link::before {
+    font-size: 36px;
+    line-height: 36px;
+    color: $brand-blue;
+    font-weight: 600;
+    font-family: 'Font Awesome 6 Pro';
+    content: "\f29a";
+    outline: none;
+  }
+
+  .menu-item-accessibility .tbm-link:hover,
+  .menu-item-accessibility .tbm-link:focus {
+    background-color: inherit;
+  }
+
+  .menu-item-accessibility .tbm-link:hover::before {color: darken($brand-blue, 10%);}
+  .menu-item-accessibility .tbm-link:focus::before {color: darken($brand-blue, 20%);}
+
+  .tbm-submenu {
+    font-size: large;
+    width: 280px;
+    position: absolute;
+    left: -230px;
+    top: 50px;
+    border: 1px solid $blue-100;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+    box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+
+    h2 {
+      font-size: 24px;
+    }
+    .accessibility--controls > div {
+      display: flex;
+      align-items: center;
+    }
+    .accessibility--label {
+      font-weight: $font-weight-bold;
+      width: 80px;
+    }
+    button {
+      margin: 0;
+      line-height: 1rem;
+    }
+  }
+}
+
+// Increase the spacing between Font Awesome icons and text when used on TB Mega Menu items
+.tbm [class^='fa-'], .tbm [class*=' fa-'] {
+  margin-right: 0.5rem;
+}
+
+
+// There is a layout issue in Safari with the positioning of the pseudo class for displaying the Font Awesome icon.
+// This media query nudges the icon back into position.
+// https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari-only-not-chrome
+// @media not all and (min-resolution:.001dpcm)
+// { @supports (-webkit-appearance:none) {
+//   .menu-item-accessibility .tbm-link::before { 
+//     position: relative;
+//     top: 3px;
+//   }
+// }}
+
+
+// Hide the secondary mobile menu from the desktop
+@media only screen and (min-width : $cuk-breakpoint-lg) {
+  #tbm-secondary-menu-mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,6 @@
+services:
+  cuk_cyclists_welcome.event_subscriber:
+    class: Drupal\cuk_cyclists_welcome\EventSubscriber\CukCyclistsWelcomeSubscriber
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: event_subscriber }

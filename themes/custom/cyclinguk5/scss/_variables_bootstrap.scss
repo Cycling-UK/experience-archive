@@ -1,0 +1,112 @@
+// Bootstrap variables (overrides).
+
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 4rem,
+  2: 3.5rem,
+  3: 3rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem,
+) !default;
+
+//$breadcrumb-divider-color: $gray-700 !default;
+//$breadcrumb-active-color: $gray-700 !default;
+
+//$navbar-light-color: rgba($black, .6) !default;
+//$navbar-dark-color: rgba($white, .6) !default;
+
+$form-text-margin-top: 0 !default;
+$legend-font-size: 1rem !default;
+$table-cell-padding-x: 0.75rem;
+
+// Set the widest xxl breakpoint at 1600px with a container width of 1520px
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px,
+);
+
+// Cycling UK breakpoint variables. These are the three primary ones we want to stick to.
+$cuk-breakpoint-sm: map-get($grid-breakpoints, "sm");
+$cuk-breakpoint-md: map-get($grid-breakpoints, "md");
+$cuk-breakpoint-xl: map-get($grid-breakpoints, "xl");
+
+// Additional breakpoint variables to follow bootstrap 5, however only use if truly needed. That's the plan anyway.
+$cuk-breakpoint-xs: map-get($grid-breakpoints, "xs");
+$cuk-breakpoint-lg: map-get($grid-breakpoints, "lg");
+$cuk-breakpoint-xxl: map-get($grid-breakpoints, "xxl");
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1520px,
+);
+
+// Override default bootstrap colors for accessibility
+$black: #000000 !default;
+$gray: #3b3b3a !default;
+$cyan: #00aeef !default;
+$blue: #007fae !default;
+$yellow: #fbb040 !default;
+$purple: #8064a9 !default;
+$pink: #e6007e !default;
+$green: #cdce00 !default;
+
+$brand-blue: #009fda !default; // This is the colour used on the Cycling UK logo
+
+// background color classes
+.bg-pink {
+  background-color: $pink;
+}
+
+// Reset the mobile menu variables.
+// It appears you can't assign Bootstrap variables to the responsive menu variables so we'll assign them manually
+
+.mm-menu_theme-white {
+  --mm-color-border: #00aeef;
+  --mm-color-button: #00aeef;
+  --mm-color-text: #000000;
+  --mm-color-text-dimmed: rgba(0, 0, 0, 0.3);
+  --mm-color-background: #fff;
+  --mm-color-background-highlight: rgba(0, 0, 0, 0.06);
+  --mm-color-background-emphasis: rgba(0, 0, 0, 0.03);
+  --mm-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+// Fonts
+$font-family-sans-serif: "Karla";
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$headings-font-family: "ff-cocon-web-pro";
+$headings-font-weight: 400;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+// Hyperlinks
+$link-color: $black;
+$link-decoration: underline;
+$link-hover-color: $yellow;
+$link-hover-decoration: underline;
+
+// Image border radius
+$border-radius-img: 7px;
+
+// Border radius
+$border-radius: 7px;
+$border-radius-img: $border-radius;

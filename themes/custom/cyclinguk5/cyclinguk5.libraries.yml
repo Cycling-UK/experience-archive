@@ -1,0 +1,7 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/eu_cookie_banner_open.js: {}
+    

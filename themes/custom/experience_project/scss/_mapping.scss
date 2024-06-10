@@ -1,0 +1,22 @@
+// To customise the background colours used in the poi leaflet clustering
+.marker-cluster-small {
+    background-color: #009fda !important;
+}
+
+.marker-cluster-small div {
+    background-color: $blue !important;
+    color: #fff !important;
+}
+
+.leaflet-popup-content {
+    font-size: 13px !important;
+}
+
+// to have a bit of control of content inside richard's side panel
+.sidepanel_content {
+    .route_image  {
+        img {
+            max-height: 200px; // this is a hack that is not a good solution, needs re-thinking
+        }
+    }
+}

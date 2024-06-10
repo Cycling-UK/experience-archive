@@ -1,0 +1,269 @@
+
+/* Hide the exposed filters on the dropdown search box on the main nav */
+
+.region-nav-main .bef--secondary {
+  display: none;
+}
+
+#block-views-exposed-filter-blocksolr-search-content-page-1 {
+  padding: 30px 0 60px 0;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .form--inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    input {
+      border: 2px solid $gray-500;
+      background-color: $white;
+      border-radius: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;  
+
+      &:focus {
+        border: 2px solid $blue;
+      }
+    }
+
+    .button {
+      margin: 0;
+      font-size: 18px;
+      line-height: 18px;
+      height: 40px;
+      background-color: $blue;
+      border-color: $blue;
+      color: $white !important;
+
+      &:hover {
+        background-color: darken($blue, 10%);
+        border-color: darken($blue, 10%);
+        color: $white !important;
+      }
+      &:focus {
+        background-color: darken($blue, 20%);
+        border-color: darken($blue, 20%);
+        color: $white !important;
+      }
+    }
+  }
+}
+
+
+// Auto-complete search result listing
+.ui-widget.ui-widget-content.search-api-autocomplete-search {
+  border: 1px solid $blue-100;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 10px -12px rgba(0,0,0,0.2);
+
+  .ui-menu-item-wrapper {
+    color: $black;
+  }
+  .ui-menu-item-wrapper.ui-state-active .search-api-autocomplete-suggestion {
+    background: $blue;
+  }
+  .ui-menu-item a {
+    text-decoration: none;
+  }
+  .ui-menu-item:hover {
+    background: $blue;
+  }
+}
+
+
+// Below directly from experience version 
+
+// Main search page
+
+.path-solr-search .region-content {
+	.solr-search-form {
+		// A small max-width forces the Advanced search filter to wrap onto a second line within the search form
+		max-width: 600px;
+		margin: 30px auto 60px;
+
+		.form--inline {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			flex-direction: row;
+
+			.form-item,
+			button {
+				margin: 0 5px;
+			}
+		}
+	}
+
+	.view-solr-search-content {
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+
+		.view-header {
+			font-size: smaller;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 30px;
+		}
+
+		.views-row {
+			margin-bottom: 30px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid #eee;
+		}
+	}
+}
+
+// Mobile display
+// Let's rearrange the search form components so they display in a columm
+
+@media (max-width: 767px) {
+	.path-solr-search .region-content {
+		.solr-search-form {
+			.form--inline {
+				flex-direction: column;
+			}
+			.input-group {
+				margin: 0 0 15px 0;
+			}
+		}
+	}
+}
+
+// Custom search results display
+// Uses views-view-fields--solr_search_content--page_1.html.twig
+#search-result-wrapper {
+	display: flex;
+	flex-direction: row;
+
+	.search-result-image {
+		width: 200px;
+		margin-right: 30px;
+
+		img {
+			border-radius: $border-radius-img;
+			-webkit-border-radius: $border-radius-img;
+			-moz-border-radius: $border-radius-img;
+		}
+
+		.field--name-field-media-image {
+			margin-bottom: 0;
+		}
+
+		.view-image {
+			width: 200px;
+
+			.geofield-google-map {
+				border-radius: $border-radius-img;
+				-webkit-border-radius: $border-radius-img;
+				-moz-border-radius: $border-radius-img;
+				overflow: hidden;
+
+				div[role="group"] {
+					border-radius: $border-radius-img;
+					-webkit-border-radius: $border-radius-img;
+					-moz-border-radius: $border-radius-img;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+
+	.search-result-details {
+		.view-type {
+			display: inline-block;
+			font-size: smaller;
+			font-weight: $font-weight-bold;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			color: $white;
+			background-color: $gray-400;
+			padding: 4px 8px;
+			border-radius: $border-radius-img;
+			-webkit-border-radius: $border-radius-img;
+			-moz-border-radius: $border-radius-img;
+		}
+
+		.view-title {
+			font-size: x-large;
+			margin-bottom: 10px;
+		}
+
+		.view-body {
+			margin-bottom: 10px;
+		}
+
+		.view-created {
+			font-size: smaller;
+			color: $gray-400;
+		}
+	}
+}
+
+// Mobile search results
+// Let's hide the thumbnail and reduce the line height to be more efficient with space and reduce the amount of scrolling
+
+@media (max-width: 767px) {
+	#search-result-wrapper {
+		.search-result-image {
+			display: none;
+		}
+		.search-result-details {
+			line-height: 1.25;
+		}
+	}
+}
+
+// Advanced search filter
+
+.path-solr-search .region-content .solr-search-form .form--inline {
+	// Reorder the search form elements
+	> div.form-item {
+		order: 1;
+	} // The search field
+	> div.form-actions {
+		order: 2;
+	} // The search button
+	> div.bef--secondary {
+		order: 3;
+	} // The advanced filter button
+
+	.bef--secondary {
+		display: block;
+		margin-top: 15px;
+		border: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+
+		.panel-heading {
+			border: none;
+			background-color: inherit;
+			border-color: inherit;
+		}
+
+		.panel-title {
+			color: $black;
+			text-decoration: underline;
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 1px;
+			font-size: revert;
+			padding: 0;
+
+			&:hover,
+			&:focus {
+				color: $yellow;
+				text-decoration: underline;
+			}
+		}
+	}
+}

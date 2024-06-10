@@ -1,0 +1,76 @@
+#block-cyclinguk5-branding {
+  .navbar-brand,
+  .site-logo img {
+    margin: 0;
+  }
+}
+
+
+
+// Desktop scaffolding
+
+// Align top navigation elements
+.region-nav-main {
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+}
+
+// Currently need to force this for all breakpoints to disabling the @media trigger code for now:
+// @media only screen and (min-width : $cuk-breakpoint-md) and (max-width : calc($cuk-breakpoint-xxl - 1px)) {
+  nav.navbar {
+    flex-wrap: wrap;
+  }
+  .cyclinguk-logo {
+    order: 1;
+  }
+  .main-navigation {
+    order: 3;
+    width: 100%;
+  }
+  .secondary-navigation {
+    order: 2;
+  }
+// }
+
+
+// Mobile scaffolding
+
+@media only screen and (max-width : calc($cuk-breakpoint-lg - 1px)) {
+  .secondary-navigation > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+
+// Remove "link to any"
+// The default permission for admin is to enable "link to any" which therefore displays both "login" and "logout".
+// This looks bad and breaks the layout for testing so we'll remove the unwanted links.
+
+#block-secondarymenu-2,
+#tbm-secondary-menu-mobile {
+  .menu-item-account,
+  .menu-item-search,
+  .menu-item-benefits,
+  .menu-item-logout {
+      display: none;
+  }
+}
+
+.user-logged-in {
+  #block-secondarymenu-2,
+  #tbm-secondary-menu-mobile {
+    .menu-item-join,
+    .menu-item-login {
+        display: none;
+    }
+    .menu-item-benefits,
+    .menu-item-logout {
+        display: inherit;
+    }
+  }
+}

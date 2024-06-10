@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a webform submission form.
+ *
+ * Available variables:
+ * - form: The webform submission form.
+ *
+ * @ingroup themeable
+ * To remember to center single column in bs3:
+ * use Bootstrap offset classes so it requires no change in markup and no extra CSS. 
+ * Set an offset equal to half of the remaining size of the row. 
+ * So for example, a column of size 2 would be centered by adding an offset of 5, that's (12-2)/2.
+ * 
+ * In markup this would look like:
+ * <div class="row">
+ *    <div class="col-md-2 col-md-offset-5"></div>
+ * </div>
+ */
+#}
+<div class="row">
+    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+        {{ form }}
+    </div>
+</div>
+

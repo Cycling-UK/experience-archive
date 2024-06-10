@@ -1,0 +1,399 @@
+.page-title {
+  padding: 1rem 0;
+}
+
+// image inline image view mode
+article.media--view-mode-inline-image {
+  margin: 0 0 1.5rem 0;
+}
+
+// adjustments for when there is a caption
+figure.caption-drupal-media {
+  margin: 0 0 1.5rem 0;
+
+  article.media--view-mode-inline-image {
+    margin: 0 0 0 0;
+  }
+  // figcaption {
+  // background: goldenrod;
+  // }
+}
+
+// Basic page layout
+
+.page-node-type-page h1.text-center {
+  text-align: left !important;
+  margin: 2rem 0 1rem 0;
+
+  //@media (min-width:$cuk-breakpoint-xl) {
+  //  margin-left: 3rem;
+  //}
+}
+
+// Member benefits
+
+.field--name-field-member-benefit-category {
+  position: absolute;
+  top: 0;
+  -webkit-border-top-left-radius: $border-radius;
+  -webkit-border-bottom-right-radius: $border-radius;
+  -moz-border-radius-topleft: $border-radius;
+  -moz-border-radius-bottomright: $border-radius;
+  border-top-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  padding: 4px 8px;
+  color: $white;
+  background-color: $blue;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  text-transform: uppercase;
+  text-align: left;
+  z-index: 8;
+}
+
+.discounts .field--name-field-member-benefit-category {
+  background-color: $blue;
+}
+
+.insurance .field--name-field-member-benefit-category {
+  background-color: $yellow;
+}
+
+.travel .field--name-field-member-benefit-category {
+  background-color: $pink;
+}
+
+.exclusive .field--name-field-member-benefit-category {
+  background-color: $green;
+}
+
+.hero-wrap {
+  margin: 0 auto 60px;
+}
+
+article.basic-page-layout {
+  padding-bottom: 120px;
+
+  .field--name-field-teaser {
+    font-family: $headings-font-family;
+    font-size: larger;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// images with captions
+
+figure {
+  margin: 2rem 0;
+
+  img {
+    -webkit-border-radius: $border-radius-img;
+    -moz-border-radius: $border-radius-img;
+    border-radius: $border-radius-img;
+  }
+  figcaption {
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    padding: 0.25rem 0 0 0;
+  }
+}
+
+blockquote {
+  position: relative;
+  z-index: 0;
+  margin: 2rem 0;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  font-size: larger;
+  //background-color: $blue-100;
+  //border-left: 0.5rem solid $blue-200;
+  padding: 2rem 5rem 1rem 5rem;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    font-size: 160px;
+    line-height: 160px;
+    color: $blue;
+    //opacity: 0.5;
+    content: "\201C";
+    left: 5px;
+    top: -8px;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    font-size: 160px;
+    line-height: 160px;
+    color: $blue;
+    //opacity: 0.5;
+    content: "\201D";
+    right: 5px;
+    bottom: -8px;
+  }
+
+  footer {
+    padding: 1rem 0;
+  }
+}
+
+// Inline images
+.region-content .field--name-field-media-image img {
+  -webkit-border-radius: $border-radius-img;
+  -moz-border-radius: $border-radius-img;
+  border-radius: $border-radius-img;
+}
+
+.field--name-field-hero img {
+  -webkit-border-radius: $border-radius-img;
+  -moz-border-radius: $border-radius-img;
+  border-radius: $border-radius-img;
+}
+
+.map-canvas,
+.leaflet-container {
+  -webkit-border-radius: $border-radius-img;
+  -moz-border-radius: $border-radius-img;
+  border-radius: $border-radius-img;
+  overflow: hidden;
+}
+
+// Five-star ratings
+
+.fivestar-summary {
+  text-decoration: center;
+}
+.has-glyphicons .form-type-fivestar .select-wrapper:after {
+  display: none;
+}
+
+.fivestar-basic div.rating div a:hover {
+  background: url("/themes/custom/cyclinguk/images/star.png") no-repeat 0 0;
+}
+
+.fivestar-basic div.fivestar-widget {
+  .star,
+  .star a {
+    background: url("/themes/custom/cyclinguk5/images/star.png") no-repeat 0 0;
+  }
+  div.on a {
+    background-position: 0 -32px;
+  }
+  div.hover a {
+    background-position: 0 -16px;
+  }
+  .cancel,
+  .star {
+    height: 16px;
+  }
+}
+
+.form-type-fivestar .form-control {
+  height: 0;
+}
+
+.fivestar-basic div.rating div a:hover {
+  background-position: 0 -16px;
+}
+
+.fivestar-basic .description {
+  color: $black;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.node-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  div.fivestar-widget {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+
+    a {
+      border-bottom: 0px;
+    }
+  }
+
+  .select-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+
+.fivestar-basic .help-block {
+  color: $black;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+// Node meta information container class removed from cyclinguk5 theme
+//.node-meta {
+//  margin-bottom: 30px;
+//}
+
+// Bookmarks
+.my-bookmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: $black;
+  }
+
+  a:hover,
+  a:focus {
+    color: $black;
+  }
+
+  .js-flag-message {
+    display: none;
+  }
+}
+.page-node-type-page {
+  .my-bookmark {
+    justify-content: left;
+    align-items: normal;
+  }
+}
+
+.user-logged-in .my-bookmark {
+  .action-flag:before,
+  .action-unflag:before {
+    color: $yellow;
+    margin-right: 10px;
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+    content: "\f02e";
+  }
+  .action-flag:before {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+    content: "\f02e";
+  }
+  .action-unflag:before {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900;
+    content: "\f02e";
+  }
+}
+
+// Social links
+
+main.main-page-content .block-system-main-block {
+  ul.social-link-list {
+    li a {
+      color: $purple;
+      border: 1px solid $purple;
+
+      &:hover,
+      &:focus {
+        color: $yellow;
+        border: 1px solid $yellow;
+      }
+    }
+  }
+}
+
+ul.social-link-list {
+  list-style: none;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    color: $purple;
+    border: 1px solid $purple;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+  }
+
+  li a:hover,
+  li a:focus {
+    color: $yellow;
+    border: 1px solid $yellow;
+  }
+}
+
+.page-node-type-webform {
+  .field--name-field-paragraph {
+    padding-top: 30px;
+  }
+
+  .paragraph:last-of-type {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  ul.social-link-list li a {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  ul.social-link-list li a {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+// Right hand column layout
+.right-column.outer-wrapper {
+  padding: 20px;
+  background-color: $gray-100;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+
+  .inner-wrapper > div {
+    margin-bottom: 15px;
+  }
+
+  .inner-wrapper > div:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .field--name-field-hero img {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  .node-gallery img {
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.top-teaser {
+  font-size: 1.5rem;
+  line-height: 140%;
+  color: $blue;
+}
+
+// Button to guide experience potential applicants to register first.
+// button held in custom block placed only on application webform node, visible only to anonymous users
+.experience-reg-prompt {
+  .btn {
+    max-width: 345px;
+    display: block;
+    margin: auto;
+  }
+  text-align: center;
+}

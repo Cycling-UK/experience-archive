@@ -1,0 +1,181 @@
+/**
+ * @file
+ * Detailed stylings are all yours, get yourself dirty.
+ *
+ * Transform is more performed than positions.
+ */
+
+.slick--skin--classic .slick__slide {
+  overflow: hidden;
+}
+
+.slick--skin--classic .slide__caption {
+  box-sizing: border-box; /* dups due to csslint ignoring inheritance */
+  background-color: $gray;
+  left: auto;
+  margin: 0;
+  min-height: 24px;
+  padding: 10px;
+  -webkit-transition: -webkit-transform 1s ease-in-out 0.2s;
+  transition: transform 1s ease-in-out 0.2s;
+  width: 100%;
+  text-align: left;
+  color: $white;
+  font-size: smaller;
+}
+
+.slick--skin--classic .slide__description {
+  margin: 0;
+}
+
+.slick--skin--classic .slide--caption--below .slide__caption {
+  background: none;
+  color: $black;
+}
+
+.slick--skin--classic .slide--caption--center .slide__caption {
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  -webkit-backface-visibility: hidden;
+}
+
+.slick--skin--classic .slide--caption--center:hover .slide__caption {
+  opacity: 1;
+  visibility: visible;
+}
+
+// Originally 64em, which is equivalent to 1024px. Replaced with bootrap $screen-sm var. 
+@media (min-width: $screen-sm ) {
+  /*.overall-gallery-container {
+    max-width: 853px;
+    display: block;
+    margin: 30px auto 60px;
+  }*/
+/*
+  .gallery-show .overall-gallery-container {
+    margin: 30px 0 60px;
+    float: right;
+  }
+*/
+  .slick--skin--classic .slide__caption {
+    box-sizing: border-box; /* dups due to csslint ignoring inheritance */
+    height: 100%;
+    min-height: 100%;
+    padding: 12px;
+    top: 0;
+    width: 100%;
+  }
+
+  .slick--skin--classic .slide__caption .slide__data {
+    box-sizing: border-box; /* dups due to csslint ignoring inheritance */
+    margin: 0 !important; /* csslint allow: known-properties, important */
+    padding: 15px;
+    width: 100%;
+  }
+
+  .slick--skin--classic .slide--caption--center .slide__caption {
+    height: 120px;
+    left: 50%;
+    margin: -60px 0 0 -40%;
+    min-height: 120px;
+    top: 50%;
+    width: 80%;
+  }
+
+  .slick--skin--classic .slide--caption--top .slide__caption,
+  .slick--skin--classic .slide--caption--center-top .slide__caption,
+  .slick--skin--classic .slide--caption--bottom .slide__caption,
+  .slick--skin--classic .slide--caption--below .slide__caption {
+    box-sizing: border-box; /* dups due to csslint ignoring inheritance */
+    height: auto;
+    min-height: 80px;
+    padding: 30px;
+    width: 100%;
+  }
+
+  .slick--skin--classic .slide--caption--bottom .slide__caption {
+    bottom: 0;
+    -ms-transform: translateY(210px);
+    -webkit-transform: translateY(210px);
+    transform: translateY(210px);
+    min-height: 120px;
+    top: auto;
+  }
+
+  .slick--skin--classic .slide--caption--stage-zebra .slide__title {
+    margin-bottom: 30px;
+  }
+
+  .slick--skin--classic .slide--caption--stage-zebra:nth-child(odd) .slide__caption,
+  .slick--skin--classic .slide--caption--stage-left .slide__caption,
+  .slick--skin--classic .slide--caption--left .slide__caption {
+    left: 0;
+    -ms-transform: translateX(-320px);
+    -webkit-transform: translateX(-320px);
+    transform: translateX(-320px);
+  }
+
+  .slick--skin--classic .slide--caption--stage-zebra:nth-child(even) .slide__caption,
+  .slick--skin--classic .slide--caption--stage-right .slide__caption,
+  .slick--skin--classic .slide--caption--right .slide__caption {
+    left: auto;
+    right: 0;
+    -ms-transform: translateX(320px);
+    -webkit-transform: translateX(320px);
+    transform: translateX(320px);
+  }
+
+  .slick--skin--classic .slide--caption--top .slide__caption,
+  .slick--skin--classic .slide--caption--center-top .slide__caption {
+    top: 0;
+    -ms-transform: translateY(-210px);
+    -webkit-transform: translateY(-210px);
+    transform: translateY(-210px);
+  }
+
+  .slick--skin--classic .slick__slide.slick-active .slide__caption {
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+}
+
+/** Keeps decent fallback for when slick-theme.css is disabled, even if dup. */
+.slick-arrow {
+  border: 0;
+  border-radius: 50%;
+  font-size: 0;
+  height: 56px;
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 56px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	color: $white;
+  @extend %fa-icon;
+  @extend .far;
+	font-size: 4rem;
+	text-shadow: 0px 2px 0px rgba(0,0,0,0.3);
+	opacity: 0.7;
+}
+
+.slick-prev:before {content: fa-content($fa-var-chevron-left);}
+.slick-next:before {content: fa-content($fa-var-chevron-right);}
+
+.slick-arrow:hover::before {
+  color: $yellow;
+  opacity: 1;
+}
+
+
+

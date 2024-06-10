@@ -1,0 +1,50 @@
+/* Import fonts */
+@import url("https://use.typekit.net/lmn7yno.css");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+a.btn {
+  text-decoration: none;
+  font-family: "Karla";
+  font-weight: 400 !important;
+  border: none !important;
+  text-transform: uppercase;
+  font-size: inherit;
+  padding: 0.375rem 1.5rem;
+  min-width: 120px;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #fbb040;
+  border-color: #fbb040;
+  color: #000 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #fa9b0e;
+  border-color: #fa9b0e;
+  color: #000000 !important;
+}
+
+.btn-default {
+  background-color: #ced4da;
+  border-color: #ced4da;
+  color: #000000 !important;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+  background-color: #adb5bd;
+  border-color: #adb5bd !important;
+  color: #000000 !important;
+}
+
+blockquote {
+  padding: 0 0 0 12px;
+  margin: 0 0 12px 26px;
+  border-left: 5px solid #9d9d9c;
+}

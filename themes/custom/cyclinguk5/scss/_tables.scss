@@ -1,0 +1,64 @@
+// Tables
+table {
+  margin: 2rem 0;
+
+  thead {
+    //font-family: $headings-font-family;
+    //font-weight: $headings-font-weight;
+    font-size: larger;
+    background-color: $blue;
+    color: $white;
+
+    th {
+      border: 1px solid $blue;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  tfoot {
+    font-size: smaller;
+    background-color: $gray-300;
+
+    td {
+      border: 1px solid $gray-300;
+    }
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+    border: 1px solid $gray-200;
+    text-align: left;
+  }
+
+  tbody {
+    > tr:nth-of-type(2n) {
+      background-color: $white;
+    }
+    
+    > tr:nth-of-type(2n + 1) {
+      background-color: $gray-100;
+    }      
+  }
+}
+
+
+// This media query will need updating once we start using tables within the final layouts and see them for real.
+@media screen and (max-width: 575px) {
+  table {
+    
+    thead {
+      font-size: large;
+    }
+
+    th,
+    td {
+      font-size: small;
+      padding: 0.3rem;
+    }
+  }
+}
