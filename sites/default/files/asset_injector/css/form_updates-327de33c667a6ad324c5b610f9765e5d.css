@@ -1,0 +1,89 @@
+/* I think this application of flex on such a broad scale is a bad idea!  */
+
+fieldset.form-item {
+   flex: 0 0 0 !important;
+}
+.form-item label {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+ span.fieldset-legend {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.webform-type-radios span.fieldset-legend {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.form-textarea-wrapper {
+    padding-bottom: 20px;
+}
+.webform-wrapper fieldset.form-item {
+    padding: 10px 10px;
+    background: #F8F8F8;
+}
+.description {
+    padding-bottom: 20px;
+}
+th.please_list_your_events_below-table--1.webform-multiple-table--1 {
+    min-width: 180px;
+}
+
+/* temp added by sacha */
+
+.webform-has-field-prefix input.form-control {display: inline; width: auto;}
+
+.webform-multiple-table table tbody > tr:nth-of-type(2n + 1) {
+    background-color: #fff;
+}
+
+.webform-multiple-table table tbody > tr > td {
+   padding-bottom: 1.5em
+}
+
+.webform-multiple-table table tbody > tr:nth-of-type(2n) {
+    background-color: #f6fcfe;
+}
+
+.webform-multiple-table table {
+   margin-bottom: 1.5em;
+}
+
+.webform-multiple-table table tr {
+   border-bottom: 2px solid #666;
+}
+
+.webform-multiple-table table thead {
+    font-family: "Karla";
+}
+
+.webform-wrapper input[type="date"] {
+    background-color: #e9ecef;
+    border: 1px solid #e9ecef;
+    padding: 0.375rem 0 0.375rem 0.35rem;
+    border-radius: 7px;
+}
+
+.form-type-webform-time input {
+    background-color: #e9ecef;
+    border: 1px solid #e9ecef;
+    padding: 0.375rem 0 0.375rem 0.35rem;
+    border-radius: 7px;
+ }
+ 
+ .form-item-please-list-your-events-below-items-0-3 input {width: 122px;}
+ 
+ .webform-submission-form.webform-submission-big-bike-revival-2023-24-draft-form .webform-wrapper {
+    max-width: 860px;
+    margin: auto;
+}
+ 
+.page-node-type-webform h1 {text-align: center;}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

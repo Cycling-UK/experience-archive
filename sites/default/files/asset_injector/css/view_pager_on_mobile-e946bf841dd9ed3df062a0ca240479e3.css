@@ -1,0 +1,1 @@
+@media screen and (max-width: 768px) {.pager__item:not(.pager__item--next):not(.pager__item--previous), li.page-item {display: none;}li.pager__item--next {margin-left: 0.5em;display: inline-flex;}li.pager__item--previous {margin-right: 0.5em;display: inline-flex;}}
