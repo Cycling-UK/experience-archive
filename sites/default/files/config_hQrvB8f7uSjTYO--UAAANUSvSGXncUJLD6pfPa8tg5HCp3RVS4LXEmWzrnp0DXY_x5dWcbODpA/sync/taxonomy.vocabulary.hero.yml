@@ -1,8 +1,0 @@
-uuid: a8ac481e-2d25-4f7c-8552-12b97f4a9be9
-langcode: en
-status: true
-dependencies: {  }
-name: Hero
-vid: hero
-description: 'like for like taxonomy from 7'
-weight: 0

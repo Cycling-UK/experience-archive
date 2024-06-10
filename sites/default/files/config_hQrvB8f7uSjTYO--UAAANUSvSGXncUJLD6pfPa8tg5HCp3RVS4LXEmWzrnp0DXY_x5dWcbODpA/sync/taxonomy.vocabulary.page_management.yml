@@ -1,8 +1,0 @@
-uuid: 97a9fb86-4d83-4e7d-bf84-f6b06c80012f
-langcode: en
-status: true
-dependencies: {  }
-name: 'Page management'
-vid: page_management
-description: ''
-weight: 0

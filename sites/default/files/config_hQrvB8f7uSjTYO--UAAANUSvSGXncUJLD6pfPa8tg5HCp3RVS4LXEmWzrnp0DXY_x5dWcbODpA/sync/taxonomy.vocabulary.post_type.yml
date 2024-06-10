@@ -1,8 +1,0 @@
-uuid: 12bb44d5-b6f4-40c9-a6b2-67e915eb8617
-langcode: en
-status: true
-dependencies: {  }
-name: 'Post type'
-vid: post_type
-description: ''
-weight: 0

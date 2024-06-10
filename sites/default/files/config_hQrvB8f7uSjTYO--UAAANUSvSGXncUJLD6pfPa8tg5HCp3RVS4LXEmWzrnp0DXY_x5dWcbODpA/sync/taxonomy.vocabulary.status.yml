@@ -1,8 +1,0 @@
-uuid: 77968e1c-2f49-4993-987f-05374de8e861
-langcode: en
-status: true
-dependencies: {  }
-name: Status
-vid: status
-description: ''
-weight: 0

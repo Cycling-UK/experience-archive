@@ -1,8 +1,0 @@
-uuid: 8c1a87c1-8423-466b-9445-d41e1f2fe569
-langcode: en
-status: true
-dependencies: {  }
-name: 'Bike type'
-vid: bike_type
-description: 'Different types of bike.'
-weight: 0

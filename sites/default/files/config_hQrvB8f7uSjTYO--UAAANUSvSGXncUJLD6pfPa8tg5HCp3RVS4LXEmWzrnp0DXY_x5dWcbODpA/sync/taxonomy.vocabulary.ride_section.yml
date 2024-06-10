@@ -1,8 +1,0 @@
-uuid: b1e75f4a-62e7-45f6-8e09-3ae63bf74ccf
-langcode: en
-status: true
-dependencies: {  }
-name: 'Ride Section'
-vid: ride_section
-description: 'Placeholder vocabulary for D7 Ride section (Type of event) on event/ride content type'
-weight: 0

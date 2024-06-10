@@ -1,8 +1,0 @@
-uuid: 338b0b7c-b4a6-42b4-b182-9faab5ff98cf
-langcode: en
-status: true
-dependencies: {  }
-id: mega_menu_info_block
-label: 'Mega menu info block'
-revision: 0
-description: 'For additional details and cta in mega menu'

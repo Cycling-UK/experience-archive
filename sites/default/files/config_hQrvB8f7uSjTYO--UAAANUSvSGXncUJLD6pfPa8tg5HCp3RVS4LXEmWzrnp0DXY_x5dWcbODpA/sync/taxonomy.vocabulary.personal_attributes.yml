@@ -1,8 +1,0 @@
-uuid: 6d7b1a8c-ef40-40c2-919d-4e649cb74fad
-langcode: en
-status: true
-dependencies: {  }
-name: 'Personal attributes'
-vid: personal_attributes
-description: ''
-weight: 0

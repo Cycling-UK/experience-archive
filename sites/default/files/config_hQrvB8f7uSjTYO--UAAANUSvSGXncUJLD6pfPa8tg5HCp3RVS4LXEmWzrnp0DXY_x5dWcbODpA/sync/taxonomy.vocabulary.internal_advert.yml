@@ -1,8 +1,0 @@
-uuid: 7c737781-9f5f-4c61-aedc-bd168cd98201
-langcode: en
-status: true
-dependencies: {  }
-name: 'Internal advert'
-vid: internal_advert
-description: 'A reserved taxonomy that is used to power internal adverts.'
-weight: 0

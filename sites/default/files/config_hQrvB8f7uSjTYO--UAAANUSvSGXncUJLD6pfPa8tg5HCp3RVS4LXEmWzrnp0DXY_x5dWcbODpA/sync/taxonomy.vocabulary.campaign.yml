@@ -1,8 +1,0 @@
-uuid: ebb03722-5c48-44c1-836e-f0ae1c07a955
-langcode: en
-status: true
-dependencies: {  }
-name: Campaign
-vid: campaign
-description: ''
-weight: 0

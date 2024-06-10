@@ -1,8 +1,0 @@
-uuid: 8b31076a-ff31-4e74-a703-3f02ccc3958d
-langcode: en
-status: true
-dependencies: {  }
-name: 'Activities of group'
-vid: activities_of_group_d7
-description: 'Placeholder vocabulary for D7 Activities of group field on group content type'
-weight: 0

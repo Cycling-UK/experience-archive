@@ -1,8 +1,0 @@
-uuid: cbe77c2c-eff6-46c4-93cf-b42985618985
-langcode: en
-status: true
-dependencies: {  }
-name: 'Event Surface'
-vid: event_surface
-description: ''
-weight: 0

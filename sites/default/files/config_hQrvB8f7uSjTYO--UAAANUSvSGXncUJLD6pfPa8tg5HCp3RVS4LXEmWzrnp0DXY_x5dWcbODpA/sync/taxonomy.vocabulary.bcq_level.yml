@@ -1,8 +1,0 @@
-uuid: 8a792e7a-281c-4ada-b8aa-10a55466f684
-langcode: en
-status: true
-dependencies: {  }
-name: 'BCQ Level'
-vid: bcq_level
-description: ''
-weight: 0
