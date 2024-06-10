@@ -1,0 +1,40 @@
+uuid: 57d4eca8-0c9c-4b99-a379-3cf2da7893d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cards_by_id.field_title
+    - field.field.paragraph.cards_by_id.field_view_field
+    - paragraphs.paragraphs_type.cards_by_id
+  module:
+    - builder_notes
+    - viewsreference
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.cards_by_id.default
+targetEntityType: paragraph
+bundle: cards_by_id
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_view_field:
+    type: viewsreference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

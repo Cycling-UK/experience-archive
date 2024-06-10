@@ -1,0 +1,31 @@
+uuid: 98f85b2c-f8af-409d-bf4f-624ac04ba844
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - options
+    - paragraphs
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.field_text_location
+field_name: field_text_location
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: left
+      label: Left
+    -
+      value: right
+      label: Right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

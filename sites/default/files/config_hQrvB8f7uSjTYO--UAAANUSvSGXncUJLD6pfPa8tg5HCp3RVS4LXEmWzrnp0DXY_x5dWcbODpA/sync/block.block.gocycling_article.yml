@@ -1,0 +1,29 @@
+uuid: 3a90dc2c-ea7d-47a4-97d1-8a3bfe9b41b2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:mega_menu_info_block:65e6f91e-241b-45f5-8650-1e6722ff9f68'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - cyclinguk5
+third_party_settings:
+  block_class:
+    classes: mega-menu-article-block
+id: gocycling_article
+theme: cyclinguk5
+region: nav_main
+weight: -5
+provider: null
+plugin: 'block_content:65e6f91e-241b-45f5-8650-1e6722ff9f68'
+settings:
+  id: 'block_content:65e6f91e-241b-45f5-8650-1e6722ff9f68'
+  label: 'Go cycling article'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: mega_menu_promoted_article
+visibility: {  }

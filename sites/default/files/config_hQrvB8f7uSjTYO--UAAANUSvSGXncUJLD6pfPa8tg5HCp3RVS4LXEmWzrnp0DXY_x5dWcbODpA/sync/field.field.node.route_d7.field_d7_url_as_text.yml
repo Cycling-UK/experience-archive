@@ -1,0 +1,24 @@
+uuid: d90e2447-a6d9-4358-a267-6fee90f8c81d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_d7_url_as_text
+    - node.type.route_d7
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route_d7.field_d7_url_as_text
+field_name: field_d7_url_as_text
+entity_type: node
+bundle: route_d7
+label: 'D7 url as text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

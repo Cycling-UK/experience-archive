@@ -1,0 +1,11 @@
+uuid: ebab4956-cdc5-4b2b-99ee-63c2b95e8557
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.quick_cards
+id: paragraph.quick_cards
+target_entity_type_id: paragraph
+target_bundle: quick_cards
+default_langcode: site_default
+language_alterable: false

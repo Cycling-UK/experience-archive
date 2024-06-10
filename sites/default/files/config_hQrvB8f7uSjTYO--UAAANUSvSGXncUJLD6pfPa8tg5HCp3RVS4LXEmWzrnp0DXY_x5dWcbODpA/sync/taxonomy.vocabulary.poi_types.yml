@@ -1,0 +1,8 @@
+uuid: 962dcd67-8c90-4e80-9c1b-508012fc1eab
+langcode: en
+status: true
+dependencies: {  }
+name: 'POI types'
+vid: poi_types
+description: ''
+weight: 0

@@ -1,0 +1,13 @@
+uuid: 1f9d6db6-e719-4538-b543-b9127b4266fd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cyclinguk5
+  menu:
+    - secondary-menu-mobile
+id: secondary-menu-mobile__cyclinguk5
+menu: secondary-menu-mobile
+theme: cyclinguk5
+block_config: '{"animation":"none","duration":400,"delay":200,"breakpoint":0,"auto-arrow":"0","always-show-submenu":"1","number-columns":1}'
+menu_config: '{"menu_link_content:a2f273e3-c9d5-47d0-929e-833c3b0ee742":{"rows_content":[],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"","xicon":"","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}},"menu_link_content:303f8491-9e8c-4f49-991d-6674670c9824":{"rows_content":[],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"","xicon":"","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}},"menu_link_content:6946f083-0834-4e8d-8387-0d60d72e0245":{"rows_content":[[{"col_content":[{"block_id":"exposedformsolr_search_contentpage_1","type":"block","tb_item_config":[]}],"col_config":{"width":"12","class":"","hidewcol":"","showblocktitle":"1"}}]],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"","xicon":"","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}}}'

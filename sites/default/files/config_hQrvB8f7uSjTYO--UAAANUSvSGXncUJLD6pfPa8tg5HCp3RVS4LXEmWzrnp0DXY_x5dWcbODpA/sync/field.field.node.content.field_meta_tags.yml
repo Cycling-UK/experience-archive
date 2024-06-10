@@ -1,0 +1,25 @@
+uuid: 640d80cc-a400-4677-86c3-409784b09c61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.content
+  module:
+    - builder_notes
+    - metatag
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.content.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: content
+label: 'Meta tags'
+description: 'Use only areas needed, only if you have an idea of what you are doing.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

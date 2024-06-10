@@ -1,0 +1,24 @@
+uuid: 3189c567-4fa7-4080-b649-07a0c1d87bd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mega_menu_info_block
+    - field.storage.block_content.field_promoted_article_label
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: block_content.mega_menu_info_block.field_promoted_article_label
+field_name: field_promoted_article_label
+entity_type: block_content
+bundle: mega_menu_info_block
+label: 'Promoted article label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

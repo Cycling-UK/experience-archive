@@ -1,0 +1,108 @@
+uuid: ae52c836-1332-4a48-b670-c81dea8ecc40
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.point_of_interest.body
+    - field.field.node.point_of_interest.field_address
+    - field.field.node.point_of_interest.field_amenities
+    - field.field.node.point_of_interest.field_caption
+    - field.field.node.point_of_interest.field_email
+    - field.field.node.point_of_interest.field_experience_project_flag
+    - field.field.node.point_of_interest.field_facebook
+    - field.field.node.point_of_interest.field_geofield
+    - field.field.node.point_of_interest.field_hide_related_content_block
+    - field.field.node.point_of_interest.field_insert_media
+    - field.field.node.point_of_interest.field_instagram
+    - field.field.node.point_of_interest.field_poi_type
+    - field.field.node.point_of_interest.field_relate_content
+    - field.field.node.point_of_interest.field_slideshow
+    - field.field.node.point_of_interest.field_strava
+    - field.field.node.point_of_interest.field_teaser
+    - field.field.node.point_of_interest.field_telephone
+    - field.field.node.point_of_interest.field_twitter
+    - field.field.node.point_of_interest.field_website
+    - field.field.node.point_of_interest.field_youtube_social
+    - node.type.point_of_interest
+  module:
+    - builder_notes
+    - geofield
+    - user
+    - uuid_extra
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.point_of_interest.card
+targetEntityType: node
+bundle: point_of_interest
+mode: card
+content:
+  field_geofield:
+    type: geofield_latlon
+    label: hidden
+    settings:
+      output_format: decimal
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_insert_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: quick_card_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_poi_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  uuid:
+    type: uuid
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_address: true
+  field_amenities: true
+  field_caption: true
+  field_email: true
+  field_experience_project_flag: true
+  field_facebook: true
+  field_hero: true
+  field_hide_related_content_block: true
+  field_instagram: true
+  field_relate_content: true
+  field_slideshow: true
+  field_strava: true
+  field_telephone: true
+  field_twitter: true
+  field_website: true
+  field_youtube_social: true
+  flag_bookmark: true
+  langcode: true
+  search_api_excerpt: true

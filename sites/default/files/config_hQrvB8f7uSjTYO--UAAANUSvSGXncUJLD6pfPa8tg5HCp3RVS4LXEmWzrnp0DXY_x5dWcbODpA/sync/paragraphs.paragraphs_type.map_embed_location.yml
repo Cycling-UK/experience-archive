@@ -1,0 +1,10 @@
+uuid: f3d0afe9-d02b-4e6f-8157-9f89ece204a5
+langcode: en
+status: true
+dependencies: {  }
+id: map_embed_location
+label: 'Map embed by location'
+icon_uuid: null
+icon_default: null
+description: 'Determine location based on postcode, lat/long, or Area selector. Options for what to show: Route/POI/Group/Event.  Eventually Tags'
+behavior_plugins: {  }

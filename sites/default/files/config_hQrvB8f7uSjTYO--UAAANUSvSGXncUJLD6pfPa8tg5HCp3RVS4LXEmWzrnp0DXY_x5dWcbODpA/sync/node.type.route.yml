@@ -1,0 +1,17 @@
+uuid: 8d9477a3-544b-4583-ab6b-d224aa7e8625
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Route
+type: route
+description: 'Upload a <em>route</em> to the website with a GPX file.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

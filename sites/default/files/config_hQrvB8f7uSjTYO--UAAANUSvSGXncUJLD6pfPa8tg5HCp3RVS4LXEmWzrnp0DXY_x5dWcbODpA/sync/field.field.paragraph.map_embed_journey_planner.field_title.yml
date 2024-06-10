@@ -1,0 +1,24 @@
+uuid: c918ace3-d815-47a3-a703-71d1a8bf6baf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.map_embed_journey_planner
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.map_embed_journey_planner.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: map_embed_journey_planner
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

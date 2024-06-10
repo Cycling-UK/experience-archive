@@ -1,0 +1,39 @@
+uuid: bdbc534b-8497-4bde-a5ef-052f6bd0ba41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_card.field_plain_text
+    - field.field.paragraph.video_card.field_remote_video_url
+    - field.field.paragraph.video_card.field_title
+    - paragraphs.paragraphs_type.video_card
+  module:
+    - builder_notes
+    - media_library
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.video_card.default
+targetEntityType: paragraph
+bundle: video_card
+mode: default
+content:
+  field_remote_video_url:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_plain_text: true
+  status: true

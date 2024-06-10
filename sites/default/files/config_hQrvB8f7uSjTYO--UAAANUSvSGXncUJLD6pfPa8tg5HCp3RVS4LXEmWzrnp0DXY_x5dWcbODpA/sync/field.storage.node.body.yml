@@ -1,0 +1,28 @@
+uuid: 76de6ac1-269c-4a7e-aaca-42a2310481a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - field_permissions
+    - node
+    - text
+third_party_settings:
+  field_permissions:
+    permission_type: public
+  builder_notes:
+    notes: ''
+_core:
+  default_config_hash: EBUo7qOWqaiZaQ_RC9sLY5IoDKphS34v77VIHSACmVY
+id: node.body
+field_name: body
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: true
+custom_storage: false

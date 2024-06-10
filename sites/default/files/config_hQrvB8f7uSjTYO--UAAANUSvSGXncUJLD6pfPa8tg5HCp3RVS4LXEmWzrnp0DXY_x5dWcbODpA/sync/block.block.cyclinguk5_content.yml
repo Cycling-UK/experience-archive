@@ -1,0 +1,22 @@
+uuid: 1166ee35-994b-400b-bb45-28a95e3cb44f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cyclinguk5
+_core:
+  default_config_hash: qILmF3AqBZp1qnSWGK4g7cZC5ECCD3el9AQGY6m8Drc
+id: cyclinguk5_content
+theme: cyclinguk5
+region: content
+weight: -12
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

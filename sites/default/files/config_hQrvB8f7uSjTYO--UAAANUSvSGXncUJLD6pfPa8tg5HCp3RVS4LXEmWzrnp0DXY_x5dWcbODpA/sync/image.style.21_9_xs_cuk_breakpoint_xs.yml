@@ -1,0 +1,30 @@
+uuid: f905834c-4e7f-4d66-9822-5cbcb5c53541
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_21_9
+  module:
+    - builder_notes
+    - crop
+third_party_settings:
+  builder_notes:
+    notes: ''
+name: 21_9_xs_cuk_breakpoint_xs
+label: '21:9 XS cuk breakpoint xs'
+effects:
+  0b2b4cc3-e0b5-4598-92c2-114fe2549363:
+    uuid: 0b2b4cc3-e0b5-4598-92c2-114fe2549363
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_21_9
+      automatic_crop_provider: null
+  6c94df07-9a22-4e90-89fe-3915f2575d61:
+    uuid: 6c94df07-9a22-4e90-89fe-3915f2575d61
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 576
+      height: 243
+      anchor: center-center

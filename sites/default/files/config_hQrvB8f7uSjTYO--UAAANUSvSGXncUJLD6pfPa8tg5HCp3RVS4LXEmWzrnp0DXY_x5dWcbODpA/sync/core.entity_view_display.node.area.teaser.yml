@@ -1,0 +1,43 @@
+uuid: 667eb304-e235-43bd-af30-001fd7be92e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.area.body
+    - field.field.node.area.field_geofield
+    - node.type.area
+  module:
+    - text
+    - user
+id: node.area.teaser
+targetEntityType: node
+bundle: area
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  flag_bookmark:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_geofield: true
+  langcode: true
+  search_api_excerpt: true

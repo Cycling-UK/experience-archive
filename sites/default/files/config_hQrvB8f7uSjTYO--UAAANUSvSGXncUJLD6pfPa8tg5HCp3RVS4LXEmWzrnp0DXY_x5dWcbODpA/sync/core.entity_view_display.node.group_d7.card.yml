@@ -1,0 +1,117 @@
+uuid: a541fd0f-35ca-43f3-89ca-e7d14720abe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.group_d7.body
+    - field.field.node.group_d7.feeds_item
+    - field.field.node.group_d7.field_activities_of_group_d7
+    - field.field.node.group_d7.field_catchment_area
+    - field.field.node.group_d7.field_cycling_uk_section
+    - field.field.node.group_d7.field_d7_url_as_text
+    - field.field.node.group_d7.field_facebook
+    - field.field.node.group_d7.field_geo_data_holder
+    - field.field.node.group_d7.field_group_website
+    - field.field.node.group_d7.field_image
+    - field.field.node.group_d7.field_instagram
+    - field.field.node.group_d7.field_location_group_d7
+    - field.field.node.group_d7.field_start_location
+    - field.field.node.group_d7.field_tags
+    - field.field.node.group_d7.field_teaser
+    - field.field.node.group_d7.field_twitter
+    - field.field.node.group_d7.field_type_of_group_d7
+    - field.field.node.group_d7.field_unique_id_d7
+    - image.style.quick_card_image
+    - node.type.group_d7
+  module:
+    - builder_notes
+    - geofield
+    - image
+    - text
+    - user
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.group_d7.card
+targetEntityType: node
+bundle: group_d7
+mode: card
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_activities_of_group_d7:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: quick_card_image
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_location_group_d7:
+    type: geofield_latlon
+    label: inline
+    settings:
+      output_format: decimal
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_start_location:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type_of_group_d7:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_catchment_area: true
+  field_cycling_uk_section: true
+  field_d7_url_as_text: true
+  field_facebook: true
+  field_geo_data_holder: true
+  field_group_website: true
+  field_instagram: true
+  field_tags: true
+  field_twitter: true
+  field_unique_id_d7: true
+  flag_bookmark: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  uuid: true

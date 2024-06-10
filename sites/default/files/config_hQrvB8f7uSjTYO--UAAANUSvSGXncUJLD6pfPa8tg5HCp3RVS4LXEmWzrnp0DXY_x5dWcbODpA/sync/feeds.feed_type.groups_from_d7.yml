@@ -1,0 +1,349 @@
+uuid: 3473ab0b-a236-475a-b44e-6c5e9ede6e39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.group_d7.body
+    - field.field.node.group_d7.field_activities_of_group_d7
+    - field.field.node.group_d7.field_cycling_uk_section
+    - field.field.node.group_d7.field_d7_url_as_text
+    - field.field.node.group_d7.field_facebook
+    - field.field.node.group_d7.field_geo_data_holder
+    - field.field.node.group_d7.field_group_website
+    - field.field.node.group_d7.field_image
+    - field.field.node.group_d7.field_instagram
+    - field.field.node.group_d7.field_start_location
+    - field.field.node.group_d7.field_tags
+    - field.field.node.group_d7.field_teaser
+    - field.field.node.group_d7.field_twitter
+    - field.field.node.group_d7.field_type_of_group_d7
+    - field.field.node.group_d7.field_unique_id_d7
+    - node.type.group_d7
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      6886814e-8084-4d70-8d1e-25aa467d936b:
+        separator: ','
+        limit: null
+        uuid: 6886814e-8084-4d70-8d1e-25aa467d936b
+        plugin: explode
+        source: groupactivities
+        weight: 0
+        label: Explode
+      3ee5e58f-d794-470d-bfe9-cd0ea00136e5:
+        separator: ','
+        limit: null
+        uuid: 3ee5e58f-d794-470d-bfe9-cd0ea00136e5
+        plugin: explode
+        source: grouptype
+        weight: 0
+        label: Explode
+      129ab6db-81df-43bd-b3e3-124b9fe25bd1:
+        separator: ','
+        limit: null
+        uuid: 129ab6db-81df-43bd-b3e3-124b9fe25bd1
+        plugin: explode
+        source: tags
+        weight: 0
+        label: Explode
+label: 'Groups from D7'
+id: groups_from_d7
+description: 'Pull in groups from D7'
+help: ''
+import_period: 259200
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: true
+  fallback_hub: ''
+  request_timeout: 280
+parser: jsonpath
+parser_configuration:
+  context:
+    value: 'nodes[*].node'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: group_d7
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _delete
+  skip_hash_check: true
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: true
+  owner_id: 1
+custom_sources:
+  groupactivities:
+    value: groupActivities
+    label: groupActivities
+    machine_name: groupactivities
+    type: json
+  d7path:
+    value: d7Path
+    label: d7Path
+    machine_name: d7path
+    type: json
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: blank
+  groupphoto_src:
+    value: groupPhoto.src
+    label: groupPhoto.src
+    machine_name: groupphoto_src
+    type: json
+  groupphoto_alt:
+    value: groupPhoto.alt
+    label: groupPhoto.alt
+    machine_name: groupphoto_alt
+    type: json
+  groupphoto_title:
+    value: groupPhoto.title
+    label: groupPhoto.title
+    machine_name: groupphoto_title
+    type: json
+  locationlat:
+    value: locationLat
+    label: locationLat
+    machine_name: locationlat
+    type: json
+  locationlong:
+    value: locationLong
+    label: locationLong
+    machine_name: locationlong
+    type: json
+  locationgeo:
+    value: locationGeo
+    label: locationGeo
+    machine_name: locationgeo
+    type: json
+  d7uuid:
+    value: d7Uuid
+    label: d7Uuid
+    machine_name: d7uuid
+    type: json
+  grouptype:
+    value: groupType
+    label: groupType
+    machine_name: grouptype
+    type: json
+  groupregion:
+    value: groupRegion
+    label: groupRegion
+    machine_name: groupregion
+    type: json
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  welcomemessage:
+    value: welcomeMessage
+    label: welcomeMessage
+    machine_name: welcomemessage
+    type: json
+  locationlatlong:
+    value: locationLatLong
+    label: locationLatLong
+    machine_name: locationlatlong
+    type: json
+  tags:
+    value: tags
+    label: tags
+    machine_name: tags
+    type: json
+  cuksection:
+    value: cukSection
+    label: cukSection
+    machine_name: cuksection
+    type: json
+  stickystatus:
+    value: stickyStatus
+    label: stickyStatus
+    machine_name: stickystatus
+    type: json
+  locations:
+    value: locations
+    label: locations
+    machine_name: locations
+    type: json
+  catchmentarea:
+    value: catchmentArea
+    label: catchmentArea
+    machine_name: catchmentarea
+    type: json
+  body:
+    value: body
+    label: body
+    machine_name: body
+    type: json
+  aboutthegroup:
+    value: aboutTheGroup
+    label: aboutTheGroup
+    machine_name: aboutthegroup
+    type: json
+  facebook:
+    value: facebook
+    label: facebook
+    machine_name: facebook
+    type: json
+  twitter:
+    value: twitter
+    label: twitter
+    machine_name: twitter
+    type: json
+  instagram:
+    value: Instagram
+    label: Instagram
+    machine_name: instagram
+    type: json
+  instagram_i:
+    value: instagram
+    label: instagram
+    machine_name: instagram_i
+    type: json
+  altsite:
+    value: altSite
+    label: altSite
+    machine_name: altsite
+    type: json
+mappings:
+  -
+    target: field_activities_of_group_d7
+    map:
+      target_id: groupactivities
+    settings:
+      language: en
+      reference_by: name
+      autocreate: 0
+  -
+    target: field_image
+    map:
+      target_id: groupphoto_src
+      alt: groupphoto_alt
+      title: groupphoto_title
+    settings:
+      existing: 2
+      language: null
+      reference_by: filename
+      autocreate: false
+  -
+    target: field_unique_id_d7
+    map:
+      value: d7uuid
+    settings:
+      language: null
+    unique:
+      value: '1'
+  -
+    target: field_type_of_group_d7
+    map:
+      target_id: grouptype
+    settings:
+      language: en
+      reference_by: name
+      autocreate: 0
+  -
+    target: field_start_location
+    map:
+      value: groupregion
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_teaser
+    map:
+      value: welcomemessage
+    settings:
+      language: null
+  -
+    target: field_cycling_uk_section
+    map:
+      target_id: cuksection
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+  -
+    target: sticky
+    map:
+      value: stickystatus
+    settings:
+      language: null
+  -
+    target: field_tags
+    map:
+      target_id: tags
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+  -
+    target: field_geo_data_holder
+    map:
+      value: locations
+    settings:
+      language: null
+  -
+    target: field_d7_url_as_text
+    map:
+      value: d7path
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: body
+    map:
+      value: aboutthegroup
+      summary: ''
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_facebook
+    map:
+      uri: facebook
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_twitter
+    map:
+      uri: twitter
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_instagram
+    map:
+      uri: instagram_i
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_group_website
+    map:
+      uri: altsite
+      title: ''
+    settings:
+      language: null

@@ -1,0 +1,26 @@
+uuid: ea9c9a94-a108-4898-9ff0-228e2df961a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accordion
+    - node.type.page
+  module:
+    - builder_notes
+    - faqfield
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.page.field_accordion
+field_name: field_accordion
+entity_type: node
+bundle: page
+label: Accordion
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  default_format: basic_html
+field_type: faqfield

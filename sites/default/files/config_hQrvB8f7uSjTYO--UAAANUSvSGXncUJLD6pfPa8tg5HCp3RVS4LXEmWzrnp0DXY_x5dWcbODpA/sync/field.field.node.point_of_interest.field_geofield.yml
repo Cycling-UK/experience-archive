@@ -1,0 +1,42 @@
+uuid: 9742d890-abb6-4dac-92a0-fc4f6727ffb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geofield
+    - node.type.point_of_interest
+  module:
+    - builder_notes
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: geocode
+    weight: 0
+    field: field_address
+    skip_not_empty_value: false
+    disabled: false
+    hidden: false
+    providers:
+      - googlemaps
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+  builder_notes:
+    notes: ''
+id: node.point_of_interest.field_geofield
+field_name: field_geofield
+entity_type: node
+bundle: point_of_interest
+label: Geofield
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  backend: geofield_backend_default
+field_type: geofield

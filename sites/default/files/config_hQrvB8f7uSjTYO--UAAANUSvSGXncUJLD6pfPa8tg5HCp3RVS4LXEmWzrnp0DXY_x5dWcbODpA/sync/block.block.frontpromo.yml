@@ -1,0 +1,27 @@
+uuid: 43675059-ba20-4569-9a21-8dfcc739228a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cyclinguk5
+id: frontpromo
+theme: cyclinguk5
+region: content
+weight: -10
+provider: null
+plugin: 'block_content:63aca7fe-0cc4-495c-9b48-b49624e50643'
+settings:
+  id: 'block_content:63aca7fe-0cc4-495c-9b48-b49624e50643'
+  label: 'Front promo'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -1,0 +1,10 @@
+uuid: 5ee76ee3-1a67-4881-8f0e-79ca7c3804e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.mega_menu_promoted_article
+label: 'Mega menu promoted article'
+targetEntityType: block_content
+cache: true

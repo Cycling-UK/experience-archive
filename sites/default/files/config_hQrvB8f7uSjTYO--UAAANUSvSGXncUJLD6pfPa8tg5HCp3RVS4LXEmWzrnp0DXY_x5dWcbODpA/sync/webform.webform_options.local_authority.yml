@@ -1,0 +1,11 @@
+uuid: 8942b686-ba53-460a-990a-8c8cbf31cc09
+langcode: en
+status: true
+dependencies: {  }
+id: local_authority
+label: 'Local Authority'
+category: Geographic
+likert: false
+options: |-
+  Aberdeen|Aberdeen: Aberdeen|Aberdeen
+  Aberdeenshire|Aberdeenshire: Aberdeenshire|Aberdeenshire

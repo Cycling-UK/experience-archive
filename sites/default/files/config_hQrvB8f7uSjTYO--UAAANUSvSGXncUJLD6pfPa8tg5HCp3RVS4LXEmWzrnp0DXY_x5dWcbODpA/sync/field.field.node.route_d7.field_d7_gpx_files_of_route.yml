@@ -1,0 +1,31 @@
+uuid: 94fe0b14-8183-4a90-8698-f6e3a2029863
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_d7_gpx_files_of_route
+    - node.type.route_d7
+  module:
+    - builder_notes
+    - file
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route_d7.field_d7_gpx_files_of_route
+field_name: field_d7_gpx_files_of_route
+entity_type: node
+bundle: route_d7
+label: 'GPX files of route'
+description: 'To hold one or more gpx route files from D7 site route content'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: gpx
+  max_filesize: ''
+  description_field: false
+field_type: file

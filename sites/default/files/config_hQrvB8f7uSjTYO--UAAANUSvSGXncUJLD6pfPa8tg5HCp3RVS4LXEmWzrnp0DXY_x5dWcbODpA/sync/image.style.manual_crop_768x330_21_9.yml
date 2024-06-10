@@ -1,0 +1,29 @@
+uuid: 08b1f0eb-46d4-4779-86db-5541b9768319
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_21_9
+  module:
+    - builder_notes
+    - crop
+third_party_settings:
+  builder_notes:
+    notes: ''
+name: manual_crop_768x330_21_9
+label: 'Manual crop 768x330 [21:9]'
+effects:
+  83040ff4-70c8-41e0-bde2-6aef017aea06:
+    uuid: 83040ff4-70c8-41e0-bde2-6aef017aea06
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_21_9
+      automatic_crop_provider: null
+  0f32637b-33ab-493f-8ae7-affe520041b2:
+    uuid: 0f32637b-33ab-493f-8ae7-affe520041b2
+    id: image_resize
+    weight: 2
+    data:
+      width: 768
+      height: 330

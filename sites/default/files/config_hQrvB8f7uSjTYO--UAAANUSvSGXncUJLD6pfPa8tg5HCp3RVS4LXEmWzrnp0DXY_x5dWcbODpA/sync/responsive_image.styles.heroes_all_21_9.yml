@@ -1,0 +1,48 @@
+uuid: 1eefbd2b-02a7-40ac-a82e-174ae4ee7ab6
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.21_9_md_cuk_breakpoint_md
+    - image.style.21_9_sm_cuk_breakpoint_sm
+    - image.style.21_9_xl_cuk_breakpoint_xl
+    - image.style.21_9_xs_cuk_breakpoint_xs
+  theme:
+    - cyclinguk5
+id: heroes_all_21_9
+label: 'Heroes all 21:9'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 21_9_xl_cuk_breakpoint_xl
+    breakpoint_id: cyclinguk5.screen.xl-min
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 21_9_md_cuk_breakpoint_md
+    breakpoint_id: cyclinguk5.screen.lg-min
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 21_9_md_cuk_breakpoint_md
+    breakpoint_id: cyclinguk5.screen.md-min
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 21_9_sm_cuk_breakpoint_sm
+    breakpoint_id: cyclinguk5.screen.sm-min
+    multiplier: 1x
+breakpoint_group: cyclinguk5.screen
+fallback_image_style: 21_9_xs_cuk_breakpoint_xs

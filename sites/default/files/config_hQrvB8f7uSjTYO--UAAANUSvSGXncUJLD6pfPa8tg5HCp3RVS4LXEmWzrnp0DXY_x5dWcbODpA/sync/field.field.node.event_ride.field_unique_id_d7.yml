@@ -1,0 +1,24 @@
+uuid: 7b23cfc7-1285-4755-ab66-2ab3e0bef9bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unique_id_d7
+    - node.type.event_ride
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.event_ride.field_unique_id_d7
+field_name: field_unique_id_d7
+entity_type: node
+bundle: event_ride
+label: 'Unique identifier for route content from d7'
+description: 'UUID d7 this'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: a6ec8733-3c99-40d7-997c-8b2526f076e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.most_basic_html
+  module:
+    - builder_notes
+    - filter
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: non_authenticated
+label: Non-authenticated
+weight: -2
+is_admin: null
+permissions:
+  - 'use text format most_basic_html'

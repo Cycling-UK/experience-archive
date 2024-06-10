@@ -1,0 +1,28 @@
+uuid: ade22d98-1bff-4bcf-9d89-c836d7ee0e8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_child_route
+    - node.type.route
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route.field_child_route
+field_name: field_child_route
+entity_type: node
+bundle: route
+label: 'Is this a stage of a multi-stage route?'
+description: 'Tick if this route is a portion of a multi-stage route. For example, if it were a point-to-point stage of King Alfred''s Way it should be ticked.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'true'
+  off_label: 'false'
+field_type: boolean

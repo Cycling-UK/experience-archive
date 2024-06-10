@@ -1,0 +1,23 @@
+uuid: c19f8098-fd84-47d6-ab84-f976edcb0c79
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - link
+    - node
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.field_strava
+field_name: field_strava
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

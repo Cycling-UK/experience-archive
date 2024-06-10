@@ -1,0 +1,23 @@
+uuid: 927a1f84-8ce5-4dda-9b71-6d9ea7eac26d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_left_sidepanel
+    - paragraphs.paragraphs_type.map_embed_single_route
+  module:
+    - options
+id: paragraph.map_embed_single_route.field_left_sidepanel
+field_name: field_left_sidepanel
+entity_type: paragraph
+bundle: map_embed_single_route
+label: 'Left-hand side panel'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: closed
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,10 @@
+uuid: 821ddc9e-4687-456b-98aa-956a8ac60163
+langcode: en
+status: true
+dependencies: {  }
+id: bg_img_title_cta
+label: 'Background image with title and CTA'
+icon_uuid: null
+icon_default: null
+description: 'Block with background image and options for title and call to action link'
+behavior_plugins: {  }

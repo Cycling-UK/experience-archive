@@ -1,0 +1,73 @@
+uuid: ca04deb7-77a0-4e0b-bdd1-9b7989f710a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.single_quick_card.field_card_link
+    - field.field.paragraph.single_quick_card.field_paragraph_image
+    - field.field.paragraph.single_quick_card.field_plain_text
+    - field.field.paragraph.single_quick_card.field_title
+    - field.field.paragraph.single_quick_card.field_topic_card
+    - paragraphs.paragraphs_type.single_quick_card
+  module:
+    - builder_notes
+    - link
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.single_quick_card.default
+targetEntityType: paragraph
+bundle: single_quick_card
+mode: default
+content:
+  field_card_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_paragraph_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: quick_card_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_plain_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_topic_card:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_text: true
+  search_api_excerpt: true
+  uuid: true

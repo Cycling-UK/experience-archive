@@ -1,0 +1,204 @@
+uuid: c1b33d44-ee2e-45d8-8e9d-a50b3f6091b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.code
+    - filter.format.contributors
+    - filter.format.email
+    - filter.format.full_html
+    - filter.format.most_basic_html
+    - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.hero
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.content
+    - node.type.member_benefit
+    - node.type.point_of_interest
+    - node.type.route
+    - taxonomy.vocabulary.tags
+  module:
+    - builder_notes
+    - filter
+    - media
+    - menu_link_attributes
+    - node
+    - paragraphs_type_permissions
+    - path
+    - system
+    - taxonomy
+    - taxonomy_manager
+    - toolbar
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: senior_editor
+label: 'Senior editor'
+weight: -5
+is_admin: null
+permissions:
+  - 'access media overview'
+  - 'access taxonomy manager list'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'administer media'
+  - 'administer media types'
+  - 'administer menu link attributes'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'create audio media'
+  - 'create document media'
+  - 'create field_member_only_content'
+  - 'create hero media'
+  - 'create image media'
+  - 'create media'
+  - 'create member_benefit content'
+  - 'create paragraph content bg_img_title_cta'
+  - 'create paragraph content block_reference'
+  - 'create paragraph content blockquote'
+  - 'create paragraph content cards_by_id'
+  - 'create paragraph content faq'
+  - 'create paragraph content hero_with_caption'
+  - 'create paragraph content img_text_bg_para'
+  - 'create paragraph content issuu_embed'
+  - 'create paragraph content links'
+  - 'create paragraph content map_embed'
+  - 'create paragraph content map_embed_content_reference'
+  - 'create paragraph content map_embed_journey_planner'
+  - 'create paragraph content map_embed_location'
+  - 'create paragraph content map_embed_preset'
+  - 'create paragraph content map_embed_single_route'
+  - 'create paragraph content member_benefit'
+  - 'create paragraph content quick_cards'
+  - 'create paragraph content simple_buttons'
+  - 'create paragraph content simple_video'
+  - 'create paragraph content single_quick_card'
+  - 'create paragraph content single_text_column'
+  - 'create paragraph content terms_and_conditions'
+  - 'create paragraph content text_field_1_to_4_col'
+  - 'create paragraph content video_card'
+  - 'create paragraph content video_cards'
+  - 'create remote_video media'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'create video media'
+  - 'delete any audio media'
+  - 'delete any content content'
+  - 'delete any document media'
+  - 'delete any hero media'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any member_benefit content'
+  - 'delete any point_of_interest content'
+  - 'delete any remote_video media'
+  - 'delete any route content'
+  - 'delete any video media'
+  - 'delete content revisions'
+  - 'delete media'
+  - 'delete member_benefit revisions'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own hero media'
+  - 'delete own image media'
+  - 'delete own member_benefit content'
+  - 'delete own remote_video media'
+  - 'delete own video media'
+  - 'delete paragraph content bg_img_title_cta'
+  - 'delete paragraph content block_reference'
+  - 'delete paragraph content blockquote'
+  - 'delete paragraph content cards_by_id'
+  - 'delete paragraph content faq'
+  - 'delete paragraph content hero_with_caption'
+  - 'delete paragraph content img_text_bg_para'
+  - 'delete paragraph content issuu_embed'
+  - 'delete paragraph content links'
+  - 'delete paragraph content map_embed'
+  - 'delete paragraph content map_embed_content_reference'
+  - 'delete paragraph content map_embed_journey_planner'
+  - 'delete paragraph content map_embed_location'
+  - 'delete paragraph content map_embed_preset'
+  - 'delete paragraph content map_embed_single_route'
+  - 'delete paragraph content member_benefit'
+  - 'delete paragraph content paragraph_simple_text'
+  - 'delete paragraph content quick_cards'
+  - 'delete paragraph content simple_buttons'
+  - 'delete paragraph content simple_video'
+  - 'delete paragraph content single_quick_card'
+  - 'delete paragraph content single_text_column'
+  - 'delete paragraph content terms_and_conditions'
+  - 'delete paragraph content text_field_1_to_4_col'
+  - 'delete paragraph content video_card'
+  - 'delete paragraph content video_cards'
+  - 'delete point_of_interest revisions'
+  - 'delete route revisions'
+  - 'delete terms in tags'
+  - 'edit any audio media'
+  - 'edit any content content'
+  - 'edit any document media'
+  - 'edit any hero media'
+  - 'edit any image media'
+  - 'edit any member_benefit content'
+  - 'edit any point_of_interest content'
+  - 'edit any remote_video media'
+  - 'edit any route content'
+  - 'edit any video media'
+  - 'edit field_member_only_content'
+  - 'edit own audio media'
+  - 'edit own document media'
+  - 'edit own field_member_only_content'
+  - 'edit own hero media'
+  - 'edit own image media'
+  - 'edit own member_benefit content'
+  - 'edit own remote_video media'
+  - 'edit own video media'
+  - 'edit terms in tags'
+  - 'revert content revisions'
+  - 'revert member_benefit revisions'
+  - 'revert point_of_interest revisions'
+  - 'revert route revisions'
+  - 'update any media'
+  - 'update media'
+  - 'update paragraph content bg_img_title_cta'
+  - 'update paragraph content block_reference'
+  - 'update paragraph content blockquote'
+  - 'update paragraph content cards_by_id'
+  - 'update paragraph content faq'
+  - 'update paragraph content hero_with_caption'
+  - 'update paragraph content img_text_bg_para'
+  - 'update paragraph content issuu_embed'
+  - 'update paragraph content links'
+  - 'update paragraph content map_embed'
+  - 'update paragraph content map_embed_content_reference'
+  - 'update paragraph content map_embed_journey_planner'
+  - 'update paragraph content map_embed_location'
+  - 'update paragraph content map_embed_preset'
+  - 'update paragraph content map_embed_single_route'
+  - 'update paragraph content member_benefit'
+  - 'update paragraph content quick_cards'
+  - 'update paragraph content simple_buttons'
+  - 'update paragraph content simple_video'
+  - 'update paragraph content single_quick_card'
+  - 'update paragraph content single_text_column'
+  - 'update paragraph content terms_and_conditions'
+  - 'update paragraph content text_field_1_to_4_col'
+  - 'update paragraph content video_card'
+  - 'update paragraph content video_cards'
+  - 'use menu link attributes'
+  - 'use text format basic_html'
+  - 'use text format code'
+  - 'use text format contributors'
+  - 'use text format email'
+  - 'use text format full_html'
+  - 'use text format most_basic_html'
+  - 'use text format restricted_html'
+  - 'view all media revisions'
+  - 'view content revisions'
+  - 'view member_benefit revisions'
+  - 'view own unpublished media'
+  - 'view point_of_interest revisions'
+  - 'view route revisions'
+  - 'view the administration theme'

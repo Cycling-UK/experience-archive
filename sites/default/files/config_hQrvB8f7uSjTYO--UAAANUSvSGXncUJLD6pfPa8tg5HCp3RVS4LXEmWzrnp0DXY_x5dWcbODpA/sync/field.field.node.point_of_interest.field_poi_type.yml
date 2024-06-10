@@ -1,0 +1,34 @@
+uuid: 6343f0b2-fcb9-49fc-ab83-fdb40b783146
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poi_type
+    - node.type.point_of_interest
+    - taxonomy.vocabulary.poi_types
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.point_of_interest.field_poi_type
+field_name: field_poi_type
+entity_type: node
+bundle: point_of_interest
+label: 'POI type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      poi_types: poi_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

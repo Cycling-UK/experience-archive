@@ -1,0 +1,26 @@
+uuid: f5e46c55-5fa2-453b-b184-4e698041ec92
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  enforced:
+    module:
+      - media_skyfish
+_core:
+  default_config_hash: 63gi2oR3ADKAmSQaHL95HPabZk9w0FgRAa_TlUZkEo8
+id: user.field_skyfish_username
+field_name: field_skyfish_username
+entity_type: user
+type: string
+settings:
+  max_length: 128
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

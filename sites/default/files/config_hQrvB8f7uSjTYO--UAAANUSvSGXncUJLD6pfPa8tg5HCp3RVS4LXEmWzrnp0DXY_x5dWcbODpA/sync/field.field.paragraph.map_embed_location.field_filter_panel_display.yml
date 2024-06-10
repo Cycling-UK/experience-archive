@@ -1,0 +1,27 @@
+uuid: 2263fa9d-ba6c-4c74-92ca-d3ade83a9609
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_filter_panel_display
+    - paragraphs.paragraphs_type.map_embed_location
+  module:
+    - builder_notes
+    - options
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.map_embed_location.field_filter_panel_display
+field_name: field_filter_panel_display
+entity_type: paragraph
+bundle: map_embed_location
+label: 'Filter panel'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'false'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

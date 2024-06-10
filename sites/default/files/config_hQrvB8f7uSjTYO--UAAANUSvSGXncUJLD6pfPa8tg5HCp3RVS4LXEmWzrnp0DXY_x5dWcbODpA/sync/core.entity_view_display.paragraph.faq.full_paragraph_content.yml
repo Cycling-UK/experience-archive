@@ -1,0 +1,58 @@
+uuid: f7a22634-33ee-4bff-8ff3-b760e682fc8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.full_paragraph_content
+    - field.field.paragraph.faq.field_faq
+    - field.field.paragraph.faq.field_text
+    - field.field.paragraph.faq.field_title
+    - paragraphs.paragraphs_type.faq
+  module:
+    - builder_notes
+    - faqfield
+    - geocoder_field
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.faq.full_paragraph_content
+targetEntityType: paragraph
+bundle: faq
+mode: full_paragraph_content
+content:
+  field_faq:
+    type: faqfield_accordion
+    label: hidden
+    settings:
+      active: 0
+      heightStyle: content
+      collapsible: true
+      event: click
+      animate:
+        easing: linear
+        duration: 200
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: geocoder_geocode_formatter
+    label: above
+    settings:
+      dumper: wkt
+      providers: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

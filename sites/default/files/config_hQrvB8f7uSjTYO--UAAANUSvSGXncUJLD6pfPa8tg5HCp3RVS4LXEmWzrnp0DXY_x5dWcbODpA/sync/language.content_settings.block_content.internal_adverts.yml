@@ -1,0 +1,11 @@
+uuid: 4ac3e254-9080-4986-8480-3ecc45fa746d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.internal_adverts
+id: block_content.internal_adverts
+target_entity_type_id: block_content
+target_bundle: internal_adverts
+default_langcode: site_default
+language_alterable: false

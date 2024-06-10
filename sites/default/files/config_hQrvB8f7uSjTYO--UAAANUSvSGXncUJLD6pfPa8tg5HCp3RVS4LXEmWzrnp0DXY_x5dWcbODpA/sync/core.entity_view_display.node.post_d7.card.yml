@@ -1,0 +1,92 @@
+uuid: 4df2cdda-c95b-4dbf-a606-e118f1eb595d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.post_d7.body
+    - field.field.node.post_d7.feeds_item
+    - field.field.node.post_d7.field_d7_url_as_text
+    - field.field.node.post_d7.field_geo_data_holder
+    - field.field.node.post_d7.field_image
+    - field.field.node.post_d7.field_tags
+    - field.field.node.post_d7.field_teaser
+    - field.field.node.post_d7.field_unique_id_d7
+    - image.style.16_9_sm_cuk_breakpoint_sm
+    - node.type.post_d7
+  module:
+    - builder_notes
+    - image
+    - user
+    - uuid_extra
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.post_d7.card
+targetEntityType: node
+bundle: post_d7
+mode: card
+content:
+  field_d7_url_as_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_geo_data_holder:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: 16_9_sm_cuk_breakpoint_sm
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  uuid:
+    type: uuid
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_unique_id_d7: true
+  flag_bookmark: true
+  langcode: true
+  search_api_excerpt: true

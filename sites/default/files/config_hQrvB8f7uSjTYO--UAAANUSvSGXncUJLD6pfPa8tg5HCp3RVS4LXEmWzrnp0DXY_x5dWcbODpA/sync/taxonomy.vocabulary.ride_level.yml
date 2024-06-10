@@ -1,0 +1,8 @@
+uuid: 70162bcb-9cf8-41ed-8e56-52bd7f56dde8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Ride level'
+vid: ride_level
+description: 'Level of experience for a ride'
+weight: 0

@@ -1,0 +1,27 @@
+uuid: a10d0613-7e8a-411c-9b00-53cd96551e5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.member_benefit
+  module:
+    - builder_notes
+    - link
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.member_benefit.field_website
+field_name: field_website
+entity_type: node
+bundle: member_benefit
+label: 'Benefit button'
+description: 'For a relevant link. Will open in new window and have rel="nofollow" on it.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

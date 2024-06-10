@@ -1,0 +1,30 @@
+uuid: 6ec9d38c-e12e-4507-b64b-a8aad2be2f25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.map_embed_location
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - most_basic_html
+      - full_html
+  builder_notes:
+    notes: ''
+id: paragraph.map_embed_location.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: map_embed_location
+label: 'Intro text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

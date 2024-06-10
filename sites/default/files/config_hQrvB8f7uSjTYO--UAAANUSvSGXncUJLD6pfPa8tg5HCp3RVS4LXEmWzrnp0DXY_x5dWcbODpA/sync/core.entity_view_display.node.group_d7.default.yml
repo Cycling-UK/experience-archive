@@ -1,0 +1,140 @@
+uuid: 2194ccfa-1a31-4a7b-9ce1-6730085931a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.group_d7.body
+    - field.field.node.group_d7.feeds_item
+    - field.field.node.group_d7.field_activities_of_group_d7
+    - field.field.node.group_d7.field_catchment_area
+    - field.field.node.group_d7.field_cycling_uk_section
+    - field.field.node.group_d7.field_d7_url_as_text
+    - field.field.node.group_d7.field_facebook
+    - field.field.node.group_d7.field_geo_data_holder
+    - field.field.node.group_d7.field_group_website
+    - field.field.node.group_d7.field_image
+    - field.field.node.group_d7.field_instagram
+    - field.field.node.group_d7.field_location_group_d7
+    - field.field.node.group_d7.field_start_location
+    - field.field.node.group_d7.field_tags
+    - field.field.node.group_d7.field_teaser
+    - field.field.node.group_d7.field_twitter
+    - field.field.node.group_d7.field_type_of_group_d7
+    - field.field.node.group_d7.field_unique_id_d7
+    - node.type.group_d7
+  module:
+    - builder_notes
+    - link
+    - user
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.group_d7.default
+targetEntityType: node
+bundle: group_d7
+mode: default
+content:
+  field_catchment_area:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_cycling_uk_section:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_d7_url_as_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_facebook:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_geo_data_holder:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_group_website:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_instagram:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_twitter:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_activities_of_group_d7: true
+  field_image: true
+  field_location_group_d7: true
+  field_start_location: true
+  field_teaser: true
+  field_type_of_group_d7: true
+  field_unique_id_d7: true
+  flag_bookmark: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  uuid: true

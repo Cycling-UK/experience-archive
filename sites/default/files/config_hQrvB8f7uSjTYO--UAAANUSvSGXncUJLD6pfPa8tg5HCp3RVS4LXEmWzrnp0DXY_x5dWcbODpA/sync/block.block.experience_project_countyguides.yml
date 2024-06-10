@@ -1,0 +1,26 @@
+uuid: a38cde9e-02e0-4d4d-a318-c9846a499361
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:mega_menu_info_block:3a20c3e4-3caf-4de0-9593-d59cc48789df'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - experience_project
+id: experience_project_countyguides
+theme: experience_project
+region: header
+weight: -3
+provider: null
+plugin: 'block_content:3a20c3e4-3caf-4de0-9593-d59cc48789df'
+settings:
+  id: 'block_content:3a20c3e4-3caf-4de0-9593-d59cc48789df'
+  label: 'County guides'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

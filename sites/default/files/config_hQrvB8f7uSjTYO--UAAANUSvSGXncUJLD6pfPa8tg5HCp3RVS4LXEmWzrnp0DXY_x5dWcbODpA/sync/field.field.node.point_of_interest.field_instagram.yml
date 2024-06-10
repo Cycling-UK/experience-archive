@@ -1,0 +1,27 @@
+uuid: c77ebbe4-1df0-4d03-bb95-b0a854b81230
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instagram
+    - node.type.point_of_interest
+  module:
+    - builder_notes
+    - link
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.point_of_interest.field_instagram
+field_name: field_instagram
+entity_type: node
+bundle: point_of_interest
+label: Instagram
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

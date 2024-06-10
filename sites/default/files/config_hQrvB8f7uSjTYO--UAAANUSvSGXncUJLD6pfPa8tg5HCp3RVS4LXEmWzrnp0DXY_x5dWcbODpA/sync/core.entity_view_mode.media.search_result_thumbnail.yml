@@ -1,0 +1,10 @@
+uuid: 443f2bc5-fe8a-421f-bab2-4a94eb9dc13f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.search_result_thumbnail
+label: 'Search result thumbnail'
+targetEntityType: media
+cache: true

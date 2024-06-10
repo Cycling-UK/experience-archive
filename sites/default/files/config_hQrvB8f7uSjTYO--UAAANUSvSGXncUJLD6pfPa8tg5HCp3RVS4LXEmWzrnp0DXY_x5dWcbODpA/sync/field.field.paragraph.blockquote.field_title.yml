@@ -1,0 +1,24 @@
+uuid: 31877931-9963-477d-950a-dab75d36766e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.blockquote
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.blockquote.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: blockquote
+label: Author
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: 7f6a115f-4df1-4cd6-9b76-c2eed2096e00
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.quick_card_image
+label: 'Quick card image'
+targetEntityType: media
+cache: true

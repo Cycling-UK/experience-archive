@@ -1,0 +1,19 @@
+uuid: a8983f9e-7c8a-4e21-bb5e-693c7658c9a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.map_embed_location
+id: paragraph.map_embed_location.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: map_embed_location
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

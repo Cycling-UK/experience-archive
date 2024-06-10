@@ -1,0 +1,29 @@
+uuid: 96782d16-f307-42c2-a089-1d50ccac365c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_code
+    - paragraphs.paragraphs_type.issuu_embed
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - code
+  builder_notes:
+    notes: ''
+id: paragraph.issuu_embed.field_code
+field_name: field_code
+entity_type: paragraph
+bundle: issuu_embed
+label: 'Issue embed code'
+description: 'Paste the embed code directly into this field. Embed a document from issuu.com using their iframe embed code found at the Issuu publication''s page --> Share --> Embed on Website'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

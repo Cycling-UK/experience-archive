@@ -1,0 +1,13 @@
+uuid: d338f6da-bf94-462f-93aa-a02bf3d38e7b
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: Hero
+description: 'Hero images media entity'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

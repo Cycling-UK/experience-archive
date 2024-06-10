@@ -1,0 +1,10 @@
+uuid: 1e1940d1-fc1c-4a09-a2fd-e028cd192570
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: OyV0e-TkARQQb5AUP3DKrzij1svf9x5MoRoB50OwbcU
+id: application
+label: Application
+target_entity_type_id: cycling_uk_application_process
+description: ''

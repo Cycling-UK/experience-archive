@@ -1,0 +1,35 @@
+uuid: 3f8a2b37-f94f-4aa9-9367-dfe77a15ee21
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.event_ride_7_to_9
+    - field.storage.node.feeds_item
+    - node.type.event_ride
+  module:
+    - builder_notes
+    - feeds
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.event_ride.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: event_ride
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings:
+    target_bundles:
+      event_ride_7_to_9: event_ride_7_to_9
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: feeds_item

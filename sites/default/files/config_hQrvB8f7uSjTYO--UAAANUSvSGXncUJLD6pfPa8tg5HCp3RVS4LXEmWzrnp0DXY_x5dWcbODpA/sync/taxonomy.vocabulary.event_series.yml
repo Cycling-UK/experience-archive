@@ -1,0 +1,8 @@
+uuid: bb1ea541-b912-405e-a243-2ad53c51e4e8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Series'
+vid: event_series
+description: ''
+weight: 0

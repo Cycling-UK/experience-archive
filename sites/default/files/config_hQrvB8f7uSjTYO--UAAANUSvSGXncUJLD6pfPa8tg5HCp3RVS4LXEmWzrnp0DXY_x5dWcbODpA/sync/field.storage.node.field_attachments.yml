@@ -1,0 +1,24 @@
+uuid: 83cc76f9-dc72-4b73-ab31-4401d700303e
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - media
+    - node
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.field_attachments
+field_name: field_attachments
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

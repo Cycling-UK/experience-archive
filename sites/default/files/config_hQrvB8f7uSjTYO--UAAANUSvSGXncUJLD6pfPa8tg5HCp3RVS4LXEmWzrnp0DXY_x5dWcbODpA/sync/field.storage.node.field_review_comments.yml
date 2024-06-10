@@ -1,0 +1,23 @@
+uuid: 8a8e6353-46ff-4f7d-914b-68560b4c9adb
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - node
+    - text
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.field_review_comments
+field_name: field_review_comments
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 00318851-b87a-4369-8e7d-fbc7c6ee55b3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cyclinguk5
+_core:
+  default_config_hash: TbvVNXbxFshSG9Vozx8TXOvYgnynhzSeVWPNQq2tc_8
+id: cyclinguk5_page_title
+theme: cyclinguk5
+region: content
+weight: -16
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

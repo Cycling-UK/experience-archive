@@ -1,0 +1,24 @@
+uuid: 34b8a993-ca90-488a-a909-7ccba6ea9aab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_d7_url_as_text
+    - node.type.event_ride
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.event_ride.field_d7_url_as_text
+field_name: field_d7_url_as_text
+entity_type: node
+bundle: event_ride
+label: 'D7 url as text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

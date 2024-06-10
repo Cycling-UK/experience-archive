@@ -1,0 +1,22 @@
+uuid: 3501d0a5-2dcc-4cfe-b727-80cfa8e2ed25
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.area
+id: node.area.promote
+field_name: promote
+entity_type: node
+bundle: area
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

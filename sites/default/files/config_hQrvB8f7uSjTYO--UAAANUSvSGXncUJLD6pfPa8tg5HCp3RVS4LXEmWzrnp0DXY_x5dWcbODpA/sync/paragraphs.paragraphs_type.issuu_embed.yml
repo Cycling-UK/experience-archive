@@ -1,0 +1,10 @@
+uuid: a329c823-9700-41c0-9f8e-d9061c3fdae8
+langcode: en
+status: true
+dependencies: {  }
+id: issuu_embed
+label: 'Issuu embed'
+icon_uuid: null
+icon_default: null
+description: 'Embed a document from issuu.com using their iframe embed code found at the Issuu publication''s page  --> Share --> Embed on Website'
+behavior_plugins: {  }

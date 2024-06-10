@@ -1,0 +1,24 @@
+uuid: 913394cb-037c-4dbf-aef8-2e0658afeb92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_start_location
+    - node.type.event_ride
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.event_ride.field_start_location
+field_name: field_start_location
+entity_type: node
+bundle: event_ride
+label: 'Start location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

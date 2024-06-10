@@ -1,0 +1,20 @@
+uuid: 8188b1c3-f99c-4d30-a4ab-39636e6c48c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+name: search_result_thumbnail
+label: 'Search result thumbnail'
+effects:
+  6f6a92e3-b107-4f96-98da-dc28e722f09e:
+    uuid: 6f6a92e3-b107-4f96-98da-dc28e722f09e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      anchor: center-center

@@ -1,0 +1,48 @@
+uuid: 82f97ccf-aac7-4eba-addc-84bdf18385ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faq.field_faq
+    - field.field.paragraph.faq.field_text
+    - field.field.paragraph.faq.field_title
+    - paragraphs.paragraphs_type.faq
+  module:
+    - builder_notes
+    - faqfield
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.faq.default
+targetEntityType: paragraph
+bundle: faq
+mode: default
+content:
+  field_faq:
+    type: faqfield_accordion
+    label: hidden
+    settings:
+      active: 0
+      heightStyle: content
+      collapsible: true
+      event: click
+      animate:
+        easing: linear
+        duration: 200
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_text: true
+  search_api_excerpt: true

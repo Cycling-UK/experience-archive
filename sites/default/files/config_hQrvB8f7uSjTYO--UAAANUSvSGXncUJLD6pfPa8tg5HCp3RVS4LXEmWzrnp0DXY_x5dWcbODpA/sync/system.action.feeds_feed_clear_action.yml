@@ -1,0 +1,11 @@
+uuid: e49c35dc-9fc7-4ee3-9371-965a7386556b
+langcode: en
+status: true
+dependencies:
+  module:
+    - feeds
+id: feeds_feed_clear_action
+label: 'Delete imported items of selected feeds'
+type: feeds_feed
+plugin: feeds_feed_clear_action
+configuration: {  }

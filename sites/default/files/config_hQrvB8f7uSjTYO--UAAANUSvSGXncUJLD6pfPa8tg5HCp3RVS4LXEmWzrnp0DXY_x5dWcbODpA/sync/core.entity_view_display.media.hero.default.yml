@@ -1,0 +1,28 @@
+uuid: a7e19b11-2153-470d-9f87-91bacfce10aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.hero.field_media_image_1
+    - media.type.hero
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: media.hero.default
+targetEntityType: media
+bundle: hero
+mode: default
+content: {  }
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_image_1: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

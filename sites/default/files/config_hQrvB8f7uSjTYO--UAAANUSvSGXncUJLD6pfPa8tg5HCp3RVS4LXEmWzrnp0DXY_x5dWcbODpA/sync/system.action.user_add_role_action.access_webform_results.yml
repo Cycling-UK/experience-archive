@@ -1,0 +1,14 @@
+uuid: 21c12657-cae9-4f95-ba5c-8f8eac1e64c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.access_webform_results
+  module:
+    - user
+id: user_add_role_action.access_webform_results
+label: 'Add the Access webform results role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: access_webform_results

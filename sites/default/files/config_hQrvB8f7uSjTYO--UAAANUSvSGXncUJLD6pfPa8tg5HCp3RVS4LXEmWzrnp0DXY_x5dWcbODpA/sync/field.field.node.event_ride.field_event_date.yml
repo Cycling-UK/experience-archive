@@ -1,0 +1,25 @@
+uuid: 7ca3668e-92e1-40c8-8127-7fd693d298b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.event_ride
+  module:
+    - builder_notes
+    - datetime
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.event_ride.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: event_ride
+label: 'Event date and time'
+description: 'Individual event date and time'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

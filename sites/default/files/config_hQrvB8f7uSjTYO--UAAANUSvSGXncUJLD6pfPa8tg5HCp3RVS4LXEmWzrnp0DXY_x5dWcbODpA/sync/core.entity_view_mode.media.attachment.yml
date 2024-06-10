@@ -1,0 +1,10 @@
+uuid: 74338531-bbef-467f-a0f8-71377b1d965e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.attachment
+label: Attachment
+targetEntityType: media
+cache: true

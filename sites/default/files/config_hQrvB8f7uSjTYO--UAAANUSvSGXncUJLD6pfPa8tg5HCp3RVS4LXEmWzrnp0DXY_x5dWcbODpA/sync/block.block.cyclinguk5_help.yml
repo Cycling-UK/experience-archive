@@ -1,0 +1,22 @@
+uuid: ab10cab8-8be3-454f-9d35-5707ba41b7e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - cyclinguk5
+_core:
+  default_config_hash: aoS3e_YLbhXtXB8R949Sk1SEV96MPLMmPx_s2PT037k
+id: cyclinguk5_help
+theme: cyclinguk5
+region: content
+weight: -14
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

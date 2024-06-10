@@ -1,0 +1,8 @@
+uuid: bafadcf7-769f-4e8a-8a5d-2757b9fc6fa3
+langcode: en
+status: true
+dependencies: {  }
+id: secondary-menu-mobile
+label: 'Secondary menu mobile'
+description: 'Login and logout links for the mobile menu'
+locked: false

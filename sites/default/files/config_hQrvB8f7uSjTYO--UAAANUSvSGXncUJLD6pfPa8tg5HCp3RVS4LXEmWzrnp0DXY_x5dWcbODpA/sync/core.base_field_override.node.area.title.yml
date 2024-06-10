@@ -1,0 +1,18 @@
+uuid: 77a028c4-5a2a-4488-86e1-7836606f3815
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.area
+id: node.area.title
+field_name: title
+entity_type: node
+bundle: area
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

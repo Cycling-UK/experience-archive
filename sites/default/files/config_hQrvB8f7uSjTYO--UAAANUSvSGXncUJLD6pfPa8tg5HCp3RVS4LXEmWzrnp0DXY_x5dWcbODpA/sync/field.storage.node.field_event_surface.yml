@@ -1,0 +1,27 @@
+uuid: 0c3201e8-b061-441b-8963-7902e82960fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - field_permissions
+    - node
+    - taxonomy
+third_party_settings:
+  builder_notes:
+    notes: ''
+  field_permissions:
+    permission_type: public
+id: node.field_event_surface
+field_name: field_event_surface
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

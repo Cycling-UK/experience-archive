@@ -1,0 +1,17 @@
+uuid: bc33aea8-6da0-428c-bd26-e0a90c2b4a20
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Area
+type: area
+description: 'Define an <em>area</em> on the map using GeoJSON data.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

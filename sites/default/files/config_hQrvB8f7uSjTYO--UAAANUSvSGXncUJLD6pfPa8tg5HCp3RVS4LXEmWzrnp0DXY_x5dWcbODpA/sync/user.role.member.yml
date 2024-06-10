@@ -1,0 +1,16 @@
+uuid: dbcb175f-d9e6-4d94-b56d-b478ffb6f6d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: member
+label: Member
+weight: -1
+is_admin: null
+permissions:
+  - 'view field_member_only_content'
+  - 'view own field_member_only_content'

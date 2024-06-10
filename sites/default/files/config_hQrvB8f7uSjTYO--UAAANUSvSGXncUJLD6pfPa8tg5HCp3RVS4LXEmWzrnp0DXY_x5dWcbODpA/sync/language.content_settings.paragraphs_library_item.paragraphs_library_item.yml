@@ -1,0 +1,11 @@
+uuid: 7eb7ac21-49b2-44b8-a58e-548853bf7be8
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+id: paragraphs_library_item.paragraphs_library_item
+target_entity_type_id: paragraphs_library_item
+target_bundle: paragraphs_library_item
+default_langcode: site_default
+language_alterable: false

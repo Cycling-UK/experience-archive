@@ -1,0 +1,8 @@
+uuid: f9d700f1-4321-4e82-acda-42dc0bbe1f3e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Type of group'
+vid: type_of_group_d7
+description: 'Placeholder vocabulary for D7 Type of Group field on group content type'
+weight: 0

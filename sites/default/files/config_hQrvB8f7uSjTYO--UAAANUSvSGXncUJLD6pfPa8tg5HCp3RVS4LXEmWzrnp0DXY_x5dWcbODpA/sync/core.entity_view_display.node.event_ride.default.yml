@@ -1,0 +1,129 @@
+uuid: 1252125f-e6d2-4651-8878-f1539b483007
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event_ride.body
+    - field.field.node.event_ride.feeds_item
+    - field.field.node.event_ride.field_audax_category
+    - field.field.node.event_ride.field_catchment_area
+    - field.field.node.event_ride.field_d7_gpx_files_of_route
+    - field.field.node.event_ride.field_d7_site_address
+    - field.field.node.event_ride.field_d7_url_as_text
+    - field.field.node.event_ride.field_d7_uuid
+    - field.field.node.event_ride.field_event_date
+    - field.field.node.event_ride.field_event_series
+    - field.field.node.event_ride.field_event_surface
+    - field.field.node.event_ride.field_geofield
+    - field.field.node.event_ride.field_image
+    - field.field.node.event_ride.field_meta_tags
+    - field.field.node.event_ride.field_ride_type_d7
+    - field.field.node.event_ride.field_start_location
+    - field.field.node.event_ride.field_type_of_event
+    - field.field.node.event_ride.field_unique_id_d7
+    - node.type.event_ride
+  module:
+    - builder_notes
+    - datetime
+    - file
+    - geofield
+    - metatag
+    - user
+    - uuid_extra
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.event_ride.default
+targetEntityType: node
+bundle: event_ride
+mode: default
+content:
+  field_catchment_area:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_d7_gpx_files_of_route:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_d7_url_as_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_d7_uuid:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_event_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'Y-m-d\TH:i:s'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_geofield:
+    type: geofield_default
+    label: above
+    settings:
+      output_format: wkt
+      output_escape: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_start_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  uuid:
+    type: uuid
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_audax_category: true
+  field_d7_site_address: true
+  field_event_series: true
+  field_event_surface: true
+  field_image: true
+  field_ride_type_d7: true
+  field_type_of_event: true
+  field_unique_id_d7: true
+  flag_bookmark: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

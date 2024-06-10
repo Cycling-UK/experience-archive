@@ -1,0 +1,23 @@
+uuid: c91b1aab-1d97-4f83-be1e-e8c737f16e00
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_field
+    - builder_notes
+    - paragraphs
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.field_block_plugin
+field_name: field_block_plugin
+entity_type: paragraph
+type: block_field
+settings: {  }
+module: block_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: 3ce8ec96-9486-48d8-bb4d-df2980fa928a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_4_3
+  module:
+    - builder_notes
+    - crop
+third_party_settings:
+  builder_notes:
+    notes: ''
+name: manual_crop_800x600_4_3
+label: 'Manual crop 800x600 [4:3]'
+effects:
+  71a18581-e790-4514-bf2f-24022be68db7:
+    uuid: 71a18581-e790-4514-bf2f-24022be68db7
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_4_3
+      automatic_crop_provider: null
+  f0ddfb6e-788f-4d59-8de3-a5cf9ee65485:
+    uuid: f0ddfb6e-788f-4d59-8de3-a5cf9ee65485
+    id: image_resize
+    weight: 2
+    data:
+      width: 800
+      height: 600

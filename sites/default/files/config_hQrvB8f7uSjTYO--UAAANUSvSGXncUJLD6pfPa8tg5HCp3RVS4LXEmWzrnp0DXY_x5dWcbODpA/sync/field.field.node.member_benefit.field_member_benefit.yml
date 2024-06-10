@@ -1,0 +1,31 @@
+uuid: 3c49cf55-3fbc-4889-afa1-fa16265ecf82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_benefit
+    - node.type.member_benefit
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+      - full_html
+      - code
+  builder_notes:
+    notes: ''
+id: node.member_benefit.field_member_benefit
+field_name: field_member_benefit
+entity_type: node
+bundle: member_benefit
+label: 'Member benefit'
+description: 'Enter the details of the member benefit here.  This is only visible to Cycling UK members who are logged in to the website.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

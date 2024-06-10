@@ -1,0 +1,24 @@
+uuid: e4f7d737-3738-4b12-8e05-7dc1a1a78067
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.content
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.content.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: content
+label: Teaser
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

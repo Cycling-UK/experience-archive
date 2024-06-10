@@ -1,0 +1,30 @@
+uuid: f61e1989-698e-4179-903c-9deafe4c8da6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.route
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+  builder_notes:
+    notes: ''
+id: node.route.body
+field_name: body
+entity_type: node
+bundle: route
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

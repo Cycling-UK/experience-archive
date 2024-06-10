@@ -1,0 +1,18 @@
+uuid: bffc769a-3749-42a6-bb89-9e940ae5caa5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: hide_add_bookmark
+label: 'Hide add bookmark'
+code: '.my-bookmark {display:none;}'
+media: all
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/cyclists-welcome/thank-you\r\n/access-bikes/thank-you\r\n/access-bikes-grant-application-confirmation/thank-you"
+contexts: {  }
+conditions_require_all: true

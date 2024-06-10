@@ -1,0 +1,22 @@
+uuid: 8c09e63d-5590-4884-b5a2-f2bf1636fe07
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.route
+id: node.route.status
+field_name: status
+entity_type: node
+bundle: route
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

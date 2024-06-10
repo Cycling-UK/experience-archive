@@ -1,0 +1,30 @@
+uuid: 9b5d3678-b31b-47ca-9316-ad4a2f511257
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_21_9
+  module:
+    - builder_notes
+    - crop
+third_party_settings:
+  builder_notes:
+    notes: ''
+name: manual_crop_1800x770_21_9
+label: 'Manual crop 1800x770 [21:9]'
+effects:
+  5438ba7a-fc87-4db1-b524-ac3325862540:
+    uuid: 5438ba7a-fc87-4db1-b524-ac3325862540
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_21_9
+      automatic_crop_provider: null
+  358ef180-1d37-40b8-9e87-f390a8c526f7:
+    uuid: 358ef180-1d37-40b8-9e87-f390a8c526f7
+    id: image_scale
+    weight: 2
+    data:
+      width: 1800
+      height: 770
+      upscale: true

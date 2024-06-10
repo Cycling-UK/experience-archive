@@ -1,0 +1,34 @@
+uuid: 2746af65-b5a9-4807-80f6-cfca56a22abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cycling_type
+    - node.type.page
+    - taxonomy.vocabulary.cycling_type
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.page.field_cycling_type
+field_name: field_cycling_type
+entity_type: node
+bundle: page
+label: 'Cycling type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      cycling_type: cycling_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

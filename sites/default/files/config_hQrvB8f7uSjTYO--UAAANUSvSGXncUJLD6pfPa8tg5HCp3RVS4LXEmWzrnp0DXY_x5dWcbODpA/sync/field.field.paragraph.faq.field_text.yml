@@ -1,0 +1,32 @@
+uuid: 0c95db49-3b56-414d-bad9-c25b5e89e52c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.faq
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+      - restricted_html
+      - plain_text
+      - code
+  builder_notes:
+    notes: ''
+id: paragraph.faq.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: faq
+label: 'Intro text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

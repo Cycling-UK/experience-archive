@@ -1,0 +1,23 @@
+uuid: ae0e4fe5-aefb-4c5e-aebb-6cf1315eaf68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_elevation
+    - paragraphs.paragraphs_type.map_embed_single_route
+id: paragraph.map_embed_single_route.field_display_elevation
+field_name: field_display_elevation
+entity_type: paragraph
+bundle: map_embed_single_route
+label: 'Display elevation'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

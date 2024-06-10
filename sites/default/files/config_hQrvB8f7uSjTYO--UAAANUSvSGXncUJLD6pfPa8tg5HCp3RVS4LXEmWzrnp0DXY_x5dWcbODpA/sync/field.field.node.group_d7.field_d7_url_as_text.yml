@@ -1,0 +1,24 @@
+uuid: e37c34f4-fc66-4aa9-abd2-97652dd5066b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_d7_url_as_text
+    - node.type.group_d7
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.group_d7.field_d7_url_as_text
+field_name: field_d7_url_as_text
+entity_type: node
+bundle: group_d7
+label: 'D7 url as text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

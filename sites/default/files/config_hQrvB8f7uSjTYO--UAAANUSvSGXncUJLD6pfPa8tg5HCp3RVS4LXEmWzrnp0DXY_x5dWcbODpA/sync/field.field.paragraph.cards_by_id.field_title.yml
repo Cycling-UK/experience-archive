@@ -1,0 +1,24 @@
+uuid: fb9396a7-cad8-407c-8274-5166b2e4018a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.cards_by_id
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.cards_by_id.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: cards_by_id
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

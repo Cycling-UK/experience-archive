@@ -1,0 +1,21 @@
+uuid: 77ac079c-fc26-4fa5-8f62-ecd0e2c60d12
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  builder_notes:
+    notes: ''
+name: 'General content'
+type: content
+description: 'General content. A paragraphs based content type.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

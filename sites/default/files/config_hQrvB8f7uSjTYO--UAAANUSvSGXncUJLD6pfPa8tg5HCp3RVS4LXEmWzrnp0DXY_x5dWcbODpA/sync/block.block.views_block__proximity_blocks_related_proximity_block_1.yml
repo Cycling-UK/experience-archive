@@ -1,0 +1,34 @@
+uuid: eca47380-6a04-4783-a153-5c786d0385ac
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.proximity_blocks
+  module:
+    - node
+    - views
+  theme:
+    - cyclinguk5
+id: views_block__proximity_blocks_related_proximity_block_1
+theme: cyclinguk5
+region: footer
+weight: -11
+provider: null
+plugin: 'views_block:proximity_blocks-related_proximity_block_1'
+settings:
+  id: 'views_block:proximity_blocks-related_proximity_block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      point_of_interest: point_of_interest
+      route: route

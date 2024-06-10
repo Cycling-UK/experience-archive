@@ -1,0 +1,24 @@
+uuid: 4d0a4466-1ec0-4c1e-883d-9bf72e2ab33b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.member_benefit
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.member_benefit.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: member_benefit
+label: Teaser
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

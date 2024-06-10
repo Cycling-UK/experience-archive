@@ -1,0 +1,8 @@
+uuid: 630c5438-0249-47fd-8df4-297d2cec225d
+langcode: en
+status: true
+dependencies: {  }
+id: secondary-menu
+label: 'Secondary menu'
+description: 'Login and logout links for the desktop menu'
+locked: false

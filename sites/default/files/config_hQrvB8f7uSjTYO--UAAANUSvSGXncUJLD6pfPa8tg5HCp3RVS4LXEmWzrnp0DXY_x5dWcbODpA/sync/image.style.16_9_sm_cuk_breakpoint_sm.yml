@@ -1,0 +1,30 @@
+uuid: 02256b48-a9a9-49f4-abb0-071ed8cac811
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_16_9
+  module:
+    - builder_notes
+    - crop
+third_party_settings:
+  builder_notes:
+    notes: ''
+name: 16_9_sm_cuk_breakpoint_sm
+label: '16:9 SM cuk breakpoint sm'
+effects:
+  2d387147-8e84-448a-9aa7-02ad69fdc8ab:
+    uuid: 2d387147-8e84-448a-9aa7-02ad69fdc8ab
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_16_9
+      automatic_crop_provider: null
+  ff22a7f7-e982-419e-acec-755d2a0d98f6:
+    uuid: ff22a7f7-e982-419e-acec-755d2a0d98f6
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 432
+      anchor: center-center
