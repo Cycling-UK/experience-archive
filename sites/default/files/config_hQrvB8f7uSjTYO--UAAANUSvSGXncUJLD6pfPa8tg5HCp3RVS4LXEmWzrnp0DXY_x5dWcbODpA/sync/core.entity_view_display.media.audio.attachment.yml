@@ -1,0 +1,44 @@
+uuid: 91ab1ca1-a492-4259-8cf0-39562ed9b4e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.attachment
+    - field.field.media.audio.field_media_audio_file
+    - media.type.audio
+  module:
+    - builder_notes
+    - media_entity_download
+third_party_settings:
+  builder_notes:
+    notes: ''
+_core:
+  default_config_hash: SWf3MLdbEKvlx4Vs6iPwDHu5pr1aKT0SJmgp8no73-k
+id: media.audio.attachment
+targetEntityType: media
+bundle: audio
+mode: attachment
+content:
+  field_media_audio_file:
+    type: media_entity_download_download_link
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      disposition: attachment
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

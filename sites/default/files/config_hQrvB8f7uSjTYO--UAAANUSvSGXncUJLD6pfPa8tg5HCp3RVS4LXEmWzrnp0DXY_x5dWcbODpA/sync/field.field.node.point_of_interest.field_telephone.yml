@@ -1,0 +1,25 @@
+uuid: 1ac84dd9-39aa-4eb4-958c-617df03c807f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_telephone
+    - node.type.point_of_interest
+  module:
+    - builder_notes
+    - telephone
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.point_of_interest.field_telephone
+field_name: field_telephone
+entity_type: node
+bundle: point_of_interest
+label: Telephone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

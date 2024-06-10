@@ -1,0 +1,13 @@
+uuid: f633da1c-b2cf-4c7a-87ec-b4281505b2df
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cyclinguk5
+  menu:
+    - secondary-menu
+id: secondary-menu__cyclinguk5
+menu: secondary-menu
+theme: cyclinguk5
+block_config: '{"animation":"none","duration":400,"delay":200,"breakpoint":991,"auto-arrow":"","always-show-submenu":"","number-columns":1}'
+menu_config: '{"menu_link_content:e38ad517-b8b7-481a-8455-553a272660f9":{"rows_content":[],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"menu-item-join","xicon":"fa-light fa-user-plus","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}},"menu_link_content:c0a9c407-a189-4230-807f-cb162c17dc3b":{"rows_content":[],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"menu-item-account","xicon":"","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}},"menu_link_content:d00887b0-9f26-45f5-b465-93fb13788c1f":{"rows_content":[],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"menu-item-benefits","xicon":"fa-light fa-gift","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}},"menu_link_content:440738b6-f75f-49c2-bf3c-0cd109a9d6f6":{"rows_content":[],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"menu-item-login","xicon":"fa-light fa-arrow-right-to-arc","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}},"menu_link_content:1649d16f-e644-4ebe-b2d7-4a9edcb14e3d":{"rows_content":[],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"menu-item-logout","xicon":"fa-light fa-arrow-right-from-arc","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}},"menu_link_content:ee2a335e-69da-4387-9d6d-dd025800cd08":{"rows_content":[],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"menu-item-search","xicon":"","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}},"menu_link_content:59130ef5-3714-4be1-ae6c-a10aaa2a6f3b":{"rows_content":[[{"col_content":[{"block_id":"accessibilitytoolbar","type":"block","tb_item_config":[]}],"col_config":{"width":"12","class":"","hidewcol":"","showblocktitle":"1"}}]],"submenu_config":{"width":"","class":"","group":"0"},"item_config":{"class":"menu-item-accessibility","xicon":"fa-solid fa-universal-access","caption":"","alignsub":"","group":"0","hidewcol":"0","hidesub":"0","label":""}}}'

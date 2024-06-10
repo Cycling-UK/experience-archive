@@ -1,0 +1,24 @@
+uuid: 95288290-626e-4570-9ee3-121e1e160a67
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - node
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.field_old_nid
+field_name: field_old_nid
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

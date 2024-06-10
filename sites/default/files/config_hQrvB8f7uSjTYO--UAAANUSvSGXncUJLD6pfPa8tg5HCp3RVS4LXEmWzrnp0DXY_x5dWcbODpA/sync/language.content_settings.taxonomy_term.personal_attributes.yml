@@ -1,0 +1,11 @@
+uuid: edeeb0d4-d003-4fac-b8aa-c1b6d4ef1fa8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.personal_attributes
+id: taxonomy_term.personal_attributes
+target_entity_type_id: taxonomy_term
+target_bundle: personal_attributes
+default_langcode: site_default
+language_alterable: false

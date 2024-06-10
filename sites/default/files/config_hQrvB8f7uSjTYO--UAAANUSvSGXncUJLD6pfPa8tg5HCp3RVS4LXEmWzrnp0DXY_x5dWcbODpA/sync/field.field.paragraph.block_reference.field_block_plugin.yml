@@ -1,0 +1,31 @@
+uuid: 6b91d745-5f81-4a6b-9dde-b3e4dead2126
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_block_plugin
+    - paragraphs.paragraphs_type.block_reference
+  module:
+    - block_field
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.block_reference.field_block_plugin
+field_name: field_block_plugin
+entity_type: paragraph
+bundle: block_reference
+label: 'Block Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      'views_block:county_page-cornwall_poi_block': 'views_block:county_page-cornwall_poi_block'
+      'views_block:county_page-kent_poi_block': 'views_block:county_page-kent_poi_block'
+      'views_block:county_page-norfolk_poi_block': 'views_block:county_page-norfolk_poi_block'
+field_type: block_field

@@ -1,0 +1,29 @@
+uuid: abda47f4-3c56-4cbc-ad2d-36ba5bf47594
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tags
+    - paragraphs.paragraphs_type.map_embed_location
+    - taxonomy.vocabulary.tags
+id: paragraph.map_embed_location.field_tags
+field_name: field_tags
+entity_type: paragraph
+bundle: map_embed_location
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

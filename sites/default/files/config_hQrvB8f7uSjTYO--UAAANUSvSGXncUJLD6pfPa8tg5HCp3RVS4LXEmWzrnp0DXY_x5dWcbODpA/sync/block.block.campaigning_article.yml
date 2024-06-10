@@ -1,0 +1,29 @@
+uuid: ba45a4c1-691d-4dbf-8bd1-057d2d637a1a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:mega_menu_info_block:d32ef324-c973-4f53-b254-9fa6e7d26fde'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - cyclinguk5
+third_party_settings:
+  block_class:
+    classes: mega-menu-article-block
+id: campaigning_article
+theme: cyclinguk5
+region: nav_main
+weight: -4
+provider: null
+plugin: 'block_content:d32ef324-c973-4f53-b254-9fa6e7d26fde'
+settings:
+  id: 'block_content:d32ef324-c973-4f53-b254-9fa6e7d26fde'
+  label: 'Campaigning article'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: mega_menu_promoted_article
+visibility: {  }

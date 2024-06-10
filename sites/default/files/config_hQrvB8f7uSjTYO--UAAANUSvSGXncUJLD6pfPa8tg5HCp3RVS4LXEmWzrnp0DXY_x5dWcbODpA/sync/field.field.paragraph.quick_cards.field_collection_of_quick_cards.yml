@@ -1,0 +1,56 @@
+uuid: b4dcd8aa-921c-403f-9c91-c27a4f587207
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_collection_of_quick_cards
+    - paragraphs.paragraphs_type.quick_cards
+    - paragraphs.paragraphs_type.single_quick_card
+  module:
+    - builder_notes
+    - entity_reference_revisions
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.quick_cards.field_collection_of_quick_cards
+field_name: field_collection_of_quick_cards
+entity_type: paragraph
+bundle: quick_cards
+label: 'Collection of quick cards'
+description: 'Add individual quick cards.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      single_quick_card: single_quick_card
+    negate: 0
+    target_bundles_drag_drop:
+      bg_img_title_cta:
+        weight: 9
+        enabled: false
+      image_and_text:
+        weight: 10
+        enabled: false
+      paragraph_simple_text:
+        weight: 11
+        enabled: false
+      quick_cards:
+        weight: 12
+        enabled: false
+      simple_video:
+        weight: 13
+        enabled: false
+      single_quick_card:
+        weight: 14
+        enabled: true
+      text:
+        weight: 15
+        enabled: false
+      text_and_image:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

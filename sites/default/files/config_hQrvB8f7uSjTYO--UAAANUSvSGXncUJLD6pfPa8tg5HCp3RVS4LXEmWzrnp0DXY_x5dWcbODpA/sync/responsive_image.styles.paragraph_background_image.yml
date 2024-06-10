@@ -1,0 +1,30 @@
+uuid: 00ed7bdb-9373-4446-bbb6-6eaaec3475f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.bg_img_para_desktop
+    - image.style.bg_img_para_mobile
+    - image.style.bg_img_para_tablet
+  theme:
+    - experience_project
+id: paragraph_background_image
+label: 'Paragraph Background Image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: bg_img_para_desktop
+    breakpoint_id: cyclinguk.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: bg_img_para_tablet
+    breakpoint_id: cyclinguk.tablet
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: bg_img_para_mobile
+    breakpoint_id: cyclinguk.mobile
+    multiplier: 1x
+breakpoint_group: experience_project
+fallback_image_style: bg_img_para_mobile

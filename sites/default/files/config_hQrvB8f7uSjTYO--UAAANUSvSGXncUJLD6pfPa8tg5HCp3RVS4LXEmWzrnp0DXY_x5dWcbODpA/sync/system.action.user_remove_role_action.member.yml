@@ -1,0 +1,14 @@
+uuid: 336e4e10-a63a-411b-8644-0c9787a536ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.member
+  module:
+    - user
+id: user_remove_role_action.member
+label: 'Remove the Member role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: member

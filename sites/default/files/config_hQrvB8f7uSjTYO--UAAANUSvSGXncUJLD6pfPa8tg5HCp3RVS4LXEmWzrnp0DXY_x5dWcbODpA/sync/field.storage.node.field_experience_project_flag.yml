@@ -1,0 +1,25 @@
+uuid: a9816672-9c7d-4e50-848c-8cb1bb341b54
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - field_permissions
+    - node
+third_party_settings:
+  builder_notes:
+    notes: ''
+  field_permissions:
+    permission_type: public
+id: node.field_experience_project_flag
+field_name: field_experience_project_flag
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

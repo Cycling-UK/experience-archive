@@ -1,0 +1,26 @@
+uuid: 99693c74-7085-4ddc-bb37-01a54a2eedcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - field_permissions
+    - paragraphs
+    - text
+third_party_settings:
+  builder_notes:
+    notes: ''
+  field_permissions:
+    permission_type: public
+id: paragraph.field_text
+field_name: field_text
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

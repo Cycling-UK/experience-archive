@@ -1,0 +1,42 @@
+uuid: b334c031-532b-402e-b3dd-ae54852e7ba1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.internal_adverts
+    - field.storage.block_content.field_internal_advert_image_mob
+  module:
+    - builder_notes
+    - image
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: block_content.internal_adverts.field_internal_advert_image_mob
+field_name: field_internal_advert_image_mob
+entity_type: block_content
+bundle: internal_adverts
+label: 'Internal advert image - mobile'
+description: 'This is the advert that will be displayed on smaller mobile screens. The image must be 300px wide by 569px tall.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: internal-adverts
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: 300x569
+  min_resolution: 300x569
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

@@ -1,0 +1,25 @@
+uuid: 4702cf2f-7a1a-4799-8520-812ab076c9ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_only_content
+    - node.type.page
+  module:
+    - builder_notes
+    - text
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.page.field_member_only_content
+field_name: field_member_only_content
+entity_type: node
+bundle: page
+label: 'Member Only Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

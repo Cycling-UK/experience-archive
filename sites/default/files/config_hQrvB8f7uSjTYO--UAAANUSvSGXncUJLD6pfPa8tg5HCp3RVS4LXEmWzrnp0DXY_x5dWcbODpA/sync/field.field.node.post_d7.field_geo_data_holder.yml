@@ -1,0 +1,24 @@
+uuid: a26e6ad4-15d2-49b6-a56c-5e4c4c70a118
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geo_data_holder
+    - node.type.post_d7
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.post_d7.field_geo_data_holder
+field_name: field_geo_data_holder
+entity_type: node
+bundle: post_d7
+label: 'Post location data WKT'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

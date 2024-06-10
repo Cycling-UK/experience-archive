@@ -1,0 +1,24 @@
+uuid: a04582b1-470d-4951-9236-d99f41e33eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_plain_text
+    - paragraphs.paragraphs_type.video_card
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.video_card.field_plain_text
+field_name: field_plain_text
+entity_type: paragraph
+bundle: video_card
+label: 'Short text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

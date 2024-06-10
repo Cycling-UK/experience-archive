@@ -1,0 +1,9 @@
+uuid: 4f5e8079-f535-43ea-8b9c-66047754734d
+langcode: en
+status: true
+dependencies: {  }
+id: marketing
+label: Marketing
+description: "Marketing cookies track visitors across websites so that they may\_display ads that are relevant and engaging for the individual user."
+checkbox_default_state: unchecked
+weight: -6

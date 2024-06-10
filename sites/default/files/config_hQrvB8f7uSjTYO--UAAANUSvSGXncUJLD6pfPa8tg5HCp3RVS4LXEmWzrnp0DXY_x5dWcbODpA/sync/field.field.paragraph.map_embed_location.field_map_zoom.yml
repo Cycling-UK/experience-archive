@@ -1,0 +1,23 @@
+uuid: 7c68e19e-6d93-4980-82b9-8d199082413a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_map_zoom
+    - paragraphs.paragraphs_type.map_embed_location
+  module:
+    - options
+id: paragraph.map_embed_location.field_map_zoom
+field_name: field_map_zoom
+entity_type: paragraph
+bundle: map_embed_location
+label: 'Map zoom'
+description: 'Approx levels: 5 = country, 9 = county, 12 = town '
+required: false
+translatable: false
+default_value:
+  -
+    value: '5'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

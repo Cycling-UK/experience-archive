@@ -1,0 +1,25 @@
+uuid: 32a88f30-d01f-42e3-95f2-3d569d258be1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_remove_rounded_corners_img
+    - paragraphs.paragraphs_type.img_text_bg_para
+  module:
+    - builder_notes
+    - options
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.img_text_bg_para.field_remove_rounded_corners_img
+field_name: field_remove_rounded_corners_img
+entity_type: paragraph
+bundle: img_text_bg_para
+label: 'Remove rounded corners on image?'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

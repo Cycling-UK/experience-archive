@@ -1,0 +1,44 @@
+uuid: 73cff2d1-2628-4e7f-a26a-9a798a922e05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.simple_buttons.field_links
+    - field.field.paragraph.simple_buttons.field_title
+    - paragraphs.paragraphs_type.simple_buttons
+  module:
+    - builder_notes
+    - link
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.simple_buttons.default
+targetEntityType: paragraph
+bundle: simple_buttons
+mode: default
+content:
+  field_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

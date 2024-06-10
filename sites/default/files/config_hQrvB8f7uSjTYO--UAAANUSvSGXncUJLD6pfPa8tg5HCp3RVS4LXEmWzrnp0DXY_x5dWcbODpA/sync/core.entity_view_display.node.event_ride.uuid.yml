@@ -1,0 +1,70 @@
+uuid: 7c79287b-c28d-48df-8231-2006afcdbaeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.uuid
+    - field.field.node.event_ride.body
+    - field.field.node.event_ride.feeds_item
+    - field.field.node.event_ride.field_audax_category
+    - field.field.node.event_ride.field_catchment_area
+    - field.field.node.event_ride.field_d7_gpx_files_of_route
+    - field.field.node.event_ride.field_d7_site_address
+    - field.field.node.event_ride.field_d7_url_as_text
+    - field.field.node.event_ride.field_d7_uuid
+    - field.field.node.event_ride.field_event_date
+    - field.field.node.event_ride.field_event_series
+    - field.field.node.event_ride.field_event_surface
+    - field.field.node.event_ride.field_geofield
+    - field.field.node.event_ride.field_image
+    - field.field.node.event_ride.field_meta_tags
+    - field.field.node.event_ride.field_ride_type_d7
+    - field.field.node.event_ride.field_start_location
+    - field.field.node.event_ride.field_type_of_event
+    - field.field.node.event_ride.field_unique_id_d7
+    - node.type.event_ride
+  module:
+    - builder_notes
+    - user
+    - uuid_extra
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.event_ride.uuid
+targetEntityType: node
+bundle: event_ride
+mode: uuid
+content:
+  uuid:
+    type: uuid
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_audax_category: true
+  field_catchment_area: true
+  field_d7_gpx_files_of_route: true
+  field_d7_site_address: true
+  field_d7_url_as_text: true
+  field_d7_uuid: true
+  field_event_date: true
+  field_event_series: true
+  field_event_surface: true
+  field_geofield: true
+  field_image: true
+  field_meta_tags: true
+  field_ride_type_d7: true
+  field_start_location: true
+  field_type_of_event: true
+  field_unique_id_d7: true
+  flag_bookmark: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

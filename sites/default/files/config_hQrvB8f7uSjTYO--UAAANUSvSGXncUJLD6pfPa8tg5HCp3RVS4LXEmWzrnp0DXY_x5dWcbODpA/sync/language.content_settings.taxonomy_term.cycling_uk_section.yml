@@ -1,0 +1,11 @@
+uuid: 3bbdd2f7-d9f9-4649-a238-c0fd842f7bf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.cycling_uk_section
+id: taxonomy_term.cycling_uk_section
+target_entity_type_id: taxonomy_term
+target_bundle: cycling_uk_section
+default_langcode: site_default
+language_alterable: false

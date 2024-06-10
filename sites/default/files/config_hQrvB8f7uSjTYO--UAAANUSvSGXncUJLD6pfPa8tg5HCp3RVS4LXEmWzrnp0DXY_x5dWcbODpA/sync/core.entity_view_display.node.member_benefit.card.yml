@@ -1,0 +1,64 @@
+uuid: a6895e14-3676-48dc-9350-5967941b1486
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.member_benefit.body
+    - field.field.node.member_benefit.field_caption
+    - field.field.node.member_benefit.field_hero
+    - field.field.node.member_benefit.field_member_benefit
+    - field.field.node.member_benefit.field_member_benefit_category
+    - field.field.node.member_benefit.field_paragraph
+    - field.field.node.member_benefit.field_teaser
+    - field.field.node.member_benefit.field_website
+    - node.type.member_benefit
+  module:
+    - builder_notes
+    - options
+    - user
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.member_benefit.card
+targetEntityType: node
+bundle: member_benefit
+mode: card
+content:
+  field_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_hero:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: quick_card_image
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_member_benefit_category:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_member_benefit: true
+  field_paragraph: true
+  field_teaser: true
+  field_website: true
+  flag_bookmark: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

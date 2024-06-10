@@ -1,0 +1,11 @@
+uuid: 5fae1ec3-267c-4d4d-bdd7-cd21cb7fe336
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.route_d7
+id: node.route_d7
+target_entity_type_id: node
+target_bundle: route_d7
+default_langcode: site_default
+language_alterable: false

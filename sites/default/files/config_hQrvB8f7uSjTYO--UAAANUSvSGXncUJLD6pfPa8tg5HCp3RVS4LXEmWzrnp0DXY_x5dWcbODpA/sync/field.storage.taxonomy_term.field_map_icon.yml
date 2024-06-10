@@ -1,0 +1,34 @@
+uuid: b2470652-399e-4a8f-a36e-2ec139e40ed8
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - file
+    - image
+    - taxonomy
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: taxonomy_term.field_map_icon
+field_name: field_map_icon
+entity_type: taxonomy_term
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: 766f1acc-d04f-4254-9e21-3a498fc8cb7c
+    alt: 'Map point'
+    title: 'Map point'
+    width: 50
+    height: 67
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: 3448a02d-702d-41ba-836e-ea69f354ba35
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - experience_project
+third_party_settings:
+  block_class:
+    classes: main-map-search
+id: experience_project_exposedformmap_searchpage_1
+theme: experience_project
+region: content
+weight: -10
+provider: null
+plugin: 'views_exposed_filter_block:map_search-page_1'
+settings:
+  id: 'views_exposed_filter_block:map_search-page_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/search-map\r\n/search-map*"

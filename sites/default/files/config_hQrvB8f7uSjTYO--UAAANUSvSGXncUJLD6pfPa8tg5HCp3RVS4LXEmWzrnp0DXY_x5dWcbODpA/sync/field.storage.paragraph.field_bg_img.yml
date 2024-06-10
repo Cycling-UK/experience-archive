@@ -1,0 +1,24 @@
+uuid: 6866e008-e22a-4b17-a4f7-aa48cb88f360
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - media
+    - paragraphs
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.field_bg_img
+field_name: field_bg_img
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

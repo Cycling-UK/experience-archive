@@ -1,0 +1,11 @@
+uuid: bb85e4e9-c8cf-4bfe-a336-7a93c9deef86
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mega_menu_info_block
+id: block_content.mega_menu_info_block
+target_entity_type_id: block_content
+target_bundle: mega_menu_info_block
+default_langcode: site_default
+language_alterable: false

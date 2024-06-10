@@ -1,0 +1,11 @@
+uuid: 63b2d339-0797-4bb1-ae46-477fc2fcf4ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hilliness
+id: taxonomy_term.hilliness
+target_entity_type_id: taxonomy_term
+target_bundle: hilliness
+default_langcode: site_default
+language_alterable: false

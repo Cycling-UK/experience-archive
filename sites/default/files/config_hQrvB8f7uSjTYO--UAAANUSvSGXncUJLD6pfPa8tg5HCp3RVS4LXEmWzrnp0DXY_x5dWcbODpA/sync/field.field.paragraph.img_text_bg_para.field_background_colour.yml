@@ -1,0 +1,25 @@
+uuid: 007dee55-25b4-4988-aaef-5fd333634eeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_colour
+    - paragraphs.paragraphs_type.img_text_bg_para
+  module:
+    - builder_notes
+    - options
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.img_text_bg_para.field_background_colour
+field_name: field_background_colour
+entity_type: paragraph
+bundle: img_text_bg_para
+label: 'Background colour'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

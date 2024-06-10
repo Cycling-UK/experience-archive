@@ -1,0 +1,11 @@
+uuid: b32b63c8-c6f5-4995-aec7-afc8f829c1b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.type_of_group_d7
+id: taxonomy_term.type_of_group_d7
+target_entity_type_id: taxonomy_term
+target_bundle: type_of_group_d7
+default_langcode: site_default
+language_alterable: false

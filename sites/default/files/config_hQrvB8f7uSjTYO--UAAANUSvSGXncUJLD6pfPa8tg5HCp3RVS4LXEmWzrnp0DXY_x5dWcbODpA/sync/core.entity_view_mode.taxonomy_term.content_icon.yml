@@ -1,0 +1,10 @@
+uuid: 5c13895c-4272-4bdc-a036-ae2bbfc7a15c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.content_icon
+label: 'Content icon'
+targetEntityType: taxonomy_term
+cache: true

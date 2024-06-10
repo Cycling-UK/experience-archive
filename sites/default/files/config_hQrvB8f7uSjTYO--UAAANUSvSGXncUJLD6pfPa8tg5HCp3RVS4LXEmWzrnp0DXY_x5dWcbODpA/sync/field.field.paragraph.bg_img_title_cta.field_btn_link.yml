@@ -1,0 +1,27 @@
+uuid: a063e785-a545-40f3-b907-6b17c092c83e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_btn_link
+    - paragraphs.paragraphs_type.bg_img_title_cta
+  module:
+    - builder_notes
+    - link
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.bg_img_title_cta.field_btn_link
+field_name: field_btn_link
+entity_type: paragraph
+bundle: bg_img_title_cta
+label: 'Button link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

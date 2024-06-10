@@ -1,0 +1,101 @@
+uuid: 7be91933-20b3-4d63-992f-ba10a6cc6b65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph
+    - node.type.webform
+    - paragraphs.paragraphs_type.single_text_column
+  module:
+    - builder_notes
+    - entity_reference_revisions
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.webform.field_paragraph
+field_name: field_paragraph
+entity_type: node
+bundle: webform
+label: 'Paragraph blocks'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      single_text_column: single_text_column
+    negate: 0
+    target_bundles_drag_drop:
+      bg_img_title_cta:
+        weight: 24
+        enabled: false
+      block_reference:
+        weight: 26
+        enabled: false
+      blockquote:
+        weight: 25
+        enabled: false
+      cards_by_id:
+        weight: 27
+        enabled: false
+      faq:
+        weight: 28
+        enabled: false
+      hero_with_caption:
+        weight: 29
+        enabled: false
+      img_text_bg_para:
+        weight: 30
+        enabled: false
+      issuu_embed:
+        weight: 31
+        enabled: false
+      links:
+        weight: 32
+        enabled: false
+      map_embed:
+        weight: 33
+        enabled: false
+      map_embed_content_reference:
+        weight: 34
+        enabled: false
+      map_embed_journey_planner:
+        weight: 35
+        enabled: false
+      map_embed_location:
+        weight: 36
+        enabled: false
+      map_embed_single_route:
+        weight: 37
+        enabled: false
+      quick_cards:
+        weight: 38
+        enabled: false
+      simple_buttons:
+        weight: 39
+        enabled: false
+      simple_video:
+        weight: 40
+        enabled: false
+      single_quick_card:
+        weight: 41
+        enabled: false
+      single_text_column:
+        weight: 42
+        enabled: true
+      terms_and_conditions:
+        weight: 43
+        enabled: false
+      text_field_1_to_4_col:
+        weight: 44
+        enabled: false
+      video_card:
+        weight: 45
+        enabled: false
+      video_cards:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

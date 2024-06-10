@@ -1,0 +1,27 @@
+uuid: f5e664fd-36c2-4f87-95ba-b5873579d690
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_group_website
+    - node.type.group_d7
+  module:
+    - builder_notes
+    - link
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.group_d7.field_group_website
+field_name: field_group_website
+entity_type: node
+bundle: group_d7
+label: 'Group website'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

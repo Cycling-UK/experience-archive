@@ -1,0 +1,115 @@
+uuid: d36714a3-ec6b-49e7-bab9-47129c6afbd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.route_d7.body
+    - field.field.node.route_d7.feeds_item
+    - field.field.node.route_d7.field_cir
+    - field.field.node.route_d7.field_conceal_from_general_maps
+    - field.field.node.route_d7.field_d7_bike_type
+    - field.field.node.route_d7.field_d7_finish_address
+    - field.field.node.route_d7.field_d7_gpx_files_of_route
+    - field.field.node.route_d7.field_d7_ride_level
+    - field.field.node.route_d7.field_d7_start_address
+    - field.field.node.route_d7.field_d7_url_as_text
+    - field.field.node.route_d7.field_data_fence_url
+    - field.field.node.route_d7.field_experience_project_flag
+    - field.field.node.route_d7.field_geofield
+    - field.field.node.route_d7.field_image
+    - field.field.node.route_d7.field_length_d7_km
+    - field.field.node.route_d7.field_length_d7_miles
+    - field.field.node.route_d7.field_route_classification
+    - field.field.node.route_d7.field_tags
+    - field.field.node.route_d7.field_unique_id_d7
+    - node.type.route_d7
+  module:
+    - builder_notes
+    - file
+    - options
+    - user
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route_d7.full
+targetEntityType: node
+bundle: route_d7
+mode: full
+content:
+  field_conceal_from_general_maps:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_d7_gpx_files_of_route:
+    type: file_url_plain
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_d7_url_as_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_data_fence_url:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_experience_project_flag:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_route_classification:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_cir: true
+  field_d7_bike_type: true
+  field_d7_finish_address: true
+  field_d7_ride_level: true
+  field_d7_start_address: true
+  field_geofield: true
+  field_image: true
+  field_length_d7_km: true
+  field_length_d7_miles: true
+  field_unique_id_d7: true
+  flag_bookmark: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  uuid: true

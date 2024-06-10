@@ -1,0 +1,11 @@
+uuid: 3cf1a137-71d6-4bda-b746-85dab1421c8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.poi_types
+id: taxonomy_term.poi_types
+target_entity_type_id: taxonomy_term
+target_bundle: poi_types
+default_langcode: site_default
+language_alterable: false

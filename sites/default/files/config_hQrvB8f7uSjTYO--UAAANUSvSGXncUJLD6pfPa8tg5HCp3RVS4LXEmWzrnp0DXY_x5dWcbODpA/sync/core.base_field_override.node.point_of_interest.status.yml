@@ -1,0 +1,22 @@
+uuid: 8eba4eea-7eef-4f8c-ad34-ef876ef4e49e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.point_of_interest
+id: node.point_of_interest.status
+field_name: status
+entity_type: node
+bundle: point_of_interest
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

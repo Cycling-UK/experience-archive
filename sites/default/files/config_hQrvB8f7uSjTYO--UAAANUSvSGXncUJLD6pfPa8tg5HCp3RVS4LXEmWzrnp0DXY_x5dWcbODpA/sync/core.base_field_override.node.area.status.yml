@@ -1,0 +1,22 @@
+uuid: 0ba8dcbe-06b9-4cb9-8c3c-ad0ca6611910
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.area
+id: node.area.status
+field_name: status
+entity_type: node
+bundle: area
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

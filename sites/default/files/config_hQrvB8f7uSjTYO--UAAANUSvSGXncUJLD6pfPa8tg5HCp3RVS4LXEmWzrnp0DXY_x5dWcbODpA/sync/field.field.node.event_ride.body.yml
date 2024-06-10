@@ -1,0 +1,30 @@
+uuid: 32e95c9e-26c0-4515-a75b-d45bf315817a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.event_ride
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+  builder_notes:
+    notes: ''
+id: node.event_ride.body
+field_name: body
+entity_type: node
+bundle: event_ride
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

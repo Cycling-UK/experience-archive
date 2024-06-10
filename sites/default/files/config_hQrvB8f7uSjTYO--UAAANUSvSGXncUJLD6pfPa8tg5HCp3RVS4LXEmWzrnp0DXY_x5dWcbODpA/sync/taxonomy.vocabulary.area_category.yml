@@ -1,0 +1,8 @@
+uuid: 8bf3fc20-3759-4941-9e54-4aaa90566c78
+langcode: en
+status: true
+dependencies: {  }
+name: 'Area category'
+vid: area_category
+description: ''
+weight: 0

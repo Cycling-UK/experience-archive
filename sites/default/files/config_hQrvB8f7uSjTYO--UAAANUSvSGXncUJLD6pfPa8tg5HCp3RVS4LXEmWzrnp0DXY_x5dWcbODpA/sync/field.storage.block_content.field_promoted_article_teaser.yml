@@ -1,0 +1,23 @@
+uuid: 8fc786b3-3b3e-4a8e-89b5-9e48db31f9b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: block_content.field_promoted_article_teaser
+field_name: field_promoted_article_teaser
+entity_type: block_content
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

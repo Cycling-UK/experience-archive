@@ -1,0 +1,61 @@
+uuid: e7f974a7-7b85-4316-a347-00bce32e1452
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.content.body
+    - field.field.node.content.field_caption
+    - field.field.node.content.field_hero
+    - field.field.node.content.field_hide_related_content_block
+    - field.field.node.content.field_meta_tags
+    - field.field.node.content.field_paragraph
+    - field.field.node.content.field_relate_content
+    - field.field.node.content.field_teaser
+    - node.type.content
+  module:
+    - builder_notes
+    - user
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.content.search_index
+targetEntityType: node
+bundle: content
+mode: search_index
+content:
+  field_hero:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: search_result_thumbnail
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_caption: true
+  field_hide_related_content_block: true
+  field_meta_tags: true
+  field_paragraph: true
+  field_relate_content: true
+  flag_bookmark: true
+  langcode: true
+  search_api_excerpt: true
+  uuid: true

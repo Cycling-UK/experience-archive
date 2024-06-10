@@ -1,0 +1,34 @@
+uuid: 6e0c9c1f-366b-4b4b-97eb-c3927f5a3169
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  builder_notes:
+    notes: ''
+  field_permissions:
+    permission_type: public
+id: node.field_single_or_full_multi_route
+field_name: field_single_or_full_multi_route
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: single
+      label: 'Single route'
+    -
+      value: multi_stage_parent
+      label: 'Full multi-stage route'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

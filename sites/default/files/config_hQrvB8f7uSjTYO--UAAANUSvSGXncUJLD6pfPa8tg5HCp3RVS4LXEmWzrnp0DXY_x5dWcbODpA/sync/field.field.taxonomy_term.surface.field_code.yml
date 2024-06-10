@@ -1,0 +1,24 @@
+uuid: 72e0a7da-4ea8-4411-a8b4-5ddded22d287
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_code
+    - taxonomy.vocabulary.surface
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: taxonomy_term.surface.field_code
+field_name: field_code
+entity_type: taxonomy_term
+bundle: surface
+label: Code
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

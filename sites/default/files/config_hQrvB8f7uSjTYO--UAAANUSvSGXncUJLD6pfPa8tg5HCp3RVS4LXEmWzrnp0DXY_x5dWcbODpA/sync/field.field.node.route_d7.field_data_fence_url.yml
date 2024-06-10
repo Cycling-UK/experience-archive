@@ -1,0 +1,19 @@
+uuid: 84ab7439-fc2f-490c-8d86-67bc55c07e48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_fence_url
+    - node.type.route_d7
+id: node.route_d7.field_data_fence_url
+field_name: field_data_fence_url
+entity_type: node
+bundle: route_d7
+label: 'Data fence url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

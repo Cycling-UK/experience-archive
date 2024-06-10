@@ -1,0 +1,29 @@
+uuid: c66cd3a2-7f24-4efd-b8bc-8d069c338412
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_display_types
+    - paragraphs.paragraphs_type.map_embed_location
+  module:
+    - options
+id: paragraph.map_embed_location.field_content_display_types
+field_name: field_content_display_types
+entity_type: paragraph
+bundle: map_embed_location
+label: 'Select the types of content to display'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: route_true
+  -
+    value: poi_true
+  -
+    value: group_true
+  -
+    value: event_ride_true
+default_value_callback: ''
+settings: {  }
+field_type: list_string

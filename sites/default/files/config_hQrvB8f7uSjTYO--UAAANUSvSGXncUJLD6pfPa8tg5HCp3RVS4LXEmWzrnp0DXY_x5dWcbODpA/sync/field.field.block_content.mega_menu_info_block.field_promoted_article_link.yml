@@ -1,0 +1,27 @@
+uuid: 415c3e89-9d91-4eb7-b898-91c731ecd4c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mega_menu_info_block
+    - field.storage.block_content.field_promoted_article_link
+  module:
+    - builder_notes
+    - link
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: block_content.mega_menu_info_block.field_promoted_article_link
+field_name: field_promoted_article_link
+entity_type: block_content
+bundle: mega_menu_info_block
+label: 'Promoted article link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

@@ -1,0 +1,7 @@
+uuid: 6cc9bc4a-54df-42ff-ab07-32e7e26483a7
+langcode: en
+status: true
+dependencies: {  }
+id: node__content
+label: 'Content: General content'
+tags: {  }

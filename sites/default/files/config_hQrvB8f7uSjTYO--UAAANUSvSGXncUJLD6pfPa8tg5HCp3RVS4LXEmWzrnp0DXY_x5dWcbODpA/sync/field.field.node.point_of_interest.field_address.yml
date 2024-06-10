@@ -1,0 +1,52 @@
+uuid: f2f64aa8-fd9b-4cb0-94a1-b3080af0a282
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.point_of_interest
+  module:
+    - address
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.point_of_interest.field_address
+field_name: field_address
+entity_type: node
+bundle: point_of_interest
+label: Address
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    langcode: ''
+    country_code: GB
+    administrative_area: null
+    locality: ''
+    dependent_locality: null
+    postal_code: ''
+    sorting_code: null
+    address_line1: ''
+    address_line2: ''
+    organization: ''
+    given_name: ''
+    additional_name: null
+    family_name: ''
+default_value_callback: ''
+settings:
+  available_countries:
+    GB: GB
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: optional
+  fields: {  }
+field_type: address

@@ -1,0 +1,23 @@
+uuid: 209a561c-466a-4301-95da-34bdf1fc5fb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_pois
+    - paragraphs.paragraphs_type.map_embed_content_reference
+id: paragraph.map_embed_content_reference.field_display_pois
+field_name: field_display_pois
+entity_type: paragraph
+bundle: map_embed_content_reference
+label: 'Display POIs'
+description: 'Show points of interest in the area, in addition to any point of interest specifically referenced.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

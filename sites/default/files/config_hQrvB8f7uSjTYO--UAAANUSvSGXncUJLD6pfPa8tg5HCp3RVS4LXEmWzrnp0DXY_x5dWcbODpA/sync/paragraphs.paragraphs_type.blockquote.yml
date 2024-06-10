@@ -1,0 +1,10 @@
+uuid: 61664b38-9cec-407b-88db-887a3e13827c
+langcode: en
+status: true
+dependencies: {  }
+id: blockquote
+label: Blockquote
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

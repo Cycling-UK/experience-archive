@@ -1,0 +1,10 @@
+uuid: be335165-0e32-48a0-a59a-cc5c08d5902e
+langcode: en
+status: true
+dependencies: {  }
+id: map_embed_single_route
+label: 'Map embed single route'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

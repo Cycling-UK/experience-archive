@@ -1,0 +1,34 @@
+uuid: 4a382835-9497-489a-909a-84b17f1abc28
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.hero
+    - field.field.media.image.field_media_image
+    - field.field.media.image.skyfish_id
+    - media.type.image
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+_core:
+  default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
+id: media.image.hero
+targetEntityType: media
+bundle: image
+mode: hero
+content: {  }
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_image: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  skyfish_id: true
+  thumbnail: true
+  uid: true
+  uuid: true

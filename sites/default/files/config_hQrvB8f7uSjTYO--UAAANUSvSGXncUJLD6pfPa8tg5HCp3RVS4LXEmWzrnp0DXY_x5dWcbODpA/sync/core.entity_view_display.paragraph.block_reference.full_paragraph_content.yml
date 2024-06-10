@@ -1,0 +1,31 @@
+uuid: a7743aa1-80f8-4f46-b1f2-7be290d7fe62
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.full_paragraph_content
+    - field.field.paragraph.block_reference.field_block_plugin
+    - paragraphs.paragraphs_type.block_reference
+  module:
+    - block_field
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.block_reference.full_paragraph_content
+targetEntityType: paragraph
+bundle: block_reference
+mode: full_paragraph_content
+content:
+  field_block_plugin:
+    type: block_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

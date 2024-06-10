@@ -1,0 +1,45 @@
+uuid: cb81d0de-966c-41f0-84c6-200015f353b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.21_9_md_cuk_breakpoint_md
+    - image.style.21_9_sm_cuk_breakpoint_sm
+    - image.style.21_9_xl_cuk_breakpoint_xl
+    - image.style.21_9_xs_cuk_breakpoint_xs
+  module:
+    - builder_notes
+  theme:
+    - experience_project
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: experience_heroes_all_21_9
+label: 'EXPERIENCE Heroes all 21:9'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 21_9_xl_cuk_breakpoint_xl
+    breakpoint_id: cyclinguk.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 21_9_md_cuk_breakpoint_md
+    breakpoint_id: cyclinguk.tablet
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 21_9_sm_cuk_breakpoint_sm
+    breakpoint_id: cyclinguk.mobile
+    multiplier: 1x
+breakpoint_group: experience_project
+fallback_image_style: 21_9_xs_cuk_breakpoint_xs

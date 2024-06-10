@@ -1,0 +1,21 @@
+uuid: 717a0f0e-79b5-42d8-b304-b33c0f3e2399
+langcode: en
+status: false
+dependencies:
+  theme:
+    - experience_project
+id: join
+theme: experience_project
+region: content
+weight: -5
+provider: null
+plugin: 'block_content:9b0ef4d3-8545-42da-9530-e5fa6eee7ab7'
+settings:
+  id: 'block_content:9b0ef4d3-8545-42da-9530-e5fa6eee7ab7'
+  label: Join
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,43 @@
+uuid: 9a6cac6c-dd73-4c9c-a744-bff9a26044e5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f710d601-45fc-423f-9446-f49b3a9385d8'
+  module:
+    - block_class
+    - block_content
+    - node
+  theme:
+    - experience_project
+third_party_settings:
+  block_class:
+    classes: experience-logo-strip
+id: experience_project_experiencelogostrip
+theme: experience_project
+region: content
+weight: -7
+provider: null
+plugin: 'block_content:f710d601-45fc-423f-9446-f49b3a9385d8'
+settings:
+  id: 'block_content:f710d601-45fc-423f-9446-f49b3a9385d8'
+  label: 'Supported by'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      area: area
+      article: article
+      content: content
+      page: page
+      point_of_interest: point_of_interest
+      route: route
+      webform: webform

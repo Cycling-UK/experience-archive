@@ -1,0 +1,24 @@
+uuid: e21fda2e-0119-46d4-93e0-cb76956d79c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unique_id_d7
+    - node.type.route_d7
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route_d7.field_unique_id_d7
+field_name: field_unique_id_d7
+entity_type: node
+bundle: route_d7
+label: 'Unique identifier for route content from d7'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

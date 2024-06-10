@@ -1,0 +1,17 @@
+uuid: 1af01468-d8c5-4f97-b200-72b8f631f293
+langcode: en
+status: true
+dependencies: {  }
+name: experience_redirect_after_registration
+label: 'Experience application redirect after registration or login'
+triggers:
+  registration: registration
+  login: login
+destination_path: 'entity:node/366'
+pages_type: 0
+pages: ''
+language: ''
+roles:
+  non_authenticated: non_authenticated
+weight: 0
+enabled: false

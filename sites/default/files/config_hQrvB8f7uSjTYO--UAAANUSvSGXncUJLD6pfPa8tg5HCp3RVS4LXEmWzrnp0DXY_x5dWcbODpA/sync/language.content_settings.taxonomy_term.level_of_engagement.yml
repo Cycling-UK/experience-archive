@@ -1,0 +1,11 @@
+uuid: 6ffb3b4c-fb85-47d5-a595-c25257422765
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.level_of_engagement
+id: taxonomy_term.level_of_engagement
+target_entity_type_id: taxonomy_term
+target_bundle: level_of_engagement
+default_langcode: site_default
+language_alterable: false

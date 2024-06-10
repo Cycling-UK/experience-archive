@@ -1,0 +1,10 @@
+uuid: 586b51c8-0825-4e46-a226-519adc4c8244
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.route_stage_panel
+label: 'Route stage panel'
+targetEntityType: node
+cache: true

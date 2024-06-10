@@ -1,0 +1,11 @@
+uuid: 5969fb77-3e31-4cce-851f-04e38674577b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.bcq_level
+id: taxonomy_term.bcq_level
+target_entity_type_id: taxonomy_term
+target_bundle: bcq_level
+default_langcode: site_default
+language_alterable: false

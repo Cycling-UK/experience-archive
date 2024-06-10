@@ -1,0 +1,44 @@
+uuid: d8c46f4c-2e5b-4e48-88e2-305c2fea85e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_skyfish_api_user
+    - field.field.user.user.field_skyfish_password
+    - field.field.user.user.field_skyfish_secret_api_key
+    - field.field.user.user.field_skyfish_username
+    - field.field.user.user.user_picture
+  module:
+    - builder_notes
+    - user
+third_party_settings:
+  builder_notes:
+    notes: ''
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_first_name: true
+  field_last_name: true
+  field_skyfish_api_user: true
+  field_skyfish_password: true
+  field_skyfish_secret_api_key: true
+  field_skyfish_username: true
+  langcode: true
+  search_api_excerpt: true
+  user_picture: true
+  uuid: true

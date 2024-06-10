@@ -1,0 +1,41 @@
+uuid: 817c7c1b-c0cf-4a27-bad7-78603e9a7061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geofield
+    - node.type.route
+  module:
+    - builder_notes
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: geocode
+    weight: 0
+    field: field_gpx_file
+    skip_not_empty_value: false
+    disabled: false
+    hidden: false
+    providers:
+      - gpx_file
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+  builder_notes:
+    notes: ''
+id: node.route.field_geofield
+field_name: field_geofield
+entity_type: node
+bundle: route
+label: Geofield
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

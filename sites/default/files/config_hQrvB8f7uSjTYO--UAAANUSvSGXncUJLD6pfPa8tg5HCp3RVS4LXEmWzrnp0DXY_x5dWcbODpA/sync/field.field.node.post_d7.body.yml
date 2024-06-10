@@ -1,0 +1,30 @@
+uuid: 5d9a3dd9-4e94-47dc-865a-fdef9566ac88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.post_d7
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+  builder_notes:
+    notes: ''
+id: node.post_d7.body
+field_name: body
+entity_type: node
+bundle: post_d7
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

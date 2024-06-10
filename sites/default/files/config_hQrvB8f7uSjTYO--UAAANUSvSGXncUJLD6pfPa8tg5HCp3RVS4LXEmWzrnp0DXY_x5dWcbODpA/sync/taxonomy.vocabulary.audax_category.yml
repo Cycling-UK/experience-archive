@@ -1,0 +1,8 @@
+uuid: 818893a5-e08e-408f-ad8d-d1ef10629b1a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Audax category'
+vid: audax_category
+description: 'Placeholder vocabulary for D7 Audax category field on event/ride content type'
+weight: 0

@@ -1,0 +1,29 @@
+uuid: 7f444853-9603-4c88-90d8-20553995a48c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3c941d8c-5656-4f82-aef2-744342e9ce1c'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - experience_project
+third_party_settings:
+  block_class:
+    classes: footer-text
+id: experience_project_footertext
+theme: experience_project
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:3c941d8c-5656-4f82-aef2-744342e9ce1c'
+settings:
+  id: 'block_content:3c941d8c-5656-4f82-aef2-744342e9ce1c'
+  label: 'Footer text'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

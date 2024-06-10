@@ -1,0 +1,24 @@
+uuid: bb89e890-ca4b-4da0-b168-7140b3ea0e33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.issuu_embed
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.issuu_embed.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: issuu_embed
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

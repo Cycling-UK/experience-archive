@@ -1,0 +1,25 @@
+uuid: 92ea3226-918a-4aa7-bb5f-3a9f6266daa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_location_embed_preset_type
+    - paragraphs.paragraphs_type.map_embed_location
+  module:
+    - builder_notes
+    - options
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.map_embed_location.field_location_embed_preset_type
+field_name: field_location_embed_preset_type
+entity_type: paragraph
+bundle: map_embed_location
+label: 'How do you want to define your location?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

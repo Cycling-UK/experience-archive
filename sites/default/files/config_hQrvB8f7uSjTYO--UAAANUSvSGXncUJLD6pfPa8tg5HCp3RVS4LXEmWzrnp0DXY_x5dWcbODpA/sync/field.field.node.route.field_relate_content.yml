@@ -1,0 +1,39 @@
+uuid: 916c9dbe-cfcc-4c9a-bd51-5afec4e82cdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_relate_content
+    - node.type.content
+    - node.type.member_benefit
+    - node.type.point_of_interest
+    - node.type.route
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route.field_relate_content
+field_name: field_relate_content
+entity_type: node
+bundle: route
+label: 'Relate content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      content: content
+      member_benefit: member_benefit
+      point_of_interest: point_of_interest
+      route: route
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: content
+field_type: entity_reference

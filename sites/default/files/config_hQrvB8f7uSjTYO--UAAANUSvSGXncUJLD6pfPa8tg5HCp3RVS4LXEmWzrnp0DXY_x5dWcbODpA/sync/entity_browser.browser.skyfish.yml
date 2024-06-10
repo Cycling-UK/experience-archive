@@ -1,0 +1,64 @@
+uuid: 3e143888-35c8-46e4-ad42-16f986fcbd0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser_media_library
+  module:
+    - media_skyfish
+    - views
+name: skyfish
+label: 'Skyfish Images'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select images'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  80959ba1-73e3-4654-8b68-3520a8225a65:
+    id: media_skyfish_search
+    uuid: 80959ba1-73e3-4654-8b68-3520a8225a65
+    label: 'Skyfish Image'
+    weight: 1
+    settings:
+      root_folder_id: '0'
+      omit_folder_ids:
+        - '999617'
+        - '2037486'
+        - '1427549'
+        - '748023'
+        - '748024'
+        - 0
+        - 0
+      media_types:
+        image: image
+        vector: 0
+        video: 0
+        generic: 0
+      submit_text: 'Select image'
+  a67d4836-b5d0-4f84-94de-298fa733a231:
+    id: view
+    uuid: a67d4836-b5d0-4f84-94de-298fa733a231
+    label: 'Select existing image'
+    weight: 2
+    settings:
+      submit_text: Select
+      auto_select: false
+      view: media_entity_browser_media_library
+      view_display: media_browser_all
+  3d4f72d6-ad0c-4500-8828-295bc2402c7d:
+    id: media_image_upload
+    uuid: 3d4f72d6-ad0c-4500-8828-295bc2402c7d
+    label: 'Upload image'
+    weight: 3
+    settings:
+      submit_text: 'Select images'
+      upload_location: 'public://media/[current-date:html_year]/[current-date:html_month]'
+      multiple: '1'
+      extensions: 'jpg jpeg png gif'
+      media_type: image

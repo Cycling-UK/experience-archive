@@ -1,0 +1,15 @@
+uuid: f96038ba-d055-42cf-8ead-9d34fe0c14f7
+langcode: en
+status: true
+dependencies: {  }
+name: experience_registered_redirect_on_login
+label: 'Experience registered redirect on login'
+triggers:
+  login: login
+destination_path: 'entity:node/366'
+pages_type: 0
+pages: ''
+language: ''
+roles: {  }
+weight: 0
+enabled: false

@@ -1,0 +1,24 @@
+uuid: e81c247a-5c71-438b-9a1a-38c280a1117e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_caption
+    - taxonomy.vocabulary.area
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: taxonomy_term.area.field_caption
+field_name: field_caption
+entity_type: taxonomy_term
+bundle: area
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

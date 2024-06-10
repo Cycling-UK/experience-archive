@@ -1,0 +1,22 @@
+uuid: d59ce1a9-fb5b-4b03-b178-3accd6f8104c
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.quick_cards
+id: paragraph.quick_cards.status
+field_name: status
+entity_type: paragraph
+bundle: quick_cards
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

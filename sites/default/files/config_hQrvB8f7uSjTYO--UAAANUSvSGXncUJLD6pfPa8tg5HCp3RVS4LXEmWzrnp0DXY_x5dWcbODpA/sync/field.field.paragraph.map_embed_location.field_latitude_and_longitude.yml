@@ -1,0 +1,21 @@
+uuid: 3018b2e1-1d75-45f8-b7e7-7c685f91aec9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_latitude_and_longitude
+    - paragraphs.paragraphs_type.map_embed_location
+  module:
+    - geofield
+id: paragraph.map_embed_location.field_latitude_and_longitude
+field_name: field_latitude_and_longitude
+entity_type: paragraph
+bundle: map_embed_location
+label: 'Latitude and longitude'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

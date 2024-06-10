@@ -1,0 +1,29 @@
+uuid: ab4f7b4b-3754-4244-8578-f0732308f3b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_code
+    - paragraphs.paragraphs_type.map_embed_single_route
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - code
+  builder_notes:
+    notes: ''
+id: paragraph.map_embed_single_route.field_code
+field_name: field_code
+entity_type: paragraph
+bundle: map_embed_single_route
+label: 'Filter code'
+description: 'This field enables you to prefill the map filters. <a href="#">Instructions here</a>.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

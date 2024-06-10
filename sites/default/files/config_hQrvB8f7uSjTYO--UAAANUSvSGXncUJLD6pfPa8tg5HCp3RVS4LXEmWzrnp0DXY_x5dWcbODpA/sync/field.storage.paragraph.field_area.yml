@@ -1,0 +1,27 @@
+uuid: 1df6fcff-b23b-41d4-8237-a3661372e5e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - field_permissions
+    - paragraphs
+    - taxonomy
+third_party_settings:
+  builder_notes:
+    notes: ''
+  field_permissions:
+    permission_type: public
+id: paragraph.field_area
+field_name: field_area
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

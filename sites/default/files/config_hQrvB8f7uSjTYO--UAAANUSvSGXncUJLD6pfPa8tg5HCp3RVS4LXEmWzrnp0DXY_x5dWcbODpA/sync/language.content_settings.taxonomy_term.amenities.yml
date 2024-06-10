@@ -1,0 +1,11 @@
+uuid: 6240e716-f0a2-40c5-9be6-bf8b37f13601
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.amenities
+id: taxonomy_term.amenities
+target_entity_type_id: taxonomy_term
+target_bundle: amenities
+default_langcode: site_default
+language_alterable: false

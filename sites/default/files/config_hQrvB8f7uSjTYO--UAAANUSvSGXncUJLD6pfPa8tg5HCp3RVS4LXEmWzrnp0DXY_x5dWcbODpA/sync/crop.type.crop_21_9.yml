@@ -1,0 +1,12 @@
+uuid: 2f479d40-c347-465a-bb5d-db0be442d34b
+langcode: en
+status: true
+dependencies: {  }
+label: 'Crop 21:9'
+id: crop_21_9
+description: 'CinemaScope - original image must be a minimum of 1600px by 675px'
+aspect_ratio: '21:9'
+soft_limit_width: 2000
+soft_limit_height: 844
+hard_limit_width: 1600
+hard_limit_height: 675

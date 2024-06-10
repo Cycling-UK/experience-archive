@@ -1,0 +1,31 @@
+uuid: 9c234471-8f49-4a7f-bc34-93357e049527
+langcode: en
+status: true
+dependencies:
+  module:
+    - builder_notes
+    - options
+    - paragraphs
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.field_remove_rounded_corners_img
+field_name: field_remove_rounded_corners_img
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: remove_image_corners_no
+      label: 'No'
+    -
+      value: remove_image_corners_yes
+      label: 'Yes'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

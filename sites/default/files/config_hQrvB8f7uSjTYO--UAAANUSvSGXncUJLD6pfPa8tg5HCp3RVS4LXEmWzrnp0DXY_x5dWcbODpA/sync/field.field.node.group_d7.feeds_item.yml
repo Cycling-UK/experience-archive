@@ -1,0 +1,35 @@
+uuid: 8d2d8078-3b76-4441-8972-a3fed0f92aa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.groups_from_d7
+    - field.storage.node.feeds_item
+    - node.type.group_d7
+  module:
+    - builder_notes
+    - feeds
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.group_d7.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: group_d7
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings:
+    target_bundles:
+      groups_from_d7: groups_from_d7
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: feeds_item

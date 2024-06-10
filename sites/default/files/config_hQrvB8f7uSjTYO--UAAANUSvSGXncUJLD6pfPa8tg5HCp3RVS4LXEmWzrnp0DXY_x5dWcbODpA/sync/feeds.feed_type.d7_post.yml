@@ -1,0 +1,165 @@
+uuid: 3fec54c9-215c-4267-aa7c-4ad7dc7c1198
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.post_d7.body
+    - field.field.node.post_d7.field_d7_url_as_text
+    - field.field.node.post_d7.field_geo_data_holder
+    - field.field.node.post_d7.field_image
+    - field.field.node.post_d7.field_tags
+    - field.field.node.post_d7.field_teaser
+    - field.field.node.post_d7.field_unique_id_d7
+    - node.type.post_d7
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      7557c074-5a99-40b9-9619-79031592284d:
+        separator: ','
+        limit: null
+        uuid: 7557c074-5a99-40b9-9619-79031592284d
+        plugin: explode
+        source: tags
+        weight: 0
+        label: Explode
+label: 'D7 Post'
+id: d7_post
+description: ''
+help: 'Import minimal data from D7 posts into D9 placeholder for api to mapping'
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: true
+  fallback_hub: ''
+  request_timeout: 360
+parser: jsonpath
+parser_configuration:
+  context:
+    value: 'nodes[*].node'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: post_d7
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _delete
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  d7uuid:
+    value: d7Uuid
+    label: d7Uuid
+    machine_name: d7uuid
+    type: json
+  heroimage:
+    value: heroImage
+    label: heroImage
+    machine_name: heroimage
+    type: json
+  locationpolygon:
+    value: locationPolygon
+    label: locationPolygon
+    machine_name: locationpolygon
+    type: json
+  teaser:
+    value: teaser
+    label: teaser
+    machine_name: teaser
+    type: json
+  d7url:
+    value: d7Url
+    label: d7Url
+    machine_name: d7url
+    type: json
+  tags:
+    value: tags
+    label: tags
+    machine_name: tags
+    type: json
+  body:
+    value: body
+    label: body
+    machine_name: body
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_unique_id_d7
+    map:
+      value: d7uuid
+    settings:
+      language: null
+    unique:
+      value: '1'
+  -
+    target: field_image
+    map:
+      target_id: heroimage
+      alt: title
+      title: title
+    settings:
+      existing: 2
+      language: null
+      reference_by: filename
+      autocreate: false
+  -
+    target: field_geo_data_holder
+    map:
+      value: locationpolygon
+    settings:
+      language: null
+  -
+    target: field_teaser
+    map:
+      value: teaser
+    settings:
+      language: null
+  -
+    target: field_d7_url_as_text
+    map:
+      value: d7url
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_tags
+    map:
+      target_id: tags
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: '1'
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      language: null
+      format: plain_text

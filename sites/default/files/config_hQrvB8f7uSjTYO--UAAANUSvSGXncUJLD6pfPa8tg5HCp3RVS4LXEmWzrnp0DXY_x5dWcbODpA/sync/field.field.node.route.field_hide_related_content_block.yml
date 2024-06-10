@@ -1,0 +1,28 @@
+uuid: f97ce89a-2105-45db-bc92-96bbf3a5f630
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_related_content_block
+    - node.type.route
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route.field_hide_related_content_block
+field_name: field_hide_related_content_block
+entity_type: node
+bundle: route
+label: 'Hide related content block'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

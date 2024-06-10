@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: o1wWkhSOJotsHFgvzESaUOiTWhLak62cKBDyEtewAIM
+role_to_select:
+  non_authenticated: non_authenticated
+  cycle_friendly_place_owner: '0'
+  staff: '0'
+  junior_editor: '0'
+  senior_editor: '0'
+  administrator: '0'
+  access_webform_results: '0'
+registration_mode: user

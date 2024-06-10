@@ -1,0 +1,17 @@
+uuid: dff50d83-b235-4095-8597-16aa62e2a5de
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Member benefit'
+type: member_benefit
+description: 'Add a <em>member benefit</em> to the website.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

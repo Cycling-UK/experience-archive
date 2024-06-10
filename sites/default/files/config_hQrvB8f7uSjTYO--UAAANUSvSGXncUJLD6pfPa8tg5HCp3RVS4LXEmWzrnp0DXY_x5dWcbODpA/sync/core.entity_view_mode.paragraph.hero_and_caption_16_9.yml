@@ -1,0 +1,10 @@
+uuid: 5bebc95e-f6a7-4178-972c-0a3f571912c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.hero_and_caption_16_9
+label: 'Hero and caption 16:9'
+targetEntityType: paragraph
+cache: true

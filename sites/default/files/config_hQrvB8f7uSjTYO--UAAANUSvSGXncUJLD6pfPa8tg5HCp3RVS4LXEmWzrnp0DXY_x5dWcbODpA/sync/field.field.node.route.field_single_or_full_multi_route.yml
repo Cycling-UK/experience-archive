@@ -1,0 +1,27 @@
+uuid: a4249497-25a5-40a6-95c2-d196bfb92157
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_single_or_full_multi_route
+    - node.type.route
+  module:
+    - builder_notes
+    - options
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route.field_single_or_full_multi_route
+field_name: field_single_or_full_multi_route
+entity_type: node
+bundle: route
+label: 'Is this an individual route or a full multi-stage route?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: single
+default_value_callback: ''
+settings: {  }
+field_type: list_string

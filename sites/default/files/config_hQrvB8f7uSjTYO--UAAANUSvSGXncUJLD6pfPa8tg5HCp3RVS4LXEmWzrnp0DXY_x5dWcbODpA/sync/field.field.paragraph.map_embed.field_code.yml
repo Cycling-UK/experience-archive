@@ -1,0 +1,29 @@
+uuid: be17af1e-6166-4754-b27b-914e1d55d21a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_code
+    - paragraphs.paragraphs_type.map_embed
+  module:
+    - allowed_formats
+    - builder_notes
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - code
+  builder_notes:
+    notes: ''
+id: paragraph.map_embed.field_code
+field_name: field_code
+entity_type: paragraph
+bundle: map_embed
+label: 'Embed code'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

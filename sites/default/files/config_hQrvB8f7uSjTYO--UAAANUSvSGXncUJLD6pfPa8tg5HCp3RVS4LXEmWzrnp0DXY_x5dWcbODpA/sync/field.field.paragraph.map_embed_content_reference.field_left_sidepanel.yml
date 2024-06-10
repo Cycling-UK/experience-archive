@@ -1,0 +1,23 @@
+uuid: f78645b5-d19f-4009-a9a0-c144669ae9ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_left_sidepanel
+    - paragraphs.paragraphs_type.map_embed_content_reference
+  module:
+    - options
+id: paragraph.map_embed_content_reference.field_left_sidepanel
+field_name: field_left_sidepanel
+entity_type: paragraph
+bundle: map_embed_content_reference
+label: 'Left-hand side panel'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: closed
+default_value_callback: ''
+settings: {  }
+field_type: list_string

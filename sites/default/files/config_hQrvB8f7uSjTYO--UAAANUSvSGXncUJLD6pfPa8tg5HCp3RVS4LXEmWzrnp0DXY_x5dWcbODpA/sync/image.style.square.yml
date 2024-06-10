@@ -1,0 +1,22 @@
+uuid: cb9bad09-8867-407d-8781-77e9b80a732d
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_1_1
+  module:
+    - builder_notes
+    - crop
+third_party_settings:
+  builder_notes:
+    notes: ''
+name: square
+label: Square
+effects:
+  1e88790f-5d35-4a58-b54a-6d2d0d722faf:
+    uuid: 1e88790f-5d35-4a58-b54a-6d2d0d722faf
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_1_1
+      automatic_crop_provider: null

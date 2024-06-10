@@ -1,0 +1,23 @@
+uuid: 4f751f90-4bb6-4b3b-93b7-7494b43db791
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_all_routes
+    - paragraphs.paragraphs_type.map_embed_location
+  module:
+    - options
+id: paragraph.map_embed_location.field_show_all_routes
+field_name: field_show_all_routes
+entity_type: paragraph
+bundle: map_embed_location
+label: 'Route types'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'true'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

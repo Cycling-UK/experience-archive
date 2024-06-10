@@ -1,0 +1,77 @@
+uuid: f44927a3-7677-4cab-aa62-1e6abc9c5e57
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mega_menu_info_block
+    - core.entity_view_mode.block_content.mega_menu_promoted_article
+    - field.field.block_content.mega_menu_info_block.body
+    - field.field.block_content.mega_menu_info_block.field_link
+    - field.field.block_content.mega_menu_info_block.field_promoted_article_image
+    - field.field.block_content.mega_menu_info_block.field_promoted_article_label
+    - field.field.block_content.mega_menu_info_block.field_promoted_article_link
+    - field.field.block_content.mega_menu_info_block.field_promoted_article_teaser
+    - field.field.block_content.mega_menu_info_block.field_promoted_article_title
+  module:
+    - builder_notes
+    - link
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: block_content.mega_menu_info_block.mega_menu_promoted_article
+targetEntityType: block_content
+bundle: mega_menu_info_block
+mode: mega_menu_promoted_article
+content:
+  field_promoted_article_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: quick_card_image
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_promoted_article_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_promoted_article_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_promoted_article_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_promoted_article_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_link: true
+  langcode: true
+  search_api_excerpt: true

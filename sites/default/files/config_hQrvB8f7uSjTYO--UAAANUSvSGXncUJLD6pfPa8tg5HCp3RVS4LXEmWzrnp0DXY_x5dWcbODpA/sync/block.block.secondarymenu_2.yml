@@ -1,0 +1,20 @@
+uuid: f1ccecdd-a225-4069-9d41-d0fbb5625953
+langcode: en
+status: true
+dependencies:
+  module:
+    - tb_megamenu
+  theme:
+    - cyclinguk5
+id: secondarymenu_2
+theme: cyclinguk5
+region: nav_additional
+weight: -6
+provider: null
+plugin: 'tb_megamenu_menu_block:secondary-menu'
+settings:
+  id: 'tb_megamenu_menu_block:secondary-menu'
+  label: 'Secondary menu'
+  label_display: '0'
+  provider: tb_megamenu
+visibility: {  }

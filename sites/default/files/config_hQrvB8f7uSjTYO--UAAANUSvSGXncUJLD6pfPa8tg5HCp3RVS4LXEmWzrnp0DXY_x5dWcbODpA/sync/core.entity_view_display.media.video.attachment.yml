@@ -1,0 +1,47 @@
+uuid: 4afc7e3b-7a9c-47fb-a70b-56ec25253ccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.attachment
+    - field.field.media.video.field_media_video_file
+    - field.field.media.video.skyfish_id
+    - media.type.video
+  module:
+    - builder_notes
+    - media_entity_download
+third_party_settings:
+  builder_notes:
+    notes: ''
+_core:
+  default_config_hash: dQR0mYK5NNg27OigHrxZrHSsnwewnNZcPJKjKIO0cpA
+id: media.video.attachment
+targetEntityType: media
+bundle: video
+mode: attachment
+content:
+  field_media_video_file:
+    type: media_entity_download_download_link
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      disposition: attachment
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  skyfish_id: true
+  thumbnail: true
+  uid: true
+  uuid: true

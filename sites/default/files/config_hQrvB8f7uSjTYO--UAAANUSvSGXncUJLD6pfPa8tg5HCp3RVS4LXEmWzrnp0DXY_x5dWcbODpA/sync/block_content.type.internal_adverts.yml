@@ -1,0 +1,8 @@
+uuid: db4046c3-a774-4db7-be26-b63ca92406ea
+langcode: en
+status: true
+dependencies: {  }
+id: internal_adverts
+label: 'Internal adverts'
+revision: 1
+description: 'Internal adverts are used for in-house calls to action, for example to subscribe to CycleClips, join Cycling UK etc.'

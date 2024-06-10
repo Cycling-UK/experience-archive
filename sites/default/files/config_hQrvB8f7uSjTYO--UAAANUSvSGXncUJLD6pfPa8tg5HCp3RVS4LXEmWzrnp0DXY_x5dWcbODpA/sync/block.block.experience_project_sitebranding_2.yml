@@ -1,0 +1,24 @@
+uuid: f8d75257-733f-4ffe-b43e-7e7892295f0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - experience_project
+id: experience_project_sitebranding_2
+theme: experience_project
+region: navigation
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 2b701fbd-c561-4986-9ea9-2cd8e5e66b8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.poi_types
+  module:
+    - path
+id: taxonomy_term.poi_types.path
+field_name: path
+entity_type: taxonomy_term
+bundle: poi_types
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

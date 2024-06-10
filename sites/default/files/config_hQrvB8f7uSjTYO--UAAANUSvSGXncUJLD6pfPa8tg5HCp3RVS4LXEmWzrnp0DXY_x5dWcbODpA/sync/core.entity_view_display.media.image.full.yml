@@ -1,0 +1,44 @@
+uuid: b7cb7482-68b6-422e-9b64-202b2e2d5169
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.full
+    - field.field.media.image.field_media_image
+    - field.field.media.image.skyfish_id
+    - media.type.image
+    - responsive_image.styles.inline_image
+  module:
+    - builder_notes
+    - responsive_image
+third_party_settings:
+  builder_notes:
+    notes: ''
+_core:
+  default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
+id: media.image.full
+targetEntityType: media
+bundle: image
+mode: full
+content:
+  field_media_image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: inline_image
+      image_link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  skyfish_id: true
+  thumbnail: true
+  uid: true
+  uuid: true

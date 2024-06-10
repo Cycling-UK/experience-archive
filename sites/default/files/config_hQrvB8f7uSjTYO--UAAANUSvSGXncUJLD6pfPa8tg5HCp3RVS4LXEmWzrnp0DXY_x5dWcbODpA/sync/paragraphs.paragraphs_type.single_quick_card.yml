@@ -1,0 +1,10 @@
+uuid: e89c3f2a-14d4-44d1-96df-39debc873026
+langcode: en
+status: true
+dependencies: {  }
+id: single_quick_card
+label: 'Single quick card'
+icon_uuid: null
+icon_default: null
+description: 'Single card component of Quick Cards paragraph type'
+behavior_plugins: {  }

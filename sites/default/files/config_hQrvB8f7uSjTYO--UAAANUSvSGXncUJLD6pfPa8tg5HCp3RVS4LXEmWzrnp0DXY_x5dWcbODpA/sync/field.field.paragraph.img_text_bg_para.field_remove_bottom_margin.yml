@@ -1,0 +1,25 @@
+uuid: 8b703a16-2d01-49cd-b0a1-92adc5d5b8a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_remove_bottom_margin
+    - paragraphs.paragraphs_type.img_text_bg_para
+  module:
+    - builder_notes
+    - options
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.img_text_bg_para.field_remove_bottom_margin
+field_name: field_remove_bottom_margin
+entity_type: paragraph
+bundle: img_text_bg_para
+label: 'Remove bottom margin'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

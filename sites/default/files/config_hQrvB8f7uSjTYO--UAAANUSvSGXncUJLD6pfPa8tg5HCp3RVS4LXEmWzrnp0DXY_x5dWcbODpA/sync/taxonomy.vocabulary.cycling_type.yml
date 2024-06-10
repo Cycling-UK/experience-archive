@@ -1,0 +1,8 @@
+uuid: 1757c141-2c04-4592-aaf5-68fb179ede90
+langcode: en
+status: true
+dependencies: {  }
+name: 'Cycling type'
+vid: cycling_type
+description: ''
+weight: 0

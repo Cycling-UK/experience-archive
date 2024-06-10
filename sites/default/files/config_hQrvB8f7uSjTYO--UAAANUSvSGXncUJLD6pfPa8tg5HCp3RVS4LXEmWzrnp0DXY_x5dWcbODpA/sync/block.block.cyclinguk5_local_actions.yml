@@ -1,0 +1,20 @@
+uuid: d4b4c767-ec7c-43d4-850c-2934ebf96afa
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cyclinguk5
+_core:
+  default_config_hash: jaeN4AcCNOydLmJ75MNeKMxm0HxsI0IpOazt5aGG_qg
+id: cyclinguk5_local_actions
+theme: cyclinguk5
+region: content
+weight: -13
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

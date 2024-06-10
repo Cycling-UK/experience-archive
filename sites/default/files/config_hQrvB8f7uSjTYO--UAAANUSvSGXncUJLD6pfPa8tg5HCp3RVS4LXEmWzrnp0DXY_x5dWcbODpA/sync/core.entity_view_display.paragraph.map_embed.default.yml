@@ -1,0 +1,39 @@
+uuid: f15899c7-6079-46fd-aaca-4596c456d3b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map_embed.field_code
+    - field.field.paragraph.map_embed.field_title
+    - paragraphs.paragraphs_type.map_embed
+  module:
+    - builder_notes
+    - text
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.map_embed.default
+targetEntityType: paragraph
+bundle: map_embed
+mode: default
+content:
+  field_code:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

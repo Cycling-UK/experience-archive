@@ -1,0 +1,35 @@
+uuid: 82b14fb4-9bb1-4f4e-91f0-afb9ad7ee2cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.quick_card
+    - field.field.paragraph.faq.field_faq
+    - field.field.paragraph.faq.field_text
+    - field.field.paragraph.faq.field_title
+    - paragraphs.paragraphs_type.faq
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: paragraph.faq.quick_card
+targetEntityType: paragraph
+bundle: faq
+mode: quick_card
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_faq: true
+  field_text: true
+  search_api_excerpt: true

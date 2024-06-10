@@ -1,0 +1,27 @@
+uuid: cb34b567-92ec-4c6f-b043-aabb94364278
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_show_all_routes
+    - taxonomy.vocabulary.area
+  module:
+    - builder_notes
+    - options
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: taxonomy_term.area.field_show_all_routes
+field_name: field_show_all_routes
+entity_type: taxonomy_term
+bundle: area
+label: 'Show all routes?'
+description: 'Limit routes to only Experience and flagship routes, or show all Cycling UK routes.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'false'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

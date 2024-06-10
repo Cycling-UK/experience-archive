@@ -1,0 +1,24 @@
+uuid: c568bd07-17fd-4526-a79b-659039984a93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_d7_ride_level
+    - node.type.route_d7
+  module:
+    - builder_notes
+third_party_settings:
+  builder_notes:
+    notes: ''
+id: node.route_d7.field_d7_ride_level
+field_name: field_d7_ride_level
+entity_type: node
+bundle: route_d7
+label: 'D7 Ride level'
+description: 'D7 ride level placeholder'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
