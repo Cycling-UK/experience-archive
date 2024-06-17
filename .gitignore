@@ -30,6 +30,8 @@ sites/*/files/js
 sites/*/files/media
 sites/*/files/php
 sites/*/files/styles
+sites/default/files-private
+sites/default/files
 
 
 
